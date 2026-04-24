@@ -1,0 +1,871 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ru"><head>
+
+<meta http-equiv="Content-Type" content="text/html; image/x-icon; charset=UTF-8">
+<link rel="shortcut icon" href="https://accusb.000webhostapp.com/favicon.ico" type="image/x-icon">
+<link rel="canonical" href="https://accusb.000webhostapp.com/">
+<meta http-equiv="Content-Language" content="ru">
+<base href="https://accusb.000webhostapp.com/">
+<meta name="Reply-to" content="post4inet@gmail.com">
+<meta name="Keywords" content="USB I2C SPI adapter адаптер">
+<meta name="Description" content="USB I2C SPI adapter адаптер"><title>USB I2C SPI adapter адаптер</title></head><noscript></noscript><body style="color: rgb(0, 0, 0); background-color: rgb(192, 192, 192);" alink="#ee0000" link="#0000ee" vlink="#551a8b"><table style="text-align: left; width: 492px; height: 38px;" border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td>
+<h2 style="background-color: rgb(204, 255, 255); margin-top: 0px; height: 26px; width: 482px;">e-mail:&nbsp;
+<a style="color: rgb(0, 102, 0);" href="mailto:post4inet@gmail.com"><b><b>post4inet@gmail.com</b></b></a><span style="color: rgb(0, 0, 153);"></span><span style="color: rgb(153, 102, 51);"></span></h2>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+
+<table style="text-align: left; height: 137px; width: 636px;" border="1" cellpadding="2" cellspacing="2">
+
+<tbody>
+<tr>
+<td style="background-color: rgb(102, 255, 255);"><a target="_blank" style="color: rgb(51, 51, 255);" href="I2C_SPI_USB_adapter.html"><big><big>I2C
+SPI 1-Wire USB адаптер</big></big></a></td>
+</tr>
+<tr>
+<td style="height: 14px; background-color: rgb(3, 253, 238); width: 626px;"><a style="color: rgb(0, 0, 238);" href="http://accelerometer.narod.ru/application.html"><big><big><span style="color: rgb(204, 0, 0);"></span><span style="color: rgb(255, 102, 0);"></span><span style="color: rgb(0, 102, 0);"></span><span style="color: rgb(51, 153, 153);"></span><span style="color: rgb(0, 0, 153);"></span><span style="color: rgb(102, 0, 204);"></span></big></big></a><big><big><a target="_blank" href="I2C_SPI_USB_interfaces.html">Интерфейсы
+I2C, SPI, 1-Wire; подключение к адаптеру</a></big></big></td>
+</tr>
+<tr>
+<td style="background-color: rgb(3, 253, 238); height: 16px; width: 626px;"><a style="color: rgb(0, 0, 238);" href="http://accelerometer.narod.ru/img/I2C_SPI/USB_case.mp4"><big><big><span style="color: rgb(204, 0, 0);"></span><span style="color: rgb(204, 153, 51);"><span style="color: rgb(51, 51, 255);"></span></span></big></big></a><a target="_blank" style="color: rgb(51, 51, 255);" href="I2C_SPI_USB_lib.html"><big><big>Программное
+обеспечение I2C SPI 1-Wire USB адаптера&nbsp;</big></big></a></td>
+</tr>
+<tr style="background-color: rgb(102, 255, 255);">
+<td><a target="_blank" style="color: rgb(51, 51, 255);" href="I2C_SPI_USB_app_examples.html"><big><big>Примеры
+программ микроконтроллера адаптера&nbsp;</big></big></a></td>
+</tr>
+<tr style="color: rgb(51, 51, 255);">
+<td style="background-color: rgb(3, 253, 238); height: 9px; width: 626px;"><big><big><a target="_blank" href="I2C_SPI_USB_use.html">Применение
+I2C SPI 1-Wire USB адаптеров</a></big></big></td>
+</tr>
+<tr>
+<td style="background-color: rgb(102, 255, 255);"><big><big><a target="_blank" href="I2C_SPI_USB_accessories.html">Платы,
+кабели, корпуса, аксессуары</a></big></big></td>
+</tr>
+    <tr>
+      <td style="vertical-align: top; background-color: rgb(102, 255, 255);"><big><big><a href="https://accusb.000webhostapp.com/I2C_SPI_USB_accessories.html"><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;"><span style="font-weight: bold;"></span></span></span></span></a><a href="https://youtu.be/eOtSVU7-4bA" target="_blank">Видео программирования по UPDI на youtube</a></big></big></td>
+    </tr>
+<tr style="background-color: rgb(102, 255, 255);">
+<td><small><small><big><big><a target="_blank" style="color: rgb(51, 51, 255);" href="img/I2C_SPI/USB_case.mp4"><big><big>3d
+модель корпуса адаптера для печати на 3d принтере</big></big></a></big></big></small></small></td>
+</tr>
+<tr>
+<td style="background-color: rgb(102, 255, 255);"><big><big><a target="_blank" href="I2C_SPI_USB_forum.html">Форум,
+(возможно, обратная связь, контакты, поддержка)</a></big></big></td>
+</tr>
+</tbody>
+</table>
+
+<h1 align="center"><span style="background-color: rgb(153, 255, 153);" lang="EN-US"></span><span style="background-color: rgb(255, 204, 51);" lang="EN-US"></span><span style="background-color: rgb(153, 255, 153);" lang="EN-US"></span><span style="background-color: rgb(153, 255, 153);" lang="EN-US"></span><span style="background-color: rgb(255, 204, 51);" lang="EN-US">Программное
+обеспечение I2C SPI 1-Wire USB адаптера</span><span style="" lang="EN-US"></span><br>
+</h1>
+<span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);"></span></span>
+<h2 style="background-color: rgb(153, 153, 0); width: 174px;"><span style="" lang="EN-US">&nbsp;Драйверы USB</span></h2>
+<span style="" lang="EN-US"></span><span style="" lang="EN-US">Для подключения к USB в
+адаптере используется микросхема USB-моста CP2102N производства <a href="https://www.silabs.com/" target="_blank">Silicon
+Labs</a>. Компания предлагает последние версии драйверов на своем
+сайте.<br>
+</span><span style="" lang="EN-US"><a target="_blank" href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers">Драйверы&nbsp;VCP
+(Virtual COM-port)</a></span><span style="" lang="EN-US"> для разных операционных систем (Windows,
+WinCE, Mac, Linux)</span><span style="" lang="EN-US">
+обеспечивают обращение&nbsp;компьютера, смартфона или контроллера
+с&nbsp;USB хостом через соответствующее приложение</span><span style="" lang="EN-US"> к адаптеру&nbsp;через
+виртуальный COM-порт.</span><span style="" lang="EN-US"><br>
+<a target="_blank" href="https://www.silabs.com/developers/direct-access-drivers">Драйверы
+прямого доступа USBxpress</a> </span><span style="" lang="EN-US"></span><span style="" lang="EN-US">доступны&nbsp;для устройств с операционными
+системами Windows, WinCE.<br>
+<br>
+Для Windows можно воспользоваться&nbsp;архивами с <a href="img/I2C_SPI/DOC/drvUSBxpressInstaller.zip" target="_blank">драйверами
+прямого доступа</a> и с <a target="_blank" href="img/I2C_SPI/DOC/drvCP210x_VCP_Windows.zip">драйверами виртуального
+COM-порта</a>.<br>
+<br>
+Режим
+работы микросхемы USB-моста CP2102 - через виртуальный COM-порт или с
+прямым доступом - определяется записанным в эту микросхему значением
+USB параметра PID (Product ID).<br>
+</span><span style="" lang="EN-US"><span style="font-weight: bold;"><a name="PID_EA61"></a>PID=0xEA61</span>
+- с этим значением параметра поставляется адаптер, его работа возможна
+под </span><span style="" lang="EN-US">Windows
+и WinCE</span><span style="" lang="EN-US">;
+микросхема работает
+в режиме прямого доступа к функциям USB-моста; на хост-устройстве
+должен быть установлен <span style="font-weight: bold;">драйвер
+прямого доступа</span>.</span><span style="" lang="EN-US"><br>
+<span style="font-weight: bold;"><a name="PID_EA60"></a>PID=0xEA60</span>
+- приложение обращается к микросхеме USB-моста&nbsp;как к <span style="font-weight: bold;">виртуальному COM-порту</span>,
+на хост-устройстве, к которому&nbsp;подключается USB-мост, должен
+быть установлен <span style="font-weight: bold;">драйвер
+VCP</span>; этот режим необходим для работы адаптера под
+операционными системами Linux, Mac - для них доступны только драйверы
+VCP. </span><span style="" lang="EN-US">Этот
+режим также возможен&nbsp;под Windows и WinCE -&nbsp;</span><span style="" lang="EN-US">разработчик может им
+воспользоваться, если предпочитает работу с виртуальным COM-портом
+прямому доступу к функциям USB-моста.<span style="font-weight: bold;"></span><br>
+<br>
+Для изменения</span><span style="" lang="EN-US">
+значений параметров </span><span style="" lang="EN-US">USB
+</span><span style="" lang="EN-US">(VID, PID,
+Product String, Serial Number,...)</span><span style="" lang="EN-US"> </span><span style="" lang="EN-US">в микросхеме USB-моста </span><span style="" lang="EN-US">CP2102N</span><span style="" lang="EN-US"> производитель </span><span style="" lang="EN-US">предлагает <a target="_blank" href="https://www.silabs.com/developers/simplicity-studio">Simplicity
+Studio</a></span><span style="" lang="EN-US"></span><span style="" lang="EN-US">.<br>
+В составе&nbsp;<span style="font-weight: bold; color: rgb(0, 102, 0);">I2C SPI
+1-Wire </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">USB </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">адаптера</span>
+микросхема CP2102N поставляется с PID=0xEA61. <br>
+Если в CP2102N необходимо изменить PID на 0xEA60, </span><span style="" lang="EN-US">следует
+предварительно&nbsp;считать параметры, уже записанные при
+изготовлении
+адаптера (кнопка "Import From Device"), затем изменить PID на 0xEA60 и
+нажать кнопку "Program To Device" для сохранения изменений.<br>
+<span style="color: red; font-weight: bold;">Внимание:
+загрузка </span></span><span style="font-weight: bold;" lang="EN-US"><span style="color: red;">в
+микросхему CP2102N </span><span style="color: red;">параметров,
+предлагаемых </span></span><span style="color: red; font-weight: bold;" lang="EN-US"></span><a target="_blank" style="color: red; font-weight: bold;" href="https://www.silabs.com/developers/simplicity-studio">Simplicity
+Studio</a><span style="font-weight: bold;" lang="EN-US"><span style="color: red;"> </span><span style="color: red;">по умолчанию</span></span><span style="" lang="EN-US"><span style="color: red; font-weight: bold;">, недопустима:
+адаптер перестанет работать. <span style="color: rgb(0, 102, 0);"><br>
+Для восстановления работы адаптера понадобится ввести корректные
+параметры.</span></span><br style="font-weight: bold;">
+<br>
+Чтобы
+операционная система и работающие в ней приложения, в том числе
+Simplicity Studio, обнаружили ваше устройство, на
+компьютере уже должен быть установлен драйвер с параметрами </span><span style="" lang="EN-US">VID, PID, Product String,
+прописанными в микросхеме USB моста, который вы подключаете. <br>
+Если вы изменили параметры&nbsp;</span><span style="" lang="EN-US">VID,
+PID, Product String в этих приложениях, а драйверы с новыми значениями
+этих параметров ещё не установлены, операционная система, а значит, и
+эти приложения не обнаружат</span><span style="" lang="EN-US"> вашего устройства после внесенных изменений.<br>
+<br>
+Замечание: <br>
+</span>
+<ul>
+<li><span style="" lang="EN-US">Windows10
+жёстко проверяет устройства на соответствие VID, PID, Product String -
+они должны быть зарегистрированы производителем, а их изменение требует
+процедуры регистрации на&nbsp;<a target="_blank" href="https://usb.org/">usb.org</a>,
+незарегистрированные устройства блокируются, а процедура их
+разблокировки в Windows10 требует довольно хлопотных изменений. Для
+микросхемы CP2102 эти параметры должны быть следующими: VID=0x10C4;
+PID=0xEA60 или PID=0xEA61</span></li>
+<li><span style="" lang="EN-US">Windows7
+допускала работу устройств с незарегистрированными значениями
+параметров, но требовала некоторой процедуры для разрешения работы
+таких устройств.</span></li>
+<li><span style="" lang="EN-US">Windows
+Vista, XP, 98 позволяли произвольно изменять эти параметры, можно было
+подключать несколько устройств с USB-мостами CP2102, при этом,
+например, первому устройству с таким мостом можно было присвоить
+PID=0xEA01, второму PID=0xEA02. Конечно, была вероятность, что при
+таком произволе кто-то зарегистрирует своё устройство с используемыми
+вами </span><span style="" lang="EN-US">VID=0x10C4
+и PID=0xEA01, а</span><span style="" lang="EN-US">
+ваш заказчик приобретет </span><span style="" lang="EN-US">такое устройство </span><span style="" lang="EN-US">и попытается использовать его вместе с вашим.</span></li>
+</ul>
+<span style="" lang="EN-US"></span>
+<h2 style="background-color: rgb(153, 153, 0); width: 583px;"><span style="" lang="EN-US"><a name="bootloader"></a>&nbsp;Bootloader
+адаптера с микроконтроллерами ATmega8 и</span> megaAVR 0-series</h2>
+В
+адаптерах с микроконтроллерами ATmega8 и микроконтроллерами megaAVR 0-series прошивка содержит не
+только
+программу работы с интерфейсами I2C, SPI и 1-Wire, но и
+программу-загрузчик (bootloader).<br>
+В адаптерах с микроконтроллерами
+STM8S003 программы-загрузчика нет - эти микроконтроллеры не имеют
+аппаратной поддержки boot-сектора.<br>
+<br>
+В
+микроконтроллерах ATmega8 и megaAVR 0-series в памяти программ можно выделить загрузочную
+область (boot) и область приложения, для этого требуется программатор.<br>
+В
+области приложения размещается рабочая программа микроконтроллера - в
+микроконтроллере адаптера это программа, обеспечивающая работу с
+интерфейсами I2C, SPI и 1-Wire, а также связь с компьютером по USB.<br>
+В
+загрузочной области размещена программа, позволяющая загрузить
+обновлённую прошивку в область приложения памяти программ
+микроконтроллера без программатора. <br>
+<br>
+<p class="MsoNormal" style="margin-bottom: 12pt;">В&nbsp;памяти
+микроконтроллеров
+ATmega8 и megaAVR 0-series адаптера программа-загрузчик и универсальная программа уже
+прошиты. В
+памяти STM8S003 прошита только универсальная программа.</p>
+При обычном подключении к USB, микроконтроллер адаптера выполняет
+рабочую программу.<br>
+Для
+перехода в режим загрузки на отключенном микроконтроллере нужно
+замкнуть контакты "O" и "_|_" и, не размыкая контактов, подключить
+адаптер к USB.<br>
+В поставляемой рабочей программе микроконтроллера
+предусмотрена команда перехода из рабочей программы в режим загрузки
+без замыкания контактов.<br>
+Чтобы
+разработанная вами рабочая программа обеспечивала
+программный переход к режиму загрузки, она должна поддерживать такую же
+команду, а микроконтроллер должен
+использовать скорость передачи&nbsp;500000 бод. Скорость передачи
+500000 бод используется во всех поставляемых программах, в том числе в
+компьютерном приложении Bootloader.&nbsp;<br>
+Компьютерное
+приложение Bootloader обеспечивает&nbsp;загрузку обновлённой
+прошивки,
+которая должна храниться в формате hex.&nbsp; <span style="color: rgb(51, 0, 51); background-color: rgb(255, 255, 51);">&lt;Разместить ссылки&gt;</span><br style="color: rgb(51, 0, 51);">
+<br>
+<span style="" lang="EN-US"></span><img title="приложение Bootloader" src="img/I2C_SPI/bootloader.jpg" alt="приложение для загрузки прошивок в МК" style="border: 0px solid ; width: 757px; height: 226px;"><br>
+<br>
+При подключенном к USB микроконтроллере, нажатие кнопки "МК-&gt;к
+Bootloader" переводит микроконтроллер (МК) в режим загрузки. <br>
+Откройте файл обновлённой прошивки (кнопка "Открыть файл прошивки
+*.hex"),&nbsp;затем нажмите кнопку
+"Записать прошивку в МК". <br>
+По мере загрузки прошивки на панели статуса отображается текущий номер
+страницы программы, уже записанной в память микроконтроллера.<br>
+Нажатие
+кнопки "МК-&gt;к программе" переводит микроконтроллер в режим
+выполнения программы, а приложение Bootloader отключает - вы можете
+запустить какое-либо приложение для управления адаптером, а приложение
+Bootloader не закрывать. Для повторного выполнения прошивки надо
+отключить или закрыть приложение управления адаптером, а в приложении
+Bootloader нажать кнопку "МК-&gt;к BootLoader". Это удобно при
+работе
+над программой с тестированием очередной обновлённой прошивки.<br>
+<br>
+Возможна загрузка обновлённой прошивки с помощью программатора - его
+можно подключить к контактам SPI интерфейса адаптера:<br>
+Контакт
+программатора:&nbsp;&nbsp;&nbsp;
+_|_&nbsp;&nbsp;&nbsp;
++3,3V&nbsp;&nbsp;&nbsp; MISO&nbsp;&nbsp;&nbsp;
+MOSI&nbsp;&nbsp;&nbsp;
+SCK&nbsp;&nbsp;&nbsp; RST<br>
+контакт адаптера:&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+_|_&nbsp;&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; O&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; I&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; C&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;МК/конт.29
+(выведен на R=10к и конденсатор у 1-го контакта МК, обозначенного на
+плате галочкой - к площадкам R и С удобнее паять провод)<br>
+<br>
+<span style="color: red;">При
+загрузке через программатор выполняется полное стирание памяти
+микроконтроллера, в том числе и загрузочной области, а
+программа-загрузчик для микроконтроллера не предоставляется.</span>
+То
+есть, после использования программатора&nbsp;вы не сможете
+пользоваться
+нашим загрузчиком в адаптере.&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; <br>
+<br>
+<h2 style="background-color: rgb(153, 153, 0); width: 456px;"><span style="" lang="EN-US">&nbsp;Адаптер: программа
+микроконтроллера</span></h2>
+<span style="" lang="EN-US"></span><span style="" lang="EN-US">Микроконтроллер адаптера I2C
+SPI 1-Wire USB (далее МК) распознаёт и выполняет поступающие по USB</span><span style="" lang="EN-US">
+команды. По этим командам МК управляет подключёнными к адаптеру
+устройствами, считывает поступающие от них данные и передаёт их по USB
+в компьютер.<br>
+</span>
+<h3><span style="" lang="EN-US">Параметры
+передачи МК:</span></h3>
+<ul>
+<li><span style="" lang="EN-US">информация
+передаётся 8-битными словами, сопровождаемыми служебными битами;</span></li>
+<li><span style="" lang="EN-US">скорость
+передачи 500000 бод;&nbsp;</span></li>
+<li><span style="" lang="EN-US">1
+стоп-бит;&nbsp;</span></li>
+<li><span style="" lang="EN-US">бит
+чётности - Odd (нечётность).</span></li>
+</ul>
+<span style="" lang="EN-US">Такие же параметры
+должны быть установлены и в компьютерном приложении, под управлением
+которого работает адаптер.<br>
+</span>
+<h3><span style="" lang="EN-US">Команды
+компьютера и ответы МК.</span></h3>
+Первым передаётся байт команды, последним - байт контрольной записи CR.<br>
+Все значения в командах и ответах однобайтные, это адреса устройств,
+адреса регистров, размеры запрашиваемых данных, содержимое регистров.<br>
+<span style="color: red; font-weight: bold;">Замечание. </span><span style="font-weight: bold;">Все
+приведённые ниже команды отправляются компьютером адаптеру. </span><br style="font-weight: bold;">
+<span style="font-weight: bold;">Адаптер обрабатывает
+команды и отправляет их в подключенные к адаптеру устройства в
+преобразованном виде.</span><br style="font-weight: bold;">
+<span style="font-weight: bold;">Ответы устройств также
+отправляются</span><span style="font-weight: bold;">
+адаптером</span><span style="font-weight: bold;"> в
+компьютер в обработанном виде.</span> <br>
+<span style="font-weight: bold;">Формат обмена между
+адаптером и подключёнными к нему устройствами здесь не рассматривается.</span><br>
+<h3 style="background-color: rgb(153, 255, 153); width: 548px;">Команды
+теста связи и работы с загрузчиком (bootloader).</h3>
+Эти четыре команды выполняются как с подключёнными к адаптеру
+устройствами, так и без них.<br>
+<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Тест
+связи с МК, выполняющим рабочую программу.</h4>
+Команда:<br>
+0x10
+B[0] ... B[n-1] CR - между байтом команды 0x10 &nbsp;и контрольной
+записью может быть до десятка произвольных байт B[0] ... B[n-1]; их
+передача необязательна. Достаточно передать байт команды и контрольную
+запись: 0x10 0x10.<br>
+Ответ:<br>
+0x10 B[0] ... B[n-1] CR -&nbsp;ответ МК повторяет принятую
+последовательность (<span style="font-weight: bold;">эхо
+команды</span>).<br>
+<span style="font-weight: bold;">Контрольная
+запись CR</span> определяется как младший байт суммы всех
+предыдущих байт
+команды: <br>
+CR = LowByteOf ( 0x10 + B[0] + ... + B[n-1] ).<br>
+Пример расчёта CR в <a target="_blank" href="I2C_SPI_USB_lib.html#CR">следующем
+разделе</a>.<br>
+<br>
+<h4 style="background-color: rgb(102, 255, 255); width: 471px;">Переход
+к программе-загрузчику МК из рабочей программы.</h4>
+0xBB 0xBB - команда перехода МК к загрузчику. Команда выполняется
+рабочей программой МК. <br>
+Ответ на команду не предусмотрен.<br>
+<h4 style="background-color: rgb(102, 255, 255); width: 472px;">Тест
+связи с МК, выполняющим программу-загрузчик.</h4>
+0xB7 0xB7 - команда выполняется загрузчиком. На команду 0x10, описанную
+выше, загрузчик не отвечает.<br>
+0xB7
+B[0] B[1] B[2] CR - ответ&nbsp;МК позволяет убедиться в переходе
+к загрузчику. Байты B[0], B[1], B[2] и CR вычисляются и передаются
+загрузчиком.<br>
+<h4 style="background-color: rgb(102, 255, 255); width: 471px;">Возврат
+МК к рабочей программе из программы-загрузчика.</h4>
+0xBA 0xBA - команда выполняется загрузчиком. Ответ на команду не
+предусмотрен. <br>
+Чтобы убедиться в переходе МК к рабочей программе, следует выполнить
+команду 0x10 0x10.<br>
+<h3 style="background-color: rgb(153, 255, 153); width: 299px;">Команды
+интерфейса I2C.</h3>
+Устройства
+с интерфейсом I2C поддерживают аппаратную адресацию. Адрес устройства
+записывается в него при производстве, а при обращении к устройству
+адаптер должен сначала отправить этот адрес. <br>
+<span style="font-weight: bold;"><span style="color: red;">Замечание.</span>
+Младший разряд адреса I2C устройства определяет направление передачи.<br>
+Если&nbsp;разряд в байте адреса сброшен, следующие за ним байты
+записываются в I2C устройство.<br>
+Если младший разряд в адресе установлен, данные из устройства будут
+считываться.<br>
+В технических описаниях устройств указываются базовые адреса - со
+сброшенными младшими разрядами. Они всегда чётные.<br style="font-weight: bold;">
+</span><span style="font-weight: bold;">Этот базовый
+адрес и используется в командах компьютера и ответах адаптера. <br>
+Установку
+или&nbsp;сброс младшего разряда адреса выполняет адаптер при
+формировании последовательностей для передачи в устройства.<br>
+При
+однобайтной адресации&nbsp;интерфейса I2C возможно формирование
+256-ти
+адресов, но так как каждое устройство использует два адреса - для
+чтения и
+для записи - общее число адресуемых устройств, подключаемых к шине I2C,
+не может превышать 128-ми.</span>
+<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Чтение
+состояния регистров устройства I2C.</h4>
+Команда:<br>
+0x11&nbsp;addr_I2C&nbsp;Rg_minNum&nbsp;numRgToRead&nbsp;CR
+<br>
+<br>
+за байтом команды 0x11 компьютером передаются <br>
+байт&nbsp;addr_I2C - адрес опрашиваемого I2C устройства,<br>
+байт&nbsp;RgNum_min - наименьший номер регистра из
+последовательности опрашиваемых регистров,<br>
+байт&nbsp;numRgToRead - число опрашиваемых регистров<br>
+и байт&nbsp;CR - контрольная запись.<br>
+<br>
+Ответ адаптера:<br>
+0x11&nbsp;addr_I2C&nbsp;Rg_minNum B[0] ... B[numRgToRead-1] CR<br>
+первые 3 байта такие же, как в команде, <br>
+B[0] ... B[numRgToRead-1] - принятые адаптером состояния регистров,<br>
+байт&nbsp;CR - контрольная запись.<br>
+Пример команды и ответа в <a target="_blank" href="I2C_SPI_USB_lib.html#read_I2C">следующем
+разделе</a>.<br>
+<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Запись
+в регистры устройства I2C.</h4>
+Команда:<br>
+0x12 addr_I2C&nbsp;Rg_minNum B[0] ... B[n-1] CR<br>
+0x12 - команда;<br>
+addr_I2C - адрес I2C устройства;<br>
+RgNum_min - наименьший номер регистра из&nbsp;последовательности
+регистров, в которую производится запись;<br>
+B[0] ... B[n-1] - <span style="font-weight: bold;">n</span>
+байт, которые следует записать в регистры;<br>
+CR - контрольная запись.<br>
+<br>
+Ответ адаптера: эхо команды.<br>
+Пример команды и ответа в <a target="_blank" href="I2C_SPI_USB_lib.html#write_I2C">следующем
+разделе</a>.<br>
+<h3 style="background-color: rgb(153, 255, 153); width: 299px;">Команды
+интерфейса SPI.</h3>
+В отличие от I2C устройств, адресация при обращении к устройствам
+SPI&nbsp;не требуется.
+<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Чтение
+состояния регистров устройства SPI.</h4>
+Команда:<br>
+0x21&nbsp;Rg_minNum&nbsp;numRgToRead&nbsp;CR <br>
+<br>
+0x21- команда чтения содержимого регистров,<br>
+RgNum_min - наименьший номер регистра из&nbsp;последовательности
+опрашиваемых регистров,<br>
+numRgToRead - число опрашиваемых регистров<br>
+CR - контрольная запись.<br>
+<br>
+Ответ адаптера:<br>
+0x21&nbsp;Rg_minNum B[0] ... B[numRgToRead-1] CR<br>
+первые 3 байта такие же, как в команде, <br>
+B[0] ... B[numRgToRead-1] -&nbsp;состояния опрошенных регистров,<br>
+байт&nbsp;CR - контрольная запись.<br>
+<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Запись
+в регистры устройства SPI.</h4>
+Команда:<br>
+0x22 Rg_minNum B[0] ... B[n-1] CR<br>
+0x22 - команда,<br>
+RgNum_min - наименьший номер регистра из&nbsp;последовательности
+регистров, в которую производится запись,<br>
+B[0] ... B[n-1] - n байт, которые следует записать в регистры,<br>
+CR - контрольная запись.<br>
+<br>
+Ответ адаптера: эхо команды.<br>
+<h3 style="background-color: rgb(153, 255, 153); width: 299px;">Команды
+интерфейса 1-Wire.</h3>
+Каждое выпускаемое устройство с интерфейсом 1-Wire имеет индивидуальный
+64-разрядный адрес. <br>
+При подключении к адаптеру одного устройства к нему возможно
+безадресное обращение.<br>
+Команда:<br>
+0x31 n CR - считать n байт из буфера устройства 1-Wire.<br>
+Ответ адаптера:<br>
+B[0] ... B[n-1] - байты, принятые адаптером.<br>
+<br>
+Команда:<br>
+0x32 B[0] CR - отправить байт B[0] устройству 1-Wire. <br>
+Ответ не предусмотрен.<br>
+<br>
+Команда:<br>
+0x33 0x33 - адаптеру генерировать импульс сброса устройств 1-Wire. <br>
+Ответ не предусмотрен.<br>
+<br>
+Команда:<br>
+0x34 0x34 - запрос присутствия устройств на линии 1-Wire. <br>
+Ответ не предусмотрен.<br>
+<br>
+<span style="font-weight: bold;"><a name="DS18B20"></a>Датчик температуры
+DS18B20: для &nbsp;него&nbsp;в программе предусмотрена
+отдельная команда.</span><br>
+Эта команда вызывает все перечисленные выше команды интерфейса 1-Wire:<br>
+0x3F 0x3F - выполнить измерение температуры и передать результат
+измерения.<br>
+Ответ: <br>
+9&nbsp;байт - содержимое буфера DS18B20.<br>
+Байты B[0] и B[1] содержат измеренное датчиком &nbsp;DS18B20
+значение.<br>
+Для получения результата использовать формулу: &nbsp;T°C = (B[0] +
+B[1] * 256 ) / 16.<br>
+<br>
+<span style="font-weight: bold;">Пример обращения к
+датчику DS18B20 отдельными командами 1-Wire:</span><br>
+0x33 0x33 - генерировать импульс сброса устройств.<br>
+0x34 0x34 - запросить присутствие устройств на линии 1-Wire.<br>
+0x32 0xCC 0xFE - отправить байт 0xCC устройству. Команда 0xCC датчика
+DS18B20: SkipROM. 0xFE - байт контрольной записи.<br>
+0x32 0x44 0x76 - отправить 0xCC устройству. Команда 0x44 датчика
+DS18B20:&nbsp;измерить температуру.<br>
+0x33 0x33 - генерировать импульс сброса устройств.<br>
+0x34 0x34 - запросить присутствие устройств на линии 1-Wire.<br>
+0x32 0xCC 0xFE - отправить 0xCC устройству. Команда 0xCC датчика
+DS18B20: SkipROM.<br>
+0x32 0xBE 0xF0 - отправить 0xBE устройству. Команда 0xBE датчика
+DS18B20: ReadScratchPad - передать содержимое памяти в буфер.<br>
+0x31
+0x09 0x3A - считать 9 байт из буфера. Результат измерения температуры
+находится в первой паре байт буфера DS18B20, но&nbsp;этот буфер
+кольцевой, он содержит 9 байт и все эти байты должны быть считаны.<br>
+<br>
+При
+выполнении отдельной команды 0xFF между некоторыми командами из примера
+размещаются необходимые задержки. При ручном вводе каждой команды в
+окно приложения компьютера&nbsp;задержки не требуются.<span style="" lang="EN-US"></span>
+<h2 style="background-color: rgb(153, 153, 0); width: 770px;"><span style="" lang="EN-US">&nbsp;<a name="APP_USBxpress"></a>Приложение с прямым доступом
+к функциям CP2102N</span></h2>
+<span style="background-color: rgb(255, 255, 51);">разместить ссылку на архив с приложением, его исходники</span><br>
+<br>
+<span style="" lang="EN-US"></span><img title="приложение USBxpressTest" src="img/I2C_SPI/app_monitor_USBxpress.jpg" alt="приложение USBxpressTest" style="border: 0px solid ; width: 1110px; height: 483px;"><br>
+<span style="" lang="EN-US"><br>
+Для работы приложения на компьютере должен быть установлен </span><span style="" lang="EN-US"><a href="img/I2C_SPI/DOC/drvUSBxpressInstaller.zip" target="_blank">драйвер
+прямого доступа</a></span><span style="" lang="EN-US">,&nbsp;</span><span style="" lang="EN-US">Приложение работает с адаптерами, у которых
+параметр <a target="_blank" href="I2C_SPI_USB_lib.html#PID_EA61">PID
+микросхемы USB-моста 0xEA61</a>.</span><br>
+<span style="" lang="EN-US"><br>
+Скорость передачи (500000 бод), число информационных бит в посылке (8),
+число стоп-бит (1) и бит
+четности (Odd - нечётность) </span><span style="" lang="EN-US">в
+этом приложении и в программе микроконтроллера </span><span style="" lang="EN-US">на плате адаптера должны быть
+одинаковыми. <br>
+<br>
+В
+окошко "Команда (HEX-коды)" записывается команда как последовательность
+16-ричных кодов, разделенных пробелами; <br>
+символы, принятые в программировании
+для обозначения hex-кодировки, здесь не вводятся, например, вместо кода
+0xE5 вводится просто E5. <br>
+После
+нажатия кнопки "Отправить команду" команда
+передается в адаптер и отображается в окне "Отправлена команда:". Если
+поступает ответ адаптера в течение времени, установленного в окошке "T
+приёма, мс:", этот ответ отображается в окне "Ответ микроконтроллера:".
+<br>
+Байты
+ответа, которые&nbsp;компьютер не успеет считать в
+течение установленного времени приёма</span><span style="" lang="EN-US">, сохраняются в буфере</span><span style="" lang="EN-US"> (выбрано время приёма 800мс - чуть больше времени преобразования термодатчика DS18B20 с интерфейсом 1-Wire).
+При поступлении следующего ответа, сохранённые в буфере байты будут
+отображены в окне перед этим ответом.</span><span style="" lang="EN-US"> Также оставшиеся в буфере байты можно считать,
+нажав кнопку "Считать ещё раз".</span><br>
+<span style="" lang="EN-US">Микроконтроллер
+адаптера и компьютер проверяют
+целостность передаваемых сообщений, для этого каждый байт сообщения
+сопровождается битом четности, а в конце сообщения передается
+контрольная запись (CR). Контрольную запись можно ввести отдельным
+байтом
+в </span><span style="" lang="EN-US">окошко
+"Команда (HEX-коды)", а можно вводить команду без контрольной записи,
+установив флажок "+CR" - контрольная запись будет вычислена
+автоматически.<br>
+</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"><a name="CR"></a>Здесь контрольная запись - это байт,
+который равен
+младшему байту суммы всех байтов команды; байт контрольной записи
+размещается в
+конце команды. <br style="">
+</span><span style="" lang="EN-US">Например,
+для последней строки в окне</span><span style="" lang="EN-US"> "Ответ&nbsp;</span><span style="" lang="EN-US">микроконтроллера</span><span style="" lang="EN-US">:"</span><span style="" lang="EN-US"> контрольная запись: </span><span style="" lang="EN-US">LowByteOf (11 + 80 + E5 + 3F +
+B6) =</span><span style="" lang="EN-US">
+LowByteOf ( 0x026B) = 0x6B.</span><br>
+<span style="" lang="EN-US"><br>
+Обмен информацией между компьютером и адаптером отображён в окнах </span><span style="" lang="EN-US">"</span><span style="" lang="EN-US">Отправлена</span><span style="" lang="EN-US"> команда:" и</span><span style="" lang="EN-US"> "Ответ&nbsp;</span><span style="" lang="EN-US">микроконтроллера</span><span style="" lang="EN-US">:".</span><span style="" lang="EN-US"> <br>
+К адаптеру по I2C интерфейсу
+подключены </span><span style="" lang="EN-US">датчики
+</span><span style="" lang="EN-US">температуры
+TMP117,</span><span style="" lang="EN-US">&nbsp;давления
+LPS22HB</span><span style="" lang="EN-US"> и</span><span style="" lang="EN-US"> </span><span style="" lang="EN-US">влажности SHT21</span><span style="" lang="EN-US">; по интерфейсу 1-Wire&nbsp;датчик температуры DS18B20;&nbsp;по интерфейсу SPI MEMS-акселерометр ADXL345 (<a target="_blank" href="I2C_SPI_USB_use.html#Adapter_AVR-0">фото комплекта</a> - датчик TMP117 на фото отсутствует).<br>
+<br>
+<span style="background-color: rgb(204, 255, 255);"></span></span><span style="" lang="EN-US">Первой передавалась </span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Команда 1</span> <br>
+"10 a 0b aA BB 01 22 3 B0" - </span><span style="" lang="EN-US"> тест связи, на неё адаптер отвечает
+такой же последовательностью (эхо команды). <br>
+<span style="font-weight: bold;">10</span> - байт
+команды 0x10, далее произвольная последовательность байт:&nbsp;</span><span style="" lang="EN-US"><span style="font-weight: bold;">a 0b&nbsp;aA BB 01 22 3</span>,
+завершаемая байтом контрольной записи <span style="font-weight: bold;">B0</span>. <br>
+При вводе команды в окне "Команда (HEX-коды)" можно использовать как
+прописные, так и строчные 16-ричные символы <span style="font-weight: bold;">A</span>...<span style="font-weight: bold;">F</span>. <br>
+Если значение байта можно представить одним символом </span><span style="" lang="EN-US"> (например, <span style="font-weight: bold;">b)</span></span><span style="" lang="EN-US">, перед ним можно вставить
+лидирующий ноль&nbsp;(</span><span style="" lang="EN-US"><span style="font-weight: bold;">0b</span></span><span style="" lang="EN-US">)<span style="font-weight: bold;"></span>.<br>
+Произвольная последовательность в команде теста связи может
+отсутствовать.<br>
+<br>
+</span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Команда 2</span></span><span style="" lang="EN-US"> "<span style="font-weight: bold;">10 10</span>" - также тест
+связи, в ней только байт команды и байт контрольной записи.</span><span style="" lang="EN-US"><br>
+<br>
+</span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Команда 3</span></span><span style="" lang="EN-US"> "11 92 0 2 A5" -
+запрос результата у датчика температуры TMP117: </span><span style="" lang="EN-US"><br>
+<span style="font-weight: bold;">команда</span> <span style="font-weight: bold; color: rgb(153, 0, 0);">0x11</span>
+-&nbsp;считать состояния регистров устройства с интерфейсом I2C <br>
+с адресом <span style="font-weight: bold; color: rgb(153, 0, 0);">0x92</span>
+(уникальный I2C адрес датчик температуры TMP117),<br>
+считывание начать с регистра <span style="color: rgb(153, 0, 0); font-weight: bold;">0x00</span>,
+<br>
+считать <span style="color: rgb(153, 0, 0); font-weight: bold;">0x02</span>
+регистра.<br>
+<span style="color: rgb(153, 0, 0); font-weight: bold;">0xA5</span>
+- контрольная запись (далее упоминаться не будет).<br>
+<span style="font-weight: bold;">Ответ</span>: </span><span style="" lang="EN-US">"11 92 00&nbsp;</span><span style="" lang="EN-US">0B
+DA 88" - в начале повторяются первые 3 байта команды, чтобы можно было
+интерпретировать ответ (считывалось устройство с адресом 0x92, начиная
+с регистра 0x00). Результат считывания размещается между 3-м и
+последним байтами - в этом ответе результат представлен 2-мя байтами.<br>
+Результат измерения (TMP117 передаёт сначала
+старший байт, затем младший) 0x0BDA = 3034, его надо разделить на 128: <br>
+T = 3034/128 = 23,703125°C.<br></span><span style="" lang="EN-US"> Результат вычисления размещается под окошком с&nbsp;формулой (b3*256+b4)/128.<br>Результат актуален только под соответствующей формулой  <br></span><span style="" lang="EN-US">либо </span><span style="" lang="EN-US">после поступления ответа адаптера при установленном флажке "вычислить результаты при ответе микроконтроллера", <br>либо
+при двойном щелчке мышкой на строке в окне "Ответ микроконтроллера" -
+именно для этой строки будут выполнены вычисления, причем по всем
+формулам.<br></span><span style="" lang="EN-US">
+<br>
+<span style="color: red; font-weight: bold;">Замечание</span>:&nbsp;<span style="font-weight: bold;">технические описания устройств,
+подключаемых к адаптеру, предоставляют всю необходимую информацию: <br>
+адреса
+устройств, номера управляющих регистров и </span></span><span style="" lang="EN-US"><span style="font-weight: bold;">регистров с результатами
+измерений,</span></span><span style="" lang="EN-US"><span style="font-weight: bold;"> <br>
+алгоритмы работы - что, в какой последовательности и в какие регистры
+устройства надо записывать для определения режима
+измерения </span></span><span style="" lang="EN-US"><span style="font-weight: bold;">и
+получения&nbsp;результатов</span></span><span style="" lang="EN-US"><span style="font-weight: bold;">. </span><br>
+</span><span style="" lang="EN-US"><br>
+</span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);"></span></span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);"><a name="write_I2C"></a>Команда 4</span></span><span style="" lang="EN-US"> "12
+BA 11 01 11 EF", <br>
+её
+назначение - обновить результат измерения &nbsp;в регистрах датчика
+давления LPS22.<br>
+Передача начинается
+байтом&nbsp;0x12 - это команда адаптеру выполнить запись в регистры
+подключенного к нему I2C </span><span style="" lang="EN-US">устройства</span><span style="" lang="EN-US">; <br>
+далее следует I2C адрес&nbsp;устройства 0xBA - это адреc датчика
+давления LPS22, <br>
+в регистр&nbsp;0x11 которого <br>
+должен быть записан 0x01
+байт, <br>
+значение этого байта 0x11. <br>
+Ответ адаптера на эту команду - эхо принятой последовательности или код
+ошибки, если при приёме команды обнаружены ошибки.<br>Результаты, вычисленные под окошками с формулами, недействительны.<br>
+<br>
+<span style="background-color: rgb(204, 255, 255);"></span></span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);"><a name="read_I2C"></a>Команда 5</span></span><span style="" lang="EN-US"> "11 BA 28 03 F6" -
+считать результат измерения датчика давления
+LPS22: <br>
+0x11 -&nbsp;считывание состояния регистров; 0xBA - I2C
+адрес датчика LPS22; начиная с регистра 0x28,
+считать состояния 0x03-х регистров.<br>
+Ответ: "11 BA 28 C3 44 3F 39". Первые 3 байта
+такие же, как в команде; следующие три байта - результат, который LPS22
+передаёт от младшего
+байта к старшему.<br>
+Последовательность переданных LPS22 данных </span><span style="" lang="EN-US">C3 44 3F </span><span style="" lang="EN-US">надо изменить, чтобы
+представить их в 16-ричном коде:&nbsp;0x003F44C3 = 4146371;
+чтобы получить результат в гектопаскалях, его надо разделить на 4096
+или сдвинуть вправо на 12 разрядов;
+получится 1012,2976 гПа. <br>Результат вычисления размещается под окошком с&nbsp;формулой (b3+b4*256+b5*65536)/4096.<br>
+<br>
+</span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);"></span></span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Команда 6</span>
+"11 80 E5 02 78" -
+опрос датчика влажности SHT21. 0x11 - считать состояние регистров
+устройства с I2C адресом 0x80, начиная с регистра 0xE5, считать 0x02
+регистра</span><span style="" lang="EN-US">.<br>
+Ответ:
+"11 80 E5 3F B6 6B". &nbsp;Первые 3 байта - как в команде.
+Результат 0x3FB6 - SHT21, как и TMP117, передает
+сначала
+старший, затем младший байт результата: 0x</span><span style="" lang="EN-US">3FB6</span><span style="" lang="EN-US"> = 16310, <br>относительная влажность воздуха RH = -6 + </span><span style="" lang="EN-US">16310 * </span><span style="" lang="EN-US">125 / 65536 = </span><span style="" lang="EN-US">-6 + 125 *</span><span style="" lang="EN-US">16310</span><span style="" lang="EN-US">/65536 = </span><span style="" lang="EN-US">25,1088%.<br></span><span style="" lang="EN-US">Результат вычисления размещается под окошком с&nbsp;формулой </span><span style="" lang="EN-US">-6+(b3*256+b4)*125/65536.</span><br><span style="" lang="EN-US"><br></span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Команда 7</span>
+"21 80 1 A2" - опрос регистра 0x00 микросхемы акселерометра ADXL345 по
+интерфейсу SPI. 0x21 - считать состояние регистра
+устройства с SPI интерфейсом; номер регистра&nbsp; 0x00 (особенность
+ADXL345: при записи номер регистра передаётся без изменений, при
+считывании одного регистра к адресу добавляется 0x80, при считывании
+последовательности регистров добавляется 0xC0),&nbsp;считать 0x01
+регистр</span><span style="" lang="EN-US">.<br>
+Ответ:
+"21 80 E5 86". &nbsp;Первые 2 байта - как в команде.
+Результат 0xE5 - однобайтный идентификационный код (ID) акселерометра ADXL345, хранящийся в его регистре 0x00.</span><br><span style="" lang="EN-US"><br></span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Команда 8</span>
+"3F 3F" - <a target="_blank" href="I2C_SPI_USB_lib.html#DS18B20">обращение к датчику температуры DS18B20</a> с интерфейсом 1-Wire.<br>Ответ датчика: "AF 01 4B 46 7F FF 01 10". Температура вычисляется по 0-му и 1-му байтам (b0 и b1, соответственно AF 01) :<br>0x01AF / 16 = 431 /16 = 26,9375</span><span style="" lang="EN-US">°C</span><br><span style="" lang="EN-US">Результат
+вычисления размещается под окошком с&nbsp;формулой (b0+b1*256)/16 -
+только под этим окошком на картинке находится актуальный результат,
+вычисленный для последнего поступившего ответа датчика DS18B20.<br><br></span><span style="" lang="EN-US">Как
+видно, достаточно использовать адаптер с исходной прошивкой, подключить
+к нему какой-либо датчик и, используя тестовое приложение, отладить
+совместную работу компьютера, адаптера и датчика. <br>
+Требуется лишь
+разыскать в документации подключаемого устройства или датчика его
+уникальный I2C адрес или особенности считывания датчика SPI, а также регистры, хранящие результат, интерпретацию этих
+результатов, а при необходимости - что в какой регистр устройства
+записать, чтобы запустить измерение, изменить режим или обновить
+результат. <br>
+<br>
+В итоге всё сводится к записи в регистры подключаемого устройства и
+считыванию состояний его регистров.</span><span style="" lang="EN-US"><br>
+<br>
+Уже отлаженную серию команд </span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">можно
+выделить и </span><span style="" lang="EN-US">скопировать
+в окне "Отправлена команда:" и вставить её в окно "Блокнот". <br>
+Для
+копирования одной команды из окна "Блокнот" в окошко "Команда
+(HEX-коды)" выполните двойной щелчок по&nbsp;строке с выбранной
+командой в окне "Блокнот".<br>
+<br>
+При нажатии кнопки "Save" набор
+команд из окна "Блокнот" сохраняется в файл Notes.st. При запуске
+приложения последний набор команд из этого файла загрузится
+автоматически.<br>
+Если надо работать с несколькими наборами команд,
+сохраняйте эти наборы в текстовые файлы, а затем вставляйте в окно
+"Блокнот" или копируйте файл Notes.st.<br>
+</span><br>
+<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">После
+отладки команд можно скорректировать тестовое
+приложение, адаптировав его под требования заказчика. <br>
+Например, скрыть ненужные
+окна и фиксированные для проекта параметры</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;" lang="EN-US">&nbsp;</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">(скорость
+передачи, режим передачи, время ожидания
+ответа и т.д.). Команды можно формировать автоматически, без их
+отображения;
+добавить необходимые органы управления, организовать приемлемое
+отображение
+результатов, возможно, добавить таймер для периодического опроса
+датчиков,
+отобразить графики измеряемых параметров, организовать сохранение и
+просмотр
+сохраненных результатов и т.д.<br>
+<br>
+В
+окна расположенной внизу панели "Введите формулы ..." можно ввести до
+4-х формул из технических описаний датчиков, тестируемых с адаптером. <br></span>
+<h3><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"><span style="font-weight: bold;">Пример.</span></span></h3>
+<h3><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"></span></h3>
+<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">Выше рассматривался ответ&nbsp;датчика давления LPS22: <br>
+</span><span style="" lang="EN-US">11 BA 28
+С3 44 3F 39, нумерация байтов в этом ответе следующая:<br>
+B0&nbsp;B1 B2 B3 B4 B5 B6. <br>
+Первые
+три байта такие же, как в команде запроса, последний байт - контрольная
+запись. Ответ датчика LPS22 заключён в байтах B3, B4, B5. Согласно
+техническому описанию LPS22, эти байты передаются от младшего к
+старшему.<br>
+B5 - старший байт, его надо умножить на 2^16 или на 65536;
+байт B4 - средний, он умножается на 2^8 или на 256; B3 - младший.
+Результаты надо просуммировать и разделить на 4096. Формула для расчёта
+записана во втором окошке: <br>
+(B3+B4*256+B5*65536)/4096<br>
+Чтобы
+получить результат в гектопаскалях, в окне "Ответ микроконтроллера"
+двойным щелчком надо выбрать строку с ответом датчика LPS22. При выборе
+строки в ней подсветился один из байтов.<br>
+Расчёты выполняются по всем введённым формулам, но
+корректный параметр будет отображён только под соответствующей
+формулой. На картинке верное значение параметра 1012,2976 расположено
+под формулой для датчика давления LPS22.<br>
+<br>
+Эта опция предназначена для
+ввода простых формул, аналогичных тем, которые рассмотрены в примере.</span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><br>
+</span><span style="" lang="EN-US"></span>
+<h2 style="background-color: rgb(153, 153, 0); width: 830px;"><span style="" lang="EN-US">&nbsp;Тестовое приложение
+Windows с обращением к виртуальному COM-порту</span></h2>&nbsp;
+<span style="background-color: rgb(255, 255, 51);">разместить ссылку на архив с приложением, его исходники, возможно,
+написать его и под linux</span><br>
+<span style="" lang="EN-US"></span><img title="приложение с VCP" src="img/I2C_SPI/app_monitor_COMport.jpg" alt="приложение с виртуальным COM-портом" style="border: 0px solid ; width: 495px; height: 341px;"><br>
+<br>
+<span style="" lang="EN-US">Приложение работает с
+адаптерами, у которых параметр <a target="_blank" href="I2C_SPI_USB_lib.html#PID_EA60">PID микросхемы
+USB-моста изменён на 0xEA60</a>. На компьютере должен быть
+установлен </span><span style="" lang="EN-US"><a target="_blank" href="img/I2C_SPI/DOC/drvCP210x_VCP_Windows.zip">драйвер
+виртуального COM-порта</a></span>
+<p class="MsoNormal" style="margin-bottom: 12pt;"><span style="" lang="EN-US">Скорость передачи (500000 бод),
+число информационных бит в посылке (8), число стоп-бит (1) и бит
+четности (Odd - нечётность) </span><span style="" lang="EN-US">в
+этом приложении и в программе микроконтроллера </span><span style="" lang="EN-US">на плате адаптера должны быть
+одинаковыми. <br>
+</span></p>
+<p class="MsoNormal" style="margin-bottom: 12pt;"><span style="" lang="EN-US"></span>Номер виртуального
+<span style="" lang="EN-US">COM</span>-порта
+устанавливается в окошке "ПОРТ"; <span style="" lang="EN-US">COM</span>-порт
+организуется операционной системой компьютера при
+подключении адаптера, его номер можно посмотреть в Диспетчере
+устройств, раздел
+"Порты (<span style="" lang="EN-US">COM</span>
+и <span style="" lang="EN-US">LPT</span>)". </p>
+<p class="MsoNormal" style="margin-bottom: 12pt;">Работа
+основных приложения соответствует описанию, приведенному в предыдущем
+разделе
+"<a target="_blank" href="I2C_SPI_USB_lib.html#APP_USBxpress">Тестовое
+приложение <span style="" lang="EN-US">Windows</span>
+с прямым доступом</a>".<span style="" lang="EN-US"></span></p>
+<hr style="width: 100%; height: 2px;">
+<h2 style="text-align: center;"><span style="" lang="EN-US">e-mail: <a style="color: rgb(0, 153, 0);" href="mailto:post4inet@gmail.com"><b>post4inet@gmail.com</b></a></span></h2>
+
+
+
+
+
+<div style="text-align: center;">
+
+</div>
+
+
+
+
+
+<hr style="width: 100%; height: 2px; margin-left: auto; margin-right: auto;">
+
+
+
+<div style="text-align: center;">
+
+</div>
+
+
+
+
+<div>
+
+
+</div>
+
+
+
+
+
+<h3 style="text-align: center;">Устройства для измерения, управления и контроля:<br>
+</h3>
+
+
+<h3 style="text-align: center;"><a target="_blank" href="https://accusb.000webhostapp.com/luxmeter.html">люксметр с графическим дисплеем и USB-интерфейсом</a></h3>
+
+
+
+
+
+<div style="text-align: center;">
+
+
+</div>
+
+
+
+
+
+<h3 style="text-align: center;"><a target="_blank" href="https://accusb.000webhostapp.com/gsmctl.html">контроллер
+gsm-управления и
+сигнализации</a><br>
+</h3>
+<h3 style="text-align: center;"><a target="_blank" href="https://accusb.000webhostapp.com/">акселерометры
+(аналоговые, цифровые с интерфейсами USB, RS-485, Bluetooth, c памятью)<br>
+</a></h3>
+
+
+
+<h3 style="text-align: center;"><a href="https://accusb.000webhostapp.com/publications.html"><span style="font-weight: bold;"></span></a></h3>
+
+<h3 style="text-align: center;"><a target="_blank" href="publications.html">публикации</a><br>
+
+
+
+
+</h3><div style="text-align: center;"><span style="color: red;">если следующие ссылки блокируются, воспользуйтесь VPN:</span><big><span style="font-weight: normal;"></span></big><br>
+
+<big><span style="font-weight: normal;"></span></big><big><span style="font-weight: normal;">&nbsp; </span></big><a target="_blank" href="http://adc-usb.narod.ru/">USB-АЦП 12
+разрядов, частота
+выборки 1МГц, память 0,5МБайт</a><br>
+&nbsp; &nbsp;<a target="_blank" href="http://thermopairs.narod.ru/">USB-контроллер
+8-ми
+термопар/USB-АЦП 12 разрядов, 8 каналов, память 0,5МБайт</a><br>
+&nbsp; &nbsp;<a target="_blank" href="http://adc-sync.narod.ru/">синхронный
+USB-АЦП 4+4 канала,
+входы ток/напряжение, переключаемые нагрузки для токовых входов, 12
+разрядов, 0,5МБайт память</a><br>
+&nbsp; &nbsp;<a target="_blank" href="http://luxmeter.narod.ru/">люксметр с USB-интерфейсом</a><br>
+&nbsp; &nbsp;<a target="_blank" href="http://colorimeter.narod.ru/">колориметр
+(измерение цвета
+и
+цветности)</a><br>
+&nbsp; &nbsp;<a target="_blank" href="http://bvn123.narod.ru/">прочие
+устройства</a><br>
+</div>
+
+</body></html>
