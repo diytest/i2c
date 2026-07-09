@@ -1,14 +1,37 @@
 <!DOCTYPE html PUBLIC "-//w3c//dtd html 4.01 transitional//en">
-<html lang="en"><head>  <meta http-equiv="content-type" content="text/html; image/x-icon; charset=utf-8"> <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <link rel="canonical" href=""> <meta http-equiv="content-language" content="en"> <base href=""> <meta name="reply-to" content="post4ytb@gmail.com"> <meta name="keywords" content="i2c spi 1wire usb adapter адаптер"> <meta name="description" content="i2c spi 1wire usb adapter адаптер"><title>i2c spi 1wire usb adapter</title></head><body style="background-color: rgb(192, 192, 192);"><big><big><big><big><a href="../projects/index.html" target="_blank">Home</a></big></big></big></big><big><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<html lang="en"><head>
+  
+  <meta http-equiv="content-type" content="text/html; image/x-icon; charset=utf-8">
+
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  
+  <link rel="canonical" href="">
+
+  
+  <meta http-equiv="content-language" content="en">
+
+  <base href="">
+  
+  <meta name="reply-to" content="post4ytb@gmail.com">
+
+  
+  <meta name="keywords" content="I2C SPI 1-Wire USB Adapter">
+
+  
+  <meta name="description" content="I2C SPI 1-Wire USB Adapter">
+  <title>I2C SPI 1-Wire USB Adapter</title>
+
+  
+</head><body style="background-color: rgb(192, 192, 192);">
+<big><big><big><big><a href="../projects/index.html" target="_blank">Home</a></big></big></big></big><big><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; &nbsp; &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </big></big><big><big><big><big><a style="font-style: italic; font-weight: bold;" href="mailto:post4ytb@gmail.com" target="_blank"><small><small>post4ytb@gmail.com</small></small></a></big></big></big></big><br>
 
 <br>
 
-
-
 <table style="text-align: left; height: 137px; width: 636px;" border="1" cellpadding="2" cellspacing="2">
-
 
   <tbody>
     <tr>
@@ -49,64 +72,95 @@ model of the adapter enclosure for 3D printing</big></big></a></big></big></smal
     </tr>
   </tbody>
 </table>
-<br> 
-<h1 align="center"><span style="background-color: rgb(255, 204, 51);" lang="en-us">I2C SPI 1-Wire USB Adapter Software</span><span style="" lang="en-us"></span><br> </h1>
- <span style="" lang="en-us"><span style="font-weight: bold; color: rgb(0, 102, 0);"></span></span> <h2 style="background-color: rgb(153, 153, 0); width: 174px;"><span style="" lang="en-us">USB Drivers</span></h2> <span style="" lang="en-us"></span><span lang="en-us">To connect to USB, the adapter uses the CP2102N USB bridge chip manufactured by <a href="https://www.silabs.com/" target="_blank">Silicon Labs</a>. The company offers the latest driver versions on its website.<br>
+
+<br>
+
+<h1 align="center"><span style="background-color: rgb(255, 204, 51);" lang="en-us">I2C SPI 1-Wire USB Adapter Software</span><span style="" lang="en-us"></span><br>
+</h1>
+
+<span style="" lang="en-us"><span style="font-weight: bold; color: rgb(0, 102, 0);"></span></span>
+<h2 style="background-color: rgb(153, 153, 0); width: 174px;"><span style="" lang="en-us">USB Drivers</span></h2>
+
+<span style="" lang="en-us"></span><span lang="en-us">To connect to
+USB, the adapter uses the CP2102N USB bridge chip manufactured by <a href="https://www.silabs.com/" target="_blank">Silicon Labs</a>. The
+company offers the latest driver versions on its website.<br>
 </span><span style="" lang="EN-US"><a target="_blank" href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers">VCP&nbsp;Drivers
 (Virtual COM-port)</a></span><span style="" lang="EN-US"> for various
 operating systems (Windows,
 WinCE, Mac, Linux)</span><span style="" lang="EN-US">
-allow a computer, smartphone, or controller with a&nbsp;USB host to communicate with the adapter&nbsp;via a
+allow a computer, smartphone, or controller with a&nbsp;USB host to
+communicate with the adapter&nbsp;via a
 virtual COM port using the appropriate application.</span><span style="" lang="EN-US"><br>
-<a target="_blank" href="https://www.silabs.com/developers/direct-access-drivers">USBxpress Direct Access
-Drivers</a> </span><span style="" lang="EN-US"></span><span style="" lang="EN-US">are available&nbsp;for devices running Windows and WinCE operating systems.<br>
+<a target="_blank" href="https://www.silabs.com/developers/direct-access-drivers">USBxpress
+Direct Access
+Drivers</a> </span><span style="" lang="EN-US"></span><span style="" lang="EN-US">are available&nbsp;for devices running Windows and WinCE
+operating systems.<br>
 <br>
-For Windows, you can use&nbsp;archives containing <a href="doc/drvUSBxpressInstaller.zip" target="_blank">Direct Access Drivers</a> and <a target="_blank" href="doc/drvCP210x_VCP_Windows.zip">Virtual COM Port Drivers</a>.<br>
+For Windows, you can use&nbsp;archives containing <a href="doc/drvUSBxpressInstaller.zip" target="_blank">Direct Access
+Drivers</a> and <a target="_blank" href="doc/drvCP210x_VCP_Windows.zip">Virtual
+COM Port Drivers</a>.<br>
 <br>
 The operating
-mode of the CP2102 USB bridge chip - either via a virtual COM port or with
-direct access - is determined by the USB PID (Product ID) parameter value
+mode of the CP2102 USB bridge chip - either via a virtual COM port or
+with
+direct access - is determined by the USB PID (Product ID) parameter
+value
 written into this chip.<br>
 </span><span style="" lang="EN-US"><span style="font-weight: bold;"><a name="PID_EA61"></a>PID=0xEA61</span>
-- the adapter is shipped with this parameter value; its operation is supported
+- the adapter is shipped with this parameter value; its operation is
+supported
 under </span><span style="" lang="EN-US">Windows
 and WinCE</span><span style="" lang="EN-US">;
 the chip operates
-in the direct access mode to the USB bridge functions; a <span style="font-weight: bold;">Direct Access Driver</span> must be installed on the host device.</span><span style="" lang="EN-US"><br>
+in the direct access mode to the USB bridge functions; a <span style="font-weight: bold;">Direct Access Driver</span> must be
+installed on the host device.</span><span style="" lang="EN-US"><br>
 <span style="font-weight: bold;"><a name="PID_EA60"></a>PID=0xEA60</span>
 - the application accesses the USB bridge chip&nbsp;as a <span style="font-weight: bold;">Virtual COM Port</span>;
 a <span style="font-weight: bold;">VCP driver</span> must be installed
-on the host device&nbsp;to which the USB bridge is connected; this mode is required for the adapter to work under
-Linux and Mac operating systems, as only VCP drivers are available for them. </span><span style="" lang="EN-US">This
+on the host device&nbsp;to which the USB bridge is connected; this mode
+is required for the adapter to work under
+Linux and Mac operating systems, as only VCP drivers are available for
+them. </span><span style="" lang="EN-US">This
 mode is also supported&nbsp;under Windows and WinCE -&nbsp;</span><span style="" lang="EN-US">a developer can use it
-if they prefer working with a virtual COM port over direct access to the USB bridge functions.<span style="font-weight: bold;"></span><br>
+if they prefer working with a virtual COM port over direct access to
+the USB bridge functions.<span style="font-weight: bold;"></span><br>
 <br>
 To change</span><span style="" lang="EN-US">
 the USB parameter </span><span style="" lang="EN-US">values </span><span style="" lang="EN-US">(VID, PID,
-Product String, Serial Number,...)</span><span style="" lang="EN-US"> </span><span style="" lang="EN-US">in the CP2102N </span><span style="" lang="EN-US">USB bridge chip, </span><span style="" lang="EN-US">the manufacturer </span><span style="" lang="EN-US">offers <a target="_blank" href="https://www.silabs.com/developers/simplicity-studio">Simplicity
+Product String, Serial Number,...)</span><span style="" lang="EN-US"> </span><span style="" lang="EN-US">in the CP2102N </span><span style="" lang="EN-US">USB bridge chip, </span><span style="" lang="EN-US">the
+manufacturer </span><span style="" lang="EN-US">offers <a target="_blank" href="https://www.silabs.com/developers/simplicity-studio">Simplicity
 Studio</a></span><span style="" lang="EN-US"></span><span style="" lang="EN-US">.<br>
 As part of the&nbsp;<span style="font-weight: bold; color: rgb(0, 102, 0);">I2C
 SPI
-1-Wire </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">USB </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">adapter</span> the IC CP2102N is shipped with PID=0xEA61. <br>If there is need to change CP2102N' PID to 0xEA60, </span><span style="" lang="EN-US">you should first
+1-Wire </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">USB </span></span><span lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">adapter</span>
+the IC CP2102N is shipped with PID=0xEA61. <br>
+If there is need to change CP2102N' PID to 0xEA60, </span><span style="" lang="EN-US">you should first
 read the parameters already written during the manufacturing of the
-adapter (the "Import From Device" button), then change the PID to 0xEA60 and
+adapter (the "Import From Device" button), then change the PID to
+0xEA60 and
 press the "Program To Device" button to save the changes.<br>
 <span style="color: red; font-weight: bold;">Attention:
 loading </span></span><span style="font-weight: bold;" lang="EN-US"><span style="color: red;">the default parameters </span><span style="color: red;">offered by </span></span><span style="color: red; font-weight: bold;" lang="EN-US"></span><a target="_blank" style="color: red; font-weight: bold;" href="https://www.silabs.com/developers/simplicity-studio">Simplicity
-Studio</a><span style="font-weight: bold;" lang="EN-US"><span style="color: red;"> </span><span style="color: red;">into the CP2102N chip</span></span><span style="" lang="EN-US"><span style="color: red; font-weight: bold;">
+Studio</a><span style="font-weight: bold;" lang="EN-US"><span style="color: red;"> </span><span style="color: red;">into the
+CP2102N chip</span></span><span style="" lang="EN-US"><span style="color: red; font-weight: bold;">
 is unacceptable:
 the adapter will stop working. <span style="color: rgb(0, 102, 0);"><br>
-To restore the adapter's functionality, you will need to enter the correct
+To restore the adapter's functionality, you will need to enter the
+correct
 parameters.</span></span><br style="font-weight: bold;">
 <br>
 For the
 operating system and the applications running within it, including
 Simplicity Studio, to detect your device, a driver with the </span><span style="" lang="EN-US">VID, PID, and Product String parameters
-matching those written in the USB bridge chip you are connecting must already be installed on the computer. <br>
+matching those written in the USB bridge chip you are connecting must
+already be installed on the computer. <br>
 If you have changed the&nbsp;</span><span style="" lang="EN-US">VID,
-PID, or Product String parameters in these applications, and drivers with the new values of
-these parameters have not yet been installed, the operating system, and consequently,
-these applications, will not detect</span><span style="" lang="EN-US"> your
+PID, or Product String parameters in these applications, and drivers
+with the new values of
+these parameters have not yet been installed, the operating system, and
+consequently,
+these applications, will not detect</span><span style="" lang="EN-US">
+your
 device after the changes are applied.<br>
 <br>
 Note: <br>
@@ -114,54 +168,70 @@ Note: <br>
 <ul>
 
   <li><span style="" lang="EN-US">Windows 10
-strictly verifies devices for compliance with VID, PID, and Product String —
-they must be registered by the manufacturer, and modifying them requires a
+strictly verifies devices for compliance with VID, PID, and Product
+String —
+they must be registered by the manufacturer, and modifying them
+requires a
 registration procedure at&nbsp;<a target="_blank" href="https://usb.org/">usb.org</a>.
-Unregistered devices are blocked, and the procedure to unblock them in Windows 10 requires rather troublesome modifications. For
+Unregistered devices are blocked, and the procedure to unblock them in
+Windows 10 requires rather troublesome modifications. For
 the CP2102 chip, these parameters must be as follows: VID=0x10C4;
 PID=0xEA60 or PID=0xEA61</span></li>
   <li><span style="" lang="EN-US">Windows 7
-allowed devices to work with unregistered parameter values but required a specific procedure to permit the operation of
+allowed devices to work with unregistered parameter values but required
+a specific procedure to permit the operation of
 such devices.</span></li>
   <li><span style="" lang="EN-US">Windows
-Vista, XP, and 98 allowed these parameters to be changed arbitrarily. It was possible to
+Vista, XP, and 98 allowed these parameters to be changed arbitrarily.
+It was possible to
 connect multiple devices with CP2102 USB bridges, where,
 for example, the first device with such a bridge could be assigned
-PID=0xEA01, and the second PID=0xEA02. Of course, there was a chance that with
-such arbitrary usage, someone else might register their device with the </span><span style="" lang="EN-US">VID=0x10C4
+PID=0xEA01, and the second PID=0xEA02. Of course, there was a chance
+that with
+such arbitrary usage, someone else might register their device with the
+    </span><span style="" lang="EN-US">VID=0x10C4
 and PID=0xEA01 values you used, and</span><span style="" lang="EN-US">
 your customer might purchase </span><span style="" lang="EN-US">that
 device </span><span style="" lang="EN-US">and attempt to
 use it alongside yours.</span></li>
 </ul>
+
 <span style="" lang="EN-US"></span>
 <h2 style="background-color: rgb(153, 153, 0); width: 583px;"><span style="" lang="EN-US"><a name="bootloader"></a>&nbsp;Adapter
 Bootloader with ATmega8 and</span> megaAVR 0-series Microcontrollers</h2>
 
 In
-adapters with ATmega8 microcontrollers and megaAVR 0-series microcontrollers, the firmware contains not
+adapters with ATmega8 microcontrollers and megaAVR 0-series
+microcontrollers, the firmware contains not
 only
 the program for working with I2C, SPI, and 1-Wire interfaces, but also
 a bootloader program.<br>
 
-In adapters with STM8S003 microcontrollers, there is no bootloader program — these microcontrollers lack
+In adapters with STM8S003 microcontrollers, there is no bootloader
+program — these microcontrollers lack
 hardware support for a boot sector.<br>
 
-<br>In ATmega8 and megaAVR 0-series microcontrollers, a boot area and
-an application area can be allocated in the program memory, which
-requires a programmer.<br>
+<br>
+
+In ATmega8 and megaAVR 0-series microcontrollers, a boot area and an
+application area can be allocated in the program memory, which requires
+a programmer.<br>
 
 The application area hosts the microcontroller's working program — in
-the adapter's microcontroller, this is the program that ensures operation with
-I2C, SPI, and 1-Wire interfaces, as well as communication with a computer via USB.<br>
+the adapter's microcontroller, this is the program that ensures
+operation with
+I2C, SPI, and 1-Wire interfaces, as well as communication with a
+computer via USB.<br>
 
 The boot area hosts a program that allows loading
-updated firmware into the application area of the microcontroller's program memory without a programmer. <br>
+updated firmware into the application area of the microcontroller's
+program memory without a programmer. <br>
 
 <br>
 
 <p class="MsoNormal" style="margin-bottom: 12pt;">In the memory
-of the adapter's ATmega8 and megaAVR 0-series microcontrollers, the bootloader program and the universal
+of the adapter's ATmega8 and megaAVR 0-series microcontrollers, the
+bootloader program and the universal
 program are already
 flashed. In the STM8S003 memory, only the universal program is flashed.</p>
 
@@ -182,20 +252,26 @@ command, and the microcontroller must
 use a baud rate of&nbsp;500,000 baud. A baud rate of
 500,000 baud is used in all supplied programs, including the
 Bootloader computer application.&nbsp;<br>
-Компьютерное приложение Bootloader обеспечивает&nbsp;загрузку обновлённой прошивки,
+
+Компьютерное приложение Bootloader обеспечивает&nbsp;загрузку
+обновлённой прошивки,
 которая должна храниться в формате hex.&nbsp; <span style="color: rgb(51, 0, 51); background-color: rgb(255, 255, 51);">&lt;Place
 links&gt;</span><br style="color: rgb(51, 0, 51);">
 
 <br>
 
-<span style="" lang="EN-US"></span><a href="img/bootloader.jpg" target="_blank"><img title="Bootloader application" src="img/bootloader.jpg" alt="application for flashing the MCU" style="border: 0px solid ; width: 506px; height: 151px;" align="left" hspace="10" vspace="5"></a>When the microcontroller is connected to USB,
-pressing the "MCU-&gt;to Bootloader" button switches the microcontroller (MCU) to boot mode. <br>
+<span style="" lang="EN-US"></span><a href="img/bootloader.jpg" target="_blank"><img title="Bootloader application" src="img/bootloader.jpg" alt="application for flashing the MCU" style="border: 0px solid ; width: 506px; height: 151px;" align="left" hspace="10" vspace="5"></a>When the microcontroller is connected to
+USB,
+pressing the "MCU-&gt;to Bootloader" button switches the
+microcontroller (MCU) to boot mode. <br>
 
-Open the updated firmware file (the "Open firmware file *.hex" button),&nbsp;then press the
+Open the updated firmware file (the "Open firmware file *.hex"
+button),&nbsp;then press the
 "Write firmware to MCU" button. <br>
 
 As the firmware is loaded, the status panel displays the current number
 of the program page already written into the microcontroller's memory.<br>
+
 Pressing the
 "MCU-&gt;to program" button switches the microcontroller to program
 execution
@@ -231,10 +307,13 @@ _|_&nbsp;&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; C&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;MCU/pin 29
-(connected to R=10k and a capacitor near pin 1 of the MCU, marked on the
-board with a checkmark — it is more convenient to solder the wire to the R and C pads)<br>
+(connected to R=10k and a capacitor near pin 1 of the MCU, marked on
+the
+board with a checkmark — it is more convenient to solder the wire to
+the R and C pads)<br>
 
 <br>
+
 <span style="color: red;">When
 flashing via a programmer, a full erase of the microcontroller's memory
 is performed, including the bootloader area, and the
@@ -250,10 +329,13 @@ our bootloader in the adapter.&nbsp; &nbsp;&nbsp;&nbsp;
 
 <h2 style="background-color: rgb(153, 153, 0); width: 456px;"><span style="" lang="EN-US">&nbsp;Adapter: Microcontroller Program</span></h2>
 
-<span style="" lang="EN-US"></span><span style="" lang="EN-US">The microcontroller
+<span style="" lang="EN-US"></span><span style="" lang="EN-US">The
+microcontroller
 of the I2C
-SPI 1-Wire USB adapter (hereinafter MCU) recognizes and executes commands received via USB.</span><span style="" lang="EN-US">
-Based on these commands, the MCU controls the devices connected to the adapter,
+SPI 1-Wire USB adapter (hereinafter MCU) recognizes and executes
+commands received via USB.</span><span style="" lang="EN-US">
+Based on these commands, the MCU controls the devices connected to the
+adapter,
 reads data coming from them, and transmits it via USB to the computer.<br>
 </span>
 <h3><span style="" lang="EN-US">MCU Transmission Parameters:</span></h3>
@@ -276,17 +358,21 @@ the adapter operates.<br>
 </span>
 <h3><span style="" lang="EN-US">Computer Commands and MCU Responses.</span></h3>
 
-The command byte is transmitted first, and the control record byte (CR) is transmitted last.<br>
+The command byte is transmitted first, and the control record byte (CR)
+is transmitted last.<br>
 
-All values in commands and responses are single-byte, which includes device addresses,
+All values in commands and responses are single-byte, which includes
+device addresses,
 register addresses, requested data sizes, and register contents.<br>
 
 <span style="color: red; font-weight: bold;">Note. </span><span style="font-weight: bold;">All
 commands listed below are sent by the computer to the adapter. </span><br style="font-weight: bold;">
 
 <span style="font-weight: bold;">The adapter processes
-the commands and sends them to the devices connected to the adapter in a
+the commands and sends them to the devices connected to the adapter in
+a
 converted form.</span><br style="font-weight: bold;">
+
 <span style="font-weight: bold;">Device responses are also
 sent by</span><span style="font-weight: bold;">
 the adapter</span><span style="font-weight: bold;"> to the
@@ -295,17 +381,22 @@ computer in a processed form.</span> <br>
 <span style="font-weight: bold;">The communication format between
 the adapter and the devices connected to it is not covered here.</span><br>
 
-<h3 style="background-color: rgb(153, 255, 153); width: 548px;">Connection Test and Bootloader Operations Commands.</h3>
+<h3 style="background-color: rgb(153, 255, 153); width: 548px;">Connection
+Test and Bootloader Operations Commands.</h3>
 
-These four commands are executed both with devices connected to the adapter and without them.<br>
+These four commands are executed both with devices connected to the
+adapter and without them.<br>
 
-<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Connection Test with MCU Running the Working Program.</h4>
+<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Connection
+Test with MCU Running the Working Program.</h4>
 
 Command:<br>
 
 0x10
-B[0] ... B[n-1] CR — up to a dozen arbitrary bytes B[0] ... B[n-1] can be placed between the 0x10 command byte and the control
-record; their transmission is optional. It is sufficient to transmit just the command byte and the control
+B[0] ... B[n-1] CR — up to a dozen arbitrary bytes B[0] ... B[n-1] can
+be placed between the 0x10 command byte and the control
+record; their transmission is optional. It is sufficient to transmit
+just the command byte and the control
 record: 0x10 0x10.<br>
 
 Response:<br>
@@ -329,7 +420,8 @@ section</a>.<br>
 <h4 style="background-color: rgb(102, 255, 255); width: 471px;">Switching
 to the MCU Bootloader Program from the Working Program.</h4>
 
-0xBB 0xBB — command to switch the MCU to the bootloader. This command is executed by the
+0xBB 0xBB — command to switch the MCU to the bootloader. This command
+is executed by the
 MCU working program. <br>
 
 No response to this command is provided.<br>
@@ -337,23 +429,28 @@ No response to this command is provided.<br>
 <h4 style="background-color: rgb(102, 255, 255); width: 472px;">Connection
 Test with MCU Running the Bootloader Program.</h4>
 
-0xB7 0xB7 — command executed by the bootloader. The bootloader does not respond to the 0x10 command described
+0xB7 0xB7 — command executed by the bootloader. The bootloader does not
+respond to the 0x10 command described
 above.<br>
+
 0xB7
 B[0] B[1] B[2] CR — the MCU response allows confirming the transition
-to the bootloader. Bytes B[0], B[1], B[2], and CR are calculated and transmitted
+to the bootloader. Bytes B[0], B[1], B[2], and CR are calculated and
+transmitted
 by the bootloader.<br>
 
 <h4 style="background-color: rgb(102, 255, 255); width: 471px;">Returning
 the MCU to the Working Program from the Bootloader Program.</h4>
 
-0xBA 0xBA — command executed by the bootloader. No response to this command is
+0xBA 0xBA — command executed by the bootloader. No response to this
+command is
 provided. <br>
 
 To verify that the MCU has switched to the working program, execute
 the 0x10 0x10 command.<br>
 
-<h3 style="background-color: rgb(153, 255, 153); width: 299px;">I2C Interface Commands.</h3>
+<h3 style="background-color: rgb(153, 255, 153); width: 299px;">I2C
+Interface Commands.</h3>
 
 Devices
 with an I2C interface support hardware addressing. The device address
@@ -361,7 +458,8 @@ is written into it during manufacturing, and when accessing the device,
 the adapter must first send this address. <br>
 
 <span style="font-weight: bold;"><span style="color: red;">Note.</span>
-The least significant bit (LSB) of the I2C device address determines the transmission direction.<br>
+The least significant bit (LSB) of the I2C device address determines
+the transmission direction.<br>
 If the bit in the address byte is cleared, the subsequent bytes
 are written to the I2C device.<br>
 If the least significant bit in the address is set, data will be
@@ -371,20 +469,28 @@ cleared least significant bits. They are always even.<br style="font-weight: bol
 </span><span style="font-weight: bold;">This base
 address is what is used in computer commands and adapter responses. <br>
 Setting
-or&nbsp;clearing the least significant bit of the address is performed by the adapter when
+or&nbsp;clearing the least significant bit of the address is performed
+by the adapter when
 generating transmission sequences for the devices.<br>
 With
-single-byte addressing&nbsp;of the I2C interface, it is possible to generate
+single-byte addressing&nbsp;of the I2C interface, it is possible to
+generate
 256
 addresses, but since each device uses two addresses — one for
 reading and
-one for writing — the total number of addressable devices connected to the I2C bus
+one for writing — the total number of addressable devices connected to
+the I2C bus
 cannot exceed 128.</span>
-<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Reading the State of I2C Device Registers.</h4>
+<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Reading
+the State of I2C Device Registers.</h4>
+
 Command:<br>
+
 0x11&nbsp;addr_I2C&nbsp;Rg_minNum&nbsp;numRgToRead&nbsp;CR
 <br>
+
 <br>
+
 Following the 0x11 command byte, the computer transmits: <br>
 
 the&nbsp;addr_I2C byte — the address of the polled I2C device,<br>
@@ -395,19 +501,31 @@ sequence of polled registers,<br>
 the&nbsp;numRgToRead byte — the number of polled registers<br>
 
 and the&nbsp;CR byte — the control record.<br>
+
 <br>
+
 Adapter response:<br>
+
 0x11&nbsp;addr_I2C&nbsp;Rg_minNum B[0] ... B[numRgToRead-1] CR<br>
+
 the first 3 bytes are the same as in the command, <br>
+
 B[0] ... B[numRgToRead-1] — register states received by the adapter,<br>
+
 the&nbsp;CR byte — control record.<br>
+
 An example of the command and response is in the <a target="_blank" href="I2C_SPI_USB_lib.html#read_I2C">next
 section</a>.<br>
+
 <h4 style="background-color: rgb(102, 255, 255); width: 418px;">Writing
 to I2C Device Registers.</h4>
+
 Command:<br>
+
 0x12 addr_I2C&nbsp;Rg_minNum B[0] ... B[n-1] CR<br>
+
 0x12 — command;<br>
+
 addr_I2C — address of the I2C device;<br>
 
 RgNum_min — the lowest register number from the register
@@ -425,10 +543,13 @@ Adapter response: command echo.<br>
 An example of the command and response is in the <a target="_blank" href="I2C_SPI_USB_lib.html#write_I2C">next
 section</a>.<br>
 
-<h3 style="background-color: rgb(153, 255, 153); width: 299px;">SPI Interface Commands.</h3>
+<h3 style="background-color: rgb(153, 255, 153); width: 299px;">SPI
+Interface Commands.</h3>
 
-Unlike I2C devices, addressing when accessing SPI&nbsp;devices is not required.
-<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Reading the State of SPI Device Registers.</h4>
+Unlike I2C devices, addressing when accessing SPI&nbsp;devices is not
+required.
+<h4 style="background-color: rgb(102, 255, 255); width: 418px;">Reading
+the State of SPI Device Registers.</h4>
 
 Command:<br>
 
@@ -450,6 +571,7 @@ CR — control record.<br>
 Adapter response:<br>
 
 0x21&nbsp;Rg_minNum B[0] ... B[numRgToRead-1] CR<br>
+
 первые 3 байта такие же, как в команде, <br>
 
 B ... B[numRgToRead-1] —&nbsp;states of the polled registers,<br>
@@ -476,12 +598,14 @@ CR — control record.<br>
 
 Adapter response: command echo.<br>
 
-<h3 style="background-color: rgb(153, 255, 153); width: 299px;">1-Wire Interface Commands.</h3>
+<h3 style="background-color: rgb(153, 255, 153); width: 299px;">1-Wire
+Interface Commands.</h3>
 
 Each manufactured device with a 1-Wire interface has an individual
 64-bit address. <br>
 
-When a single device is connected to the adapter, addressless communication with it is possible.<br>
+When a single device is connected to the adapter, addressless
+communication with it is possible.<br>
 
 Command:<br>
 
@@ -506,32 +630,50 @@ Command:<br>
 0x33 0x33 — the adapter generates a reset pulse for 1-Wire devices. <br>
 
 No response is provided.<br>
+
 <br>
+
 Command:<br>
+
 0x34 0x34 — request the presence of devices on the 1-Wire line. <br>
+
 No response is provided.<br>
+
 <br>
+
 <span style="font-weight: bold;"><a name="DS18B20"></a>DS18B20
 Temperature
 Sensor: a dedicated command is provided for it in the program.</span><br>
 
 This command invokes all the 1-Wire interface commands listed above:<br>
 
-0x3F 0x3F — perform temperature measurement and transmit the measurement
+0x3F 0x3F — perform temperature measurement and transmit the
+measurement
 result.<br>
+
 Response: <br>
+
 9&nbsp;bytes — the content of the DS18B20 buffer.<br>
+
 Bytes B and B contain the value measured by the DS18B20
 sensor.<br>
+
 To get the result, use the formula: &nbsp;T°C = (B +
 B * 256 ) / 16.<br>
+
 <br>
+
 <span style="font-weight: bold;">Example of addressing the
 DS18B20 sensor using individual 1-Wire commands:</span><br>
+
 0x33 0x33 — generate a device reset pulse.<br>
+
 0x34 0x34 — request the presence of devices on the 1-Wire line.<br>
-0x32 0xCC 0xFE — send byte 0xCC to the device. Command 0xCC of the DS18B20
+
+0x32 0xCC 0xFE — send byte 0xCC to the device. Command 0xCC of the
+DS18B20
 sensor: SkipROM. 0xFE — control record byte.<br>
+
 0x32 0x44 0x76 — send 0x44 to the device. Command 0x44 of the DS18B20
 sensor:&nbsp;measure temperature.<br>
 
@@ -546,39 +688,51 @@ sensor: SkipROM.<br>
 sensor: ReadScratchPad — transfer memory content to the buffer.<br>
 
 0x31
-0x09 0x3A — read 9 bytes from the buffer. The temperature measurement result
-is located in the first pair of buffer bytes of the DS18B20, but&nbsp;this buffer
+0x09 0x3A — read 9 bytes from the buffer. The temperature measurement
+result
+is located in the first pair of buffer bytes of the DS18B20,
+but&nbsp;this buffer
 is circular; it contains 9 bytes and all these bytes must be read.<br>
 
 <br>
+
 When
 executing the dedicated 0xFF command, the necessary delays are placed
 between some commands from the example. When manually entering each
 command into
 the computer application window,&nbsp;no delays are required.<span style="" lang="EN-US"></span>
-<h2 style="background-color: rgb(153, 153, 0); width: 770px;"><span style="" lang="EN-US">&nbsp;<a name="APP_USBxpress"></a>Application with
+<h2 style="background-color: rgb(153, 153, 0); width: 770px;"><span style="" lang="EN-US">&nbsp;<a name="APP_USBxpress"></a>Application
+with
 Direct Access
 to CP2102N Functions</span></h2>
 
 <span style="background-color: rgb(255, 255, 51);">place a link to the
 archive containing the application and its source code</span><br>
+
 <br>
+
 <span style="" lang="EN-US"></span><a href="img/app_monitor_USBxpress.jpg" target="_blank"><img title="USBxpressTest application" src="img/app_monitor_USBxpress.jpg" alt="USBxpressTest application" style="border: 0px solid ; width: 824px; height: 360px;" hspace="10" vspace="5"></a><br>
 
 <span style="" lang="EN-US"><br>
 For the application to work, a </span><span style="" lang="EN-US"><a href="doc/drvUSBxpressInstaller.zip" target="_blank">direct access
-driver</a></span><span style="" lang="EN-US"> must be installed on the computer.&nbsp;</span><span style="" lang="EN-US">The application works with adapters that have the </span><span style="" lang="EN-US"><a target="_blank" href="I2C_SPI_USB_lib.html#PID_EA61">USB bridge chip PID parameter set to 0xEA61</a>.</span><br>
+driver</a></span><span style="" lang="EN-US"> must be installed on the
+computer.&nbsp;</span><span style="" lang="EN-US">The application works
+with adapters that have the </span><span style="" lang="EN-US"><a target="_blank" href="I2C_SPI_USB_lib.html#PID_EA61">USB bridge chip
+PID parameter set to 0xEA61</a>.</span><br>
 
 <span style="" lang="EN-US"><br>
-The baud rate (500,000 baud), the number of data bits in the packet (8),
+The baud rate (500,000 baud), the number of data bits in the packet
+(8),
 the number of stop bits (1), and the parity bit (Odd) </span><span style="" lang="EN-US">in
 this application and in the microcontroller program </span><span style="" lang="EN-US">on the adapter board must be
 the same. <br>
 <br>
-In the "Command (HEX codes)" window, the command is written as a sequence of
+In the "Command (HEX codes)" window, the command is written as a
+sequence of
 hexadecimal codes separated by spaces; <br>
 symbols typically used in programming
-to denote hex formatting are not entered here — for example, instead of the code
+to denote hex formatting are not entered here — for example, instead of
+the code
 0xE5, simply enter E5. <br>
 After pressing the "Send Command" button, the command
 is transmitted to the adapter and displayed in the "Command Sent:"
@@ -589,10 +743,9 @@ Response:" window.
 <br>
 Response bytes that&nbsp;the computer does not manage to read
 within the set reception time</span><span style="" lang="EN-US">
-are saved in the buffer</span><span style="" lang="EN-US">
-(a reception time of 800ms is selected — slightly longer than the
-conversion time of the DS18B20 temperature sensor with a 1-Wire
-interface).
+are saved in the buffer</span><span style="" lang="EN-US"> (a reception
+time of 800ms is selected — slightly longer than the conversion time of
+the DS18B20 temperature sensor with a 1-Wire interface).
 When the next response arrives, the bytes saved in the buffer will be
 displayed in the window before that response.</span><span style="" lang="EN-US">
 Additionally, the bytes remaining in the buffer can be read
@@ -607,30 +760,38 @@ transmitted at the end of the message. The control record can be
 entered as a separate
 byte
 in the </span><span style="" lang="EN-US">"Command
-(HEX codes)" window, or the command can be entered without the control record
-by checking the "+CR" checkbox — the control record will then be calculated
+(HEX codes)" window, or the command can be entered without the control
+record
+by checking the "+CR" checkbox — the control record will then be
+calculated
 automatically.<br>
 </span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"><a name="CR"></a>Here, the control record is a byte
 equal to the
-least significant byte of the sum of all command bytes; the control record byte
+least significant byte of the sum of all command bytes; the control
+record byte
 is placed at the
 end of the command. <br style="">
 </span><span style="" lang="EN-US">For example,
 for the last row in the</span><span style="" lang="EN-US">
 "Microcontroller&nbsp;</span><span style="" lang="EN-US">Response</span><span style="" lang="EN-US">:"</span><span style="" lang="EN-US">
-window, the control record is: </span><span style="" lang="EN-US">LowByteOf (11 +
+window, the control record is: </span><span style="" lang="EN-US">LowByteOf
+(11 +
 80 + E5 + 3F +
 B6) =</span><span style="" lang="EN-US">
 LowByteOf (0x026B) = 0x6B.</span><br>
+
 <span style="" lang="EN-US"><br>
-The information exchange between the computer and the adapter is shown in the </span><span style="" lang="EN-US">"</span><span style="" lang="EN-US">Command</span><span style="" lang="EN-US"> Sent:" and</span><span style="" lang="EN-US">
+The information exchange between the computer and the adapter is shown
+in the </span><span style="" lang="EN-US">"</span><span style="" lang="EN-US">Command</span><span style="" lang="EN-US"> Sent:" and</span><span style="" lang="EN-US">
 "Microcontroller&nbsp;</span><span style="" lang="EN-US">Response</span><span style="" lang="EN-US">:" windows.</span><span style="" lang="EN-US"> <br>
-The following devices are connected to the adapter via the I2C interface: </span><span style="" lang="EN-US">TMP117
+The following devices are connected to the adapter via the I2C
+interface: </span><span style="" lang="EN-US">TMP117
 </span><span style="" lang="EN-US">temperature,
-LPS22HB&nbsp;pressure,</span><span style="" lang="EN-US"> and</span><span style="" lang="EN-US"> </span><span style="" lang="EN-US">SHT21 humidity sensors;</span><span style="" lang="EN-US">
-a DS18B20 temperature sensor is connected via the 1-Wire
-interface;&nbsp;an ADXL345 MEMS accelerometer is connected via the SPI
-interface (<a target="_blank" href="I2C_SPI_USB_use.html#Adapter_AVR-0">kit photo</a> — the TMP117 sensor is missing from the photo).<br>
+LPS22HB&nbsp;pressure,</span><span style="" lang="EN-US"> and</span><span style="" lang="EN-US"> </span><span style="" lang="EN-US">SHT21
+humidity sensors;</span><span style="" lang="EN-US"> a DS18B20
+temperature sensor is connected via the 1-Wire interface;&nbsp;an
+ADXL345 MEMS accelerometer is connected via the SPI interface (<a target="_blank" href="I2C_SPI_USB_use.html#Adapter_AVR-0">kit photo</a>
+— the TMP117 sensor is missing from the photo).<br>
 <br>
 <span style="background-color: rgb(204, 255, 255);"></span></span><span style="" lang="EN-US">First, </span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command
 1</span> <br>
@@ -642,7 +803,8 @@ byte, followed by an arbitrary sequence of bytes:&nbsp;</span><span style="" lan
 01 22 3</span>,
 terminated by the control record byte <span style="font-weight: bold;">B0</span>.
 <br>
-When entering a command in the "Command (HEX codes)" window, you can use both
+When entering a command in the "Command (HEX codes)" window, you can
+use both
 uppercase and lowercase hexadecimal characters <span style="font-weight: bold;">A</span>...<span style="font-weight: bold;">F</span>.
 <br>
 If a byte value can be represented by a single character </span><span style="" lang="EN-US"> (for example, <span style="font-weight: bold;">b)</span></span><span style="" lang="EN-US">, a leading zero can be added before it&nbsp;(</span><span style="" lang="EN-US"><span style="font-weight: bold;">0b</span></span><span style="" lang="EN-US">)<span style="font-weight: bold;"></span>.<br>
@@ -687,9 +849,11 @@ formulas.<br>
 <span style="color: red; font-weight: bold;">Note</span>:&nbsp;<span style="font-weight: bold;">technical descriptions of devices
 connected to the adapter provide all necessary information: <br>
 device
-addresses, control register numbers, and </span></span><span style="" lang="EN-US"><span style="font-weight: bold;">registers containing measurement
+addresses, control register numbers, and </span></span><span style="" lang="EN-US"><span style="font-weight: bold;">registers containing
+measurement
 results,</span></span><span style="" lang="EN-US"><span style="font-weight: bold;"> <br>
-operating algorithms — what, in which sequence, and into which registers
+operating algorithms — what, in which sequence, and into which
+registers
 of the device must be written to define the measurement mode </span></span><span style="" lang="EN-US"><span style="font-weight: bold;">and
 obtain&nbsp;the results</span></span><span style="" lang="EN-US"><span style="font-weight: bold;">. </span><br>
 </span><span style="" lang="EN-US"><br>
@@ -697,11 +861,14 @@ obtain&nbsp;the results</span></span><span style="" lang="EN-US"><span style="fo
 4</span></span><span style="" lang="EN-US"> "12
 BA 11 01 11 EF", <br>
 its
-purpose is to update the measurement result &nbsp;in the registers of the LPS22
+purpose is to update the measurement result &nbsp;in the registers of
+the LPS22
 pressure sensor.<br>
 The transmission starts
-with byte&nbsp;0x12 — this is a command to the adapter to perform a write operation to the registers of the connected I2C </span><span style="" lang="EN-US">device</span><span style="" lang="EN-US">; <br>
-followed by the I2C address of the&nbsp;device 0xBA — this is the address of the LPS22
+with byte&nbsp;0x12 — this is a command to the adapter to perform a
+write operation to the registers of the connected I2C </span><span style="" lang="EN-US">device</span><span style="" lang="EN-US">; <br>
+followed by the I2C address of the&nbsp;device 0xBA — this is the
+address of the LPS22
 pressure sensor, <br>
 into register&nbsp;0x11 of which <br>
 0x01
@@ -720,50 +887,63 @@ sensor: <br>
 address of the LPS22 sensor; starting from register 0x28,
 read the states of 0x03 registers.<br>
 Response: "11 BA 28 C3 44 3F 39". The first 3 bytes
-are the same as in the command; the next three bytes are the result, which the LPS22
+are the same as in the command; the next three bytes are the result,
+which the LPS22
 transmits from the least significant
 byte to the most significant byte.<br>
 The sequence of data transmitted by the LPS22 </span><span style="" lang="EN-US">C3 44 3F </span><span style="" lang="EN-US">must
 be reordered to
 represent it in hex code:&nbsp;0x003F44C3 = 4146371;
-to get the result in hectopascals, it must be divided by 4096 or shifted right by 12 bits;
+to get the result in hectopascals, it must be divided by 4096 or
+shifted right by 12 bits;
 this gives 1012.2976 hPa. <br>
 The calculation result is placed under the box with the&nbsp;formula
 (b3+b4*256+b5*65536)/4096.<br>
 <br>
 </span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 6</span>
 "11 80 E5 02 78" —
-polling the SHT21 humidity sensor. 0x11 — read the register states of the
+polling the SHT21 humidity sensor. 0x11 — read the register states of
+the
 device with I2C address 0x80, starting from register 0xE5, read 0x02
 registers</span><span style="" lang="EN-US">.<br>
 Response:
-"11 80 E5 3F B6 6B". &nbsp;The first 3 bytes are the same as in the command.
+"11 80 E5 3F B6 6B". &nbsp;The first 3 bytes are the same as in the
+command.
 The result is 0x3FB6 — SHT21, just like TMP117, transmits
 the most significant
-byte first, then the least significant byte of the result: 0x</span><span style="" lang="EN-US">3FB6</span><span style="" lang="EN-US"> = 16310, <br>
-relative air humidity RH = -6 + </span><span style="" lang="EN-US">16310 * </span><span style="" lang="EN-US">125 / 65536 =
+byte first, then the least significant byte of the result: 0x</span><span style="" lang="EN-US">3FB6</span><span style="" lang="EN-US"> = 16310,
+<br>
+relative air humidity RH = -6 + </span><span style="" lang="EN-US">16310
+* </span><span style="" lang="EN-US">125 / 65536 =
 </span><span style="" lang="EN-US">-6 + 125 *</span><span style="" lang="EN-US">16310</span><span style="" lang="EN-US">/65536 = </span><span style="" lang="EN-US">25.1088%.<br>
-</span><span style="" lang="EN-US">The calculation result is placed under the
+</span><span style="" lang="EN-US">The calculation result is placed
+under the
 window with the&nbsp;formula </span><span style="" lang="EN-US">-6+(b3*256+b4)*125/65536.</span><br>
 
 <span style="" lang="EN-US"><br>
 </span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 7</span>
-"21 80 1 A2" — polling register 0x00 of the ADXL345 accelerometer chip via the
+"21 80 1 A2" — polling register 0x00 of the ADXL345 accelerometer chip
+via the
 SPI interface. 0x21 — read the register state of the
-device with an SPI interface; register number&nbsp; 0x00 (a feature of the
-ADXL345: when writing, the register number is transmitted unchanged; when
+device with an SPI interface; register number&nbsp; 0x00 (a feature of
+the
+ADXL345: when writing, the register number is transmitted unchanged;
+when
 reading a single register, 0x80 is added to the address; when reading a
 sequence of registers, 0xC0 is added),&nbsp;read 0x01
 register</span><span style="" lang="EN-US">.<br>
 Response:
 "21 80 E5 86". &nbsp;The first 2 bytes are the same as in the command.
-The result 0xE5 is the single-byte identification code (ID) of the ADXL345
+The result 0xE5 is the single-byte identification code (ID) of the
+ADXL345
 accelerometer, stored in its 0x00 register.</span><br>
+
 <span style="" lang="EN-US"><br>
 </span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 8</span>
 "3F 3F" — <a target="_blank" href="I2C_SPI_USB_lib.html#DS18B20">addressing
 the DS18B20 temperature sensor</a> with a 1-Wire interface.<br>
-Sensor response: "AF 01 4B 46 7F FF 01 10". Temperature is calculated using
+Sensor response: "AF 01 4B 46 7F FF 01 10". Temperature is calculated
+using
 the 0th and 1st bytes (b0 and b1, respectively AF 01):<br>
 0x01AF / 16 = 431 /16 = 26.9375</span><span style="" lang="EN-US">°C</span><br>
 
@@ -773,17 +953,21 @@ only under this box in the picture is the up-to-date result,
 calculated for the last received response from the DS18B20 sensor.<br>
 <br>
 </span><span style="" lang="EN-US">As
-you can see, it is sufficient to use the adapter with the original firmware, connect
-any sensor to it, and, using the test application, debug the joint operation of the computer, adapter, and sensor. <br>
+you can see, it is sufficient to use the adapter with the original
+firmware, connect
+any sensor to it, and, using the test application, debug the joint
+operation of the computer, adapter, and sensor. <br>
 You only need to
 find in the documentation of the connected device or sensor its
-unique I2C address or specific features of reading the SPI sensor, as well as
+unique I2C address or specific features of reading the SPI sensor, as
+well as
 the registers storing the result, the interpretation of these
 results, and, if necessary, what to write into which device register
 to start the measurement, change the mode, or update the
 result. <br>
 <br>
-In the end, it all comes down to writing to the registers of the connected device and
+In the end, it all comes down to writing to the registers of the
+connected device and
 reading the states of its registers.</span><span style="" lang="EN-US"><br>
 <br>
 An already debugged series of commands </span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">can
@@ -795,7 +979,8 @@ copy a single command from the "Notepad" window into the "Command
 command in the "Notepad" window.<br>
 <br>
 When the "Save" button is pressed, the set
-of commands from the "Notepad" window is saved to the Notes.st file. When starting the
+of commands from the "Notepad" window is saved to the Notes.st file.
+When starting the
 application, the last set of commands from this file will load
 automatically.<br>
 If you need to work with multiple command sets,
@@ -812,7 +997,8 @@ rate, transmission mode, response timeout,
 etc.). Commands can be generated automatically without displaying them;
 you can add the necessary controls, organize an acceptable display of
 results, perhaps add a timer for periodic sensor polling,
-display charts of measured parameters, organize the saving and viewing of
+display charts of measured parameters, organize the saving and viewing
+of
 saved results, etc.<br>
 <br>
 В окна расположенной внизу панели "Введите формулы ..." можно ввести до
@@ -822,18 +1008,25 @@ saved results, etc.<br>
 
 <h3><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"></span></h3>
 
-<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">The response of the LPS22 pressure sensor
+<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">The
+response of the LPS22 pressure sensor
 was discussed above: <br>
 </span><span style="" lang="EN-US">11 BA 28
 С3 44 3F 39, the byte numbering in this response is as follows:<br>
 B0&nbsp;B1 B2 B3 B4 B5 B6. <br>
-The first three bytes are the same as in the request command, and the last byte is the control
-record. The response of the LPS22 sensor is contained in bytes B3, B4, and B5. According to the
-LPS22 technical description, these bytes are transmitted from least significant to
+The first three bytes are the same as in the request command, and the
+last byte is the control
+record. The response of the LPS22 sensor is contained in bytes B3, B4,
+and B5. According to the
+LPS22 technical description, these bytes are transmitted from least
+significant to
 most significant.<br>
-B5 is the most significant byte, it must be multiplied by 2^16 or 65536;
-byte B4 is the middle one, it is multiplied by 2^8 or 256; B3 is the least significant byte.
-The results must be summed up and divided by 4096. The formula for the calculation
+B5 is the most significant byte, it must be multiplied by 2^16 or
+65536;
+byte B4 is the middle one, it is multiplied by 2^8 or 256; B3 is the
+least significant byte.
+The results must be summed up and divided by 4096. The formula for the
+calculation
 is written in the second box: <br>
 (B3+B4*256+B5*65536)/4096<br>
 To get the result in hectopascals, you need to double-click on the row
@@ -842,33 +1035,42 @@ window. When the row is selected,
 one of its bytes is highlighted.<br>
 Calculations are performed for all entered formulas, but the
 correct parameter value will be displayed only under the corresponding
-formula. In the picture, the correct value of the parameter 1012.2976 is located
+formula. In the picture, the correct value of the parameter 1012.2976
+is located
 under the formula for the LPS22 pressure sensor.<br>
 <br>
-This option is intended for entering simple formulas similar to those discussed in the example.</span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><br>
+This option is intended for entering simple formulas similar to those
+discussed in the example.</span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><br>
 </span><span style="" lang="EN-US"></span>
-<h2 style="background-color: rgb(153, 153, 0); width: 830px;"><span style="" lang="EN-US">&nbsp;Windows Test Application with Virtual COM Port Communication</span></h2>
+<h2 style="background-color: rgb(153, 153, 0); width: 830px;"><span style="" lang="EN-US">&nbsp;Windows Test Application with Virtual COM
+Port Communication</span></h2>
 
 &nbsp;
 <span style="background-color: rgb(255, 255, 51);">place a link to the
-archive containing the application and its source code, possibly write it for Linux as well</span><br>
+archive containing the application and its source code, possibly write
+it for Linux as well</span><br>
 
 <span style="" lang="EN-US"></span><a href="img/app_monitor_COMport.jpg" target="_blank"><img title="application with VCP" src="img/app_monitor_COMport.jpg" alt="application with virtual COM port" style="border: 0px solid ; width: 379px; height: 262px;" hspace="10" vspace="5"></a><br>
 
 <br>
 
 <span style="" lang="EN-US">The application works with
-adapters that have the </span><span style="" lang="EN-US"><a target="_blank" href="I2C_SPI_USB_lib.html#PID_EA60">USB bridge chip PID parameter changed to 0xEA60</a>. A </span><span style="" lang="EN-US"><a target="_blank" href="doc/drvCP210x_VCP_Windows.zip">virtual COM port
+adapters that have the </span><span style="" lang="EN-US"><a target="_blank" href="I2C_SPI_USB_lib.html#PID_EA60">USB bridge chip
+PID parameter changed to 0xEA60</a>. A </span><span style="" lang="EN-US"><a target="_blank" href="doc/drvCP210x_VCP_Windows.zip">virtual
+COM port
 driver</a></span> must be installed on the computer.
 <p class="MsoNormal" style="margin-bottom: 12pt;"><span style="" lang="EN-US">The baud rate (500,000 baud),
-the number of data bits in the packet (8), the number of stop bits (1), and the parity bit
+the number of data bits in the packet (8), the number of stop bits (1),
+and the parity bit
 (Odd) </span><span style="" lang="EN-US">in
 this application and in the microcontroller program </span><span style="" lang="EN-US">on the adapter board must be
 the same. <br>
 </span></p>
+
 <p class="MsoNormal" style="margin-bottom: 12pt;"><span style="" lang="EN-US"></span>The virtual
 <span style="" lang="EN-US">COM</span> port number
-is set in the "PORT" box; the <span style="" lang="EN-US">COM</span> port
+is set in the "PORT" box; the <span style="" lang="EN-US">COM</span>
+port
 is organized by the computer's operating system when
 the adapter is connected, and its number can be checked in the Device
 Manager under the
@@ -876,9 +1078,11 @@ Manager under the
 &amp; <span style="" lang="EN-US">LPT</span>)" section. </p>
 
 <p class="MsoNormal" style="margin-bottom: 12pt;">The operation
-of the main application corresponds to the description given in the previous
+of the main application corresponds to the description given in the
+previous
 section
-"<a target="_blank" href="I2C_SPI_USB_lib.html#APP_USBxpress">Windows Test
+"<a target="_blank" href="I2C_SPI_USB_lib.html#APP_USBxpress">Windows
+Test
 Application with Direct Access</a>".<span style="" lang="EN-US"></span></p>
 
 <hr style="width: 100%; height: 2px;">
