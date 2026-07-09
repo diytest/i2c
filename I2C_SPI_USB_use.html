@@ -7,6 +7,7 @@
 
 
 
+
   
   <meta http-equiv="Content-Type" content="text/html; image/x-icon; charset=UTF-8">
 
@@ -477,20 +478,22 @@ clock.<br>An RGB LED Strip with Per-LED Addressing, Controlled by an
 <hr style="width: 100%; height: 2px;"><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;"></span></span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;"></span></span></span>
 <h2><span style="font-weight: bold; color: rgb(0, 102, 0);"><a name="strip"></a></span>I2C
 SPI 1-Wire USB Adapter<span style="font-weight: bold; color: rgb(0, 102, 0);"> Based on the
-ATmega328P or ATmega8 Microcontroller.<span style="color: black;">A test computer application written for this purpose sends control
-sequences over USB for the addressable LED strip </span><br>
+ATmega328P or ATmega8 Microcontroller.<span style="color: black;"></span><br>
 </span></h2>
 
 
-<a target="_blank" href="img/WS2811.jpg"><img title="RAM 256K and I2C SPI 1-Wire USB adapter on a megaAVR 0-series microcontroller" src="img/WS2811.jpg" alt="RAM 256K and I2C SPI 1-Wire USB adapter on a megaAVR 0-series microcontroller" style="border: 0px solid ; width: 369px; height: 252px; float: left;" align="left" hspace="10" vspace="5"></a> <big><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;">the adapter converts the received data into a serial code,
+<a target="_blank" href="img/WS2811.jpg"><img title="RAM 256K and I2C SPI 1-Wire USB adapter on a megaAVR 0-series microcontroller" src="img/WS2811.jpg" alt="RAM 256K and I2C SPI 1-Wire USB adapter on a megaAVR 0-series microcontroller" style="border: 0px solid ; width: 369px; height: 252px; float: left;" align="left" hspace="10" vspace="5"></a> <br>
+<big><span style="font-weight: bold; color: rgb(0, 102, 0);"><span style="color: black;">A test computer application written for this purpose sends control
+sequences over USB for the addressable LED strip; </span></span></big><br>
+<big><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;">the adapter converts the received data into a serial code,
 sent to the addressable LED strip over a single line</span></span></span><span style="font-weight: bold; color: rgb(0, 102, 0);">I2C SPI 1-Wire </span><span style="font-weight: bold; color: rgb(0, 102, 0);">USB </span></big><big><span style="font-weight: bold; color: rgb(0, 102, 0);">Adapter</span></big><big><span style="font-weight: bold; color: rgb(0, 102, 0);"></span>;</big><br>
 <span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;">(the WS2811 addressable LED strip has only three lines: Gnd,
 Din, and +12V).<br>
 Pulse-width manipulation is used to encode the signal that
-controls the LED strip.<br><br>A video of testing the strip with a simple effect is <br>
+controls the LED strip.<br><br><br>
 <br>
-</span></span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;">here<a target="_blank" href="https://youtu.be/JluhY-VQRE4">A 28BYJ-48 Stepper Motor&nbsp; Controlled by an
-</a>.<br>
+<br>
+A video of testing the strip with a simple effects is </span></span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;"><a href="https://youtu.be/JluhY-VQRE4" target="_blank">here</a><br>
 <br>
 <br>
 <br>
@@ -499,10 +502,9 @@ controls the LED strip.<br><br>A video of testing the strip with a simple effect
 <br>
 </span></span></span>
 <hr style="width: 100%; height: 2px;"><span style="" lang="EN-US"></span>
-<h2><span style="font-weight: bold; color: rgb(0, 102, 0);"><a name="motor"></a></span> Based on the <span style="font-weight: bold; color: rgb(0, 102, 0);"> Based on the
-ATmega328P or ATmega8 Microcontroller.<span style="color: black;">Microcontroller.</span></span>megaAVR
-0-series<span style="font-weight: bold; color: rgb(0, 102, 0);"><span style="color: black;"></span><br>
-</span></h2>
+<h2><span style="font-weight: bold; color: rgb(0, 102, 0);"><a name="motor"></a></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;">Stepper motor 28BYJ-48 is controlled by I2C SPI 1-Wire USB Adapter on megaAVR 0-series microcontroller<br>
+</span></span></span></h2>
+
 
 <span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;"></span></span></span><a target="_blank" href="img/28BYJ_48_step_motor.jpg"><img title="Stepper motor controlled by the I2C SPI 1-Wire USB Adapter" src="img/28BYJ_48_step_motor.jpg" alt="Stepper motor controlled by the I2C SPI 1-Wire USB Adapter" style="border: 0px solid ; width: 372px; height: 247px; float: left;" align="left" hspace="10" vspace="5"></a><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;">A driver is needed to control the motor; the ULN2003 chip works well for
 this - 7 open-collector Darlington transistors with diodes
