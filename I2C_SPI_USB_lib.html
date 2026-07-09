@@ -252,10 +252,7 @@ command, and the microcontroller must
 use a baud rate of&nbsp;500,000 baud. A baud rate of
 500,000 baud is used in all supplied programs, including the
 Bootloader computer application.&nbsp;<br>
-
-Компьютерное приложение Bootloader обеспечивает&nbsp;загрузку
-обновлённой прошивки,
-которая должна храниться в формате hex.&nbsp; <span style="color: rgb(51, 0, 51); background-color: rgb(255, 255, 51);">&lt;Place
+The Bootloader computer application provides downloading of updated firmware, which must be stored in hex format.&nbsp; <span style="color: rgb(51, 0, 51); background-color: rgb(255, 255, 51);">&lt;Place
 links&gt;</span><br style="color: rgb(51, 0, 51);">
 
 <br>
@@ -571,12 +568,10 @@ CR — control record.<br>
 Adapter response:<br>
 
 0x21&nbsp;Rg_minNum B[0] ... B[numRgToRead-1] CR<br>
-
-первые 3 байта такие же, как в команде, <br>
+the first 3 bytes are the same as in the command,&nbsp;<br>
 
 B ... B[numRgToRead-1] —&nbsp;states of the polled registers,<br>
-
-байт&nbsp;CR - control record.<br>
+byte CR - control record.<br>
 
 <h4 style="background-color: rgb(102, 255, 255); width: 418px;">Writing
 to SPI Device Registers.</h4>
@@ -1000,9 +995,9 @@ results, perhaps add a timer for periodic sensor polling,
 display charts of measured parameters, organize the saving and viewing
 of
 saved results, etc.<br>
-<br>
-В окна расположенной внизу панели "Введите формулы ..." можно ввести до
-4-х формул из технических описаний датчиков, тестируемых с адаптером. <br>
+<br>In the windows of the 'Enter formulas...' panel located at the
+bottom, you can enter up to 4 formulas from the technical descriptions
+of the sensors tested with the adapter.&nbsp;<br>
 </span>
 <h3><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"><span style="font-weight: bold;">Example.</span></span></h3>
 
