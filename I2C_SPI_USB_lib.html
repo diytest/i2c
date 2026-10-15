@@ -911,12 +911,12 @@ when writing, the register number is transmitted unchanged;
 when
 reading, 0x40 is added to the address), beginning with the Rg0x02 - for
 the ADT7320 the register number must be shifted left 3 times: 0x02 shl
-3 = 0x10</span><span lang="EN-US">, for the reading 0x40 must be added, so 0x40 | 0x10 = 0x50; 02 - read 2 registers.<br>
+3 = 0x10</span><span lang="EN-US">, for the reading 0x40 must be added, so 0x40 | 0x10 = 0x50; 02 - read 2 bytes.<br>
 Response:
-"21 50 00 0A 98 13". &nbsp;The first 2 bytes are the same as in the
-command, then 0x00 to provide 3 bytes head, as for I2C results.
-The result 0x0A 0x98 or 0x0A98 = 2712</span><span lang="EN-US">, which must be divided by 128: <br>
-T = 2712/128 = 21.1875°C.</span><span lang="EN-US"><br>
+"21 50 02 0B C8 46". &nbsp;The first 3 bytes are the same as in the
+command.
+The result 0x0B 0xC8 or 0x0BC8 = 3016</span><span lang="EN-US">, which must be divided by 128: <br>
+T = 3016/128 = 23.5625°C.</span><span lang="EN-US"><br>
 The calculation result is placed
 under the
 window with the&nbsp;formula</span><span lang="EN-US"> (B0*256+B1)/128</span><br>
