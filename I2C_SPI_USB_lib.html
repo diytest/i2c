@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//w3c//dtd html 4.01 transitional//en">
 <html lang="en"><head>
 
+
+
   
   <meta http-equiv="content-type" content="text/html; image/x-icon; charset=utf-8">
 
@@ -693,10 +695,7 @@ with
 Direct Access
 to CP2102N Functions</span></h2>
 
-<span style="background-color: rgb(255, 255, 51);">place a link to the
-archive containing the application and its source code</span><br>
 
-<br>
 
 <span style="" lang="EN-US"></span><a href="img/app_monitor_USBxpress.jpg" target="_blank"><img title="USBxpressTest application" src="img/app_monitor_USBxpress.jpg" alt="USBxpressTest application" style="border: 0px solid ; width: 824px; height: 360px;" hspace="10" vspace="5"></a><br>
 
@@ -821,10 +820,10 @@ was read, starting
 from register 0x00). The read result is placed between the 3rd and
 the last byte — in this response, the result is represented by 2 bytes.<br>
 The measurement result (the TMP117 transmits the MSB
-first, then the LSB) is 0x0BDA = 3034, which must be divided by 128: <br>
+first, then the LSB) is 0x0B 0xDA or 0x0BDA = 3034, which must be divided by 128: <br>
 T = 3034/128 = 23.703125°C.<br>
 </span><span style="" lang="EN-US"> The calculation result is placed
-under the box with the&nbsp;formula (b3*256+b4)/128.<br>
+under the box with the&nbsp;formula (B0*256+B1)/128.<br>
 The result is valid only under the corresponding formula <br>
 </span><span style="" lang="EN-US">either </span><span style="" lang="EN-US">after receiving the adapter response when the
 "calculate results on microcontroller response" checkbox is checked, <br>
@@ -845,8 +844,8 @@ of the device must be written to define the measurement mode </span></span><span
 obtain&nbsp;the results</span></span><span style="" lang="EN-US"><span style="font-weight: bold;">. </span><br>
 </span><span style="" lang="EN-US"><br>
 </span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);"></span></span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);"><a name="write_I2C"></a>Command
-4</span></span><span style="" lang="EN-US"> "12
-BA 11 01 11 EF", <br>
+4</span></span><span lang="EN-US"> "12
+BA 11 11 EE", <br>
 its
 purpose is to update the measurement result &nbsp;in the registers of
 the LPS22
@@ -857,10 +856,7 @@ write operation to the registers of the connected I2C </span><span style="" lang
 followed by the I2C address of the&nbsp;device 0xBA — this is the
 address of the LPS22
 pressure sensor, <br>
-into register&nbsp;0x11 of which <br>
-0x01
-byte must be written, <br>
-the value of this byte is 0x11. <br>
+into register&nbsp;0x11 of which byte </span><span style="" lang="EN-US">0x11 </span><span lang="EN-US">must be written. <br>
 The adapter's response to this command is an echo of the received
 sequence or an error code if errors are detected during command
 reception.<br>
@@ -878,14 +874,14 @@ are the same as in the command; the next three bytes are the result,
 which the LPS22
 transmits from the least significant
 byte to the most significant byte.<br>
-The sequence of data transmitted by the LPS22 </span><span style="" lang="EN-US">C3 44 3F </span><span style="" lang="EN-US">must
+The sequence of data transmitted by the LPS22 </span><span style="" lang="EN-US">C3 44 3F </span><span lang="EN-US">must
 be reordered to
 represent it in hex code:&nbsp;0x003F44C3 = 4146371;
 to get the result in hectopascals, it must be divided by 4096 or
 shifted right by 12 bits;
 this gives 1012.2976 hPa. <br>
 The calculation result is placed under the box with the&nbsp;formula
-(b3+b4*256+b5*65536)/4096.<br>
+(B0+B1*256+B2*65536)/4096.<br>
 <br>
 </span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 6</span>
 "11 80 E5 02 78" —
@@ -905,39 +901,45 @@ relative air humidity RH = -6 + </span><span style="" lang="EN-US">16310
 </span><span style="" lang="EN-US">-6 + 125 *</span><span style="" lang="EN-US">16310</span><span style="" lang="EN-US">/65536 = </span><span style="" lang="EN-US">25.1088%.<br>
 </span><span style="" lang="EN-US">The calculation result is placed
 under the
-window with the&nbsp;formula </span><span style="" lang="EN-US">-6+(b3*256+b4)*125/65536.</span><br>
+window with the&nbsp;formula </span><span style="" lang="EN-US">-6+(B0*256+B1)*125/65536.</span><br>
 
 <span style="" lang="EN-US"><br>
-</span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 7</span>
-"21 80 1 A2" — polling register 0x00 of the ADXL345 accelerometer chip
-via the
-SPI interface. 0x21 — read the register state of the
-device with an SPI interface; register number&nbsp; 0x00 (a feature of
-the
-ADXL345: when writing, the register number is transmitted unchanged;
+</span><span lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 7</span>
+"21 50 02 73" — </span><span style="" lang="EN-US">requests the result from the ADT7320 temperature sensor</span><span lang="EN-US">. 0x21 — read the registers of the
+device with an SPI interface; (a feature of
+the </span><span style="" lang="EN-US">ADT7320</span><span lang="EN-US">:
+when writing, the register number is transmitted unchanged;
 when
 reading a single register, 0x80 is added to the address; when reading a
-sequence of registers, 0xC0 is added),&nbsp;read 0x01
-register</span><span style="" lang="EN-US">.<br>
+sequence of registers, 0x40 is added), beginning with the Rg0x02 - for
+the ADT7320 the register number must be shifted left 3 times: 0x02 shl
+3 = 0x10</span><span lang="EN-US">, for the reading of 2 or more registers 0x40 must be added, so 0x40 | 0x10 = 0x50; 02 - read 2 registers.<br>
 Response:
-"21 80 E5 86". &nbsp;The first 2 bytes are the same as in the command.
-The result 0xE5 is the single-byte identification code (ID) of the
-ADXL345
-accelerometer, stored in its 0x00 register.</span><br>
+"21 50 00 0A 98 13". &nbsp;The first 2 bytes are the same as in the
+command, then 0x00 to provide 3 bytes head, as for I2C results.
+The result 0x0A 0x98 or 0x0A98 = 2712</span><span lang="EN-US">, which must be divided by 128: <br>
+T = 2712/128 = 21.1875°C.</span><span lang="EN-US"><br>
+The calculation result is placed
+under the
+window with the&nbsp;formula</span><span lang="EN-US"> (B0*256+B1)/128</span><br>
 
 <span style="" lang="EN-US"><br>
-</span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 8</span>
+</span><span lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 8</span>
 "3F 3F" — <a target="_blank" href="I2C_SPI_USB_lib.html#DS18B20">addressing
-the DS18B20 temperature sensor</a> with a 1-Wire interface.<br>
-Sensor response: "AF 01 4B 46 7F FF 01 10". Temperature is calculated
+the DS18B20 temperature sensor</a> with a 1-Wire interface.<br>Sensor
+response: "3F 00 00 7B 01 4B 46 7F FF 07 10 E1". After 3-bytes head,
+only 2 bytes provide the temperature data: 0x7B 0x01. The sequence
+transmitted by </span><span lang="EN-US"></span><span lang="EN-US">ADT7320 </span><span lang="EN-US">must
+be reordered to
+represent it in hex code: 0x017B =</span><span lang="EN-US"> 379</span><span style="" lang="EN-US"></span>. <span style="" lang="EN-US"></span><br>
+<span lang="EN-US">The result </span><span lang="EN-US">must be divided by 16: </span><span lang="EN-US">Temperature result is calculated
 using
-the 0th and 1st bytes (b0 and b1, respectively AF 01):<br>
-0x01AF / 16 = 431 /16 = 26.9375</span><span style="" lang="EN-US">°C</span><br>
+the 0th and 1st bytes (B0 and B1, respectively 0x7B 0x01), :<br>379 /16 = 23.6875</span><span style="" lang="EN-US">°C</span><br>
 
-<span style="" lang="EN-US">The calculation
-result is placed under the box with the&nbsp;formula (b0+b1*256)/16 —
-only under this box in the picture is the up-to-date result,
-calculated for the last received response from the DS18B20 sensor.<br>
+<span lang="EN-US">The calculation
+result is placed under the box with the&nbsp;formula (B0+B1*256)/16 —
+under this box in the picture is the up-to-date result,
+and calculated after received response from the DS18B20 sensor.<br>
 <br>
 </span><span style="" lang="EN-US">As
 you can see, it is sufficient to use the adapter with the original
@@ -999,8 +1001,7 @@ of the sensors tested with the adapter.&nbsp;<br>
 response of the LPS22 pressure sensor
 was discussed above: <br>
 </span><span style="" lang="EN-US">11 BA 28
-С3 44 3F 39, the byte numbering in this response is as follows:<br>
-B0&nbsp;B1 B2 B3 B4 B5 B6. <br>
+С3 44 3F 39, the byte numbering in this response is as follows:<br>Cmd Addr Rg B0&nbsp;B1 B2 CR. <br>
 The first three bytes are the same as in the request command, and the
 last byte is the control
 record. The response of the LPS22 sensor is contained in bytes B3, B4,
@@ -1029,13 +1030,8 @@ under the formula for the LPS22 pressure sensor.<br>
 This option is intended for entering simple formulas similar to those
 discussed in the example.</span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><br>
 </span><span style="" lang="EN-US"></span>
-<h2 style="background-color: rgb(153, 153, 0); width: 830px;"><span style="" lang="EN-US">&nbsp;Windows Test Application with Virtual COM
-Port Communication</span></h2>
-
-&nbsp;
-<span style="background-color: rgb(255, 255, 51);">place a link to the
-archive containing the application and its source code, possibly write
-it for Linux as well</span><br>
+<h2 style="background-color: rgb(153, 153, 0); width: 830px;"><span lang="EN-US">&nbsp;Windows Test Application with Virtual COM
+Port Communication</span></h2><span style="background-color: rgb(255, 255, 51);"></span>
 
 <span style="" lang="EN-US"></span><a href="img/app_monitor_COMport.jpg" target="_blank"><img title="application with VCP" src="img/app_monitor_COMport.jpg" alt="application with virtual COM port" style="border: 0px solid ; width: 379px; height: 262px;" hspace="10" vspace="5"></a><br>
 
