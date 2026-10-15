@@ -1,8 +1,5 @@
 <!DOCTYPE html PUBLIC "-//w3c//dtd html 4.01 transitional//en">
 <html lang="en"><head>
-
-
-
   
   <meta http-equiv="content-type" content="text/html; image/x-icon; charset=utf-8">
 
@@ -23,7 +20,11 @@
   <meta name="keywords" content="I2C SPI 1-Wire USB Adapter">
 
   
-  <meta name="description" content="I2C SPI 1-Wire USB Adapter"><title>I2C SPI 1-Wire USB Adapter</title></head><body style="background-color: rgb(192, 192, 192);">
+  <meta name="description" content="I2C SPI 1-Wire USB Adapter">
+  <title>I2C SPI 1-Wire USB Adapter</title>
+
+  
+</head><body style="background-color: rgb(192, 192, 192);">
 <big><big><big><big><a href="../projects/index.html" target="_blank">Home</a></big></big></big></big><big><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; &nbsp; &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </big></big><big><big><big><big><a style="font-style: italic; font-weight: bold;" href="mailto:post4ytb@gmail.com" target="_blank"><small><small>post4ytb@gmail.com</small></small></a></big></big></big></big><br>
@@ -38,11 +39,11 @@
 SPI 1-Wire USB adapter</big></big></a></td>
     </tr>
     <tr>
-      <td style="height: 14px; background-color: rgb(3, 253, 238); width: 626px;"><a style="color: rgb(0, 0, 238);" href="http://accelerometer.narod.ru/application.html"><big><big><span style="color: rgb(204, 0, 0);"></span><span style="color: rgb(255, 102, 0);"></span><span style="color: rgb(0, 102, 0);"></span><span style="color: rgb(51, 153, 153);"></span><span style="color: rgb(0, 0, 153);"></span><span style="color: rgb(102, 0, 204);"></span></big></big></a><big><big><a target="_blank" href="I2C_SPI_USB_interfaces.html">Interfaces
+      <td style="height: 14px; background-color: rgb(3, 253, 238); width: 626px;"><big><big><span style="color: rgb(204, 0, 0);"></span><span style="color: rgb(255, 102, 0);"></span><span style="color: rgb(0, 102, 0);"></span><span style="color: rgb(51, 153, 153);"></span><span style="color: rgb(0, 0, 153);"></span><span style="color: rgb(102, 0, 204);"></span></big></big><big><big><a target="_blank" href="I2C_SPI_USB_interfaces.html">Interfaces
 I2C, SPI, 1-Wire; connecting to the adapter</a></big></big></td>
     </tr>
     <tr>
-      <td style="background-color: rgb(3, 253, 238); height: 16px; width: 626px;"><a style="color: rgb(0, 0, 238);" href="http://accelerometer.narod.ru/img/I2C_SPI/USB_case.mp4"><big><big><span style="color: rgb(204, 0, 0);"></span><span style="color: rgb(204, 153, 51);"><span style="color: rgb(51, 51, 255);"></span></span></big></big></a><a target="_blank" style="color: rgb(51, 51, 255);" href="I2C_SPI_USB_lib.html"><big><big>Software
+      <td style="background-color: rgb(3, 253, 238); height: 16px; width: 626px;"><big><big><span style="color: rgb(204, 0, 0);"></span><span style="color: rgb(204, 153, 51);"><span style="color: rgb(51, 51, 255);"></span></span></big></big><a target="_blank" style="color: rgb(51, 51, 255);" href="I2C_SPI_USB_lib.html"><big><big>Software
 for the I2C SPI 1-Wire USB adapter</big></big></a></td>
     </tr>
     <tr style="background-color: rgb(102, 255, 255);">
@@ -58,7 +59,7 @@ I2C SPI 1-Wire USB adapters</a></big></big></td>
 cables, enclosures, accessories</a></big></big></td>
     </tr>
     <tr>
-      <td style="vertical-align: top; background-color: rgb(102, 255, 255);"><big><big><a href="https://accusb.000webhostapp.com/I2C_SPI_USB_accessories.html"><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;"><span style="font-weight: bold;"></span></span></span></span></a><a href="https://youtu.be/eOtSVU7-4bA" target="_blank">UPDI programming
+      <td style="vertical-align: top; background-color: rgb(102, 255, 255);"><big><big><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;"><span style="font-weight: bold;"></span></span></span></span><a href="https://youtu.be/eOtSVU7-4bA" target="_blank">UPDI programming
 video on YouTube</a></big></big></td>
     </tr>
     <tr style="background-color: rgb(102, 255, 255);">
@@ -132,7 +133,8 @@ Studio</a></span><span style="" lang="EN-US"></span><span style="" lang="EN-US">
 As part of the&nbsp;<span style="font-weight: bold; color: rgb(0, 102, 0);">I2C
 SPI
 1-Wire </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">USB </span></span><span lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">adapter</span>
-the IC CP2102N is shipped with PID=0xEA61. <br>
+the IC CP2102N is shipped with PID=0xEA61 or with PID= 0xEA60 (on
+oreder). <br>
 If there is need to change CP2102N' PID to 0xEA60, </span><span style="" lang="EN-US">you should first
 read the parameters already written during the manufacturing of the
 adapter (the "Import From Device" button), then change the PID to
@@ -251,14 +253,18 @@ command, and the microcontroller must
 use a baud rate of&nbsp;500,000 baud. A baud rate of
 500,000 baud is used in all supplied programs, including the
 Bootloader computer application.&nbsp;<br>
-The Bootloader computer application provides downloading of updated firmware, which must be stored in hex format.&nbsp; <span style="color: rgb(51, 0, 51); background-color: rgb(255, 255, 51);">&lt;Place
-links&gt;<br>
+
+The Bootloader computer application provides downloading of updated
+firmware, which must be stored in hex format.<span style="color: rgb(51, 0, 51); background-color: rgb(255, 255, 51);"><br>
 </span><br>
+
 When the microcontroller is connected to
 USB,
 pressing the "MCU-&gt;to Bootloader" button switches the
 microcontroller (MCU) to boot mode. <br>
-<span style="" lang="EN-US"></span><a href="img/bootloader.jpg" target="_blank"><img title="Bootloader application" src="img/bootloader.jpg" alt="application for flashing the MCU" style="border: 0px solid ; width: 506px; height: 151px;" align="left" hspace="10" vspace="5"></a>Open the updated firmware file (the "Open firmware file *.hex"
+
+<span style="" lang="EN-US"></span><a href="img/bootloader.jpg" target="_blank"><img title="Bootloader application" src="img/bootloader.jpg" alt="application for flashing the MCU" style="border: 0px solid ; width: 506px; height: 151px;" align="left" hspace="10" vspace="5"></a>Open the updated firmware file (the "Open
+firmware file *.hex"
 button),&nbsp;then press the
 "Write firmware to MCU" button. <br>
 
@@ -562,8 +568,11 @@ CR — control record.<br>
 Adapter response:<br>
 
 0x21&nbsp;Rg_minNum numRgToRead B[0] ... B[numRgToRead-1] CR<br>
+
 the first 3 bytes are the same as in the command, <br>
+
 B[0] ... B[numRgToRead-1] —&nbsp;states of the polled registers,<br>
+
 byte CR - control record.<br>
 
 <h4 style="background-color: rgb(102, 255, 255); width: 418px;">Writing
@@ -639,8 +648,12 @@ This command invokes all the 1-Wire interface commands listed above:<br>
 measurement
 result.<br>
 
-Response: <br>3F 00 00 B[0]..B[8] CR<br>
+Response: <br>
+
+3F 00 00 B[0]..B[8] CR<br>
+
 3F 00 00 - DS18B20 response head<br>
+
 B[0]..B[8] — the content of the DS18B20 buffer.<br>
 
 Bytes B0 and B1 contain the value measured by the DS18B20
@@ -693,8 +706,6 @@ the computer application window,&nbsp;no delays are required.<span style="" lang
 with
 Direct Access
 to CP2102N Functions</span></h2>
-
-
 
 <span style="" lang="EN-US"></span><a href="img/app_monitor_USBxpress.jpg" target="_blank"><img title="USBxpressTest application" src="img/app_monitor_USBxpress.jpg" alt="USBxpressTest application" style="border: 0px solid ; width: 824px; height: 360px;" hspace="10" vspace="5"></a><br>
 
@@ -775,7 +786,7 @@ interface: </span><span style="" lang="EN-US">TMP117
 LPS22HB&nbsp;pressure,</span><span style="" lang="EN-US"> and</span><span style="" lang="EN-US"> </span><span style="" lang="EN-US">SHT21
 humidity sensors;</span><span style="" lang="EN-US"> a DS18B20
 temperature sensor is connected via the 1-Wire interface;&nbsp;an
-ADXL345 MEMS accelerometer is connected via the SPI interface (<a target="_blank" href="I2C_SPI_USB_use.html#Adapter_AVR-0">kit photo</a>
+ADT7320 </span><span style="" lang="EN-US">temperature sensor </span><span style="" lang="EN-US"> is connected via the SPI interface (<a target="_blank" href="I2C_SPI_USB_use.html#Adapter_AVR-0">kit photo</a>
 — the TMP117 sensor is missing from the photo).<br>
 <br>
 <span style="background-color: rgb(204, 255, 255);"></span></span><span style="" lang="EN-US">First, </span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command
@@ -819,7 +830,8 @@ was read, starting
 from register 0x00). The read result is placed between the 3rd and
 the last byte — in this response, the result is represented by 2 bytes.<br>
 The measurement result (the TMP117 transmits the MSB
-first, then the LSB) is 0x0B 0xDA or 0x0BDA = 3034, which must be divided by 128: <br>
+first, then the LSB) is 0x0B 0xDA or 0x0BDA = 3034, which must be
+divided by 128: <br>
 T = 3034/128 = 23.703125°C.<br>
 </span><span style="" lang="EN-US"> The calculation result is placed
 under the box with the&nbsp;formula (B0*256+B1)/128.<br>
@@ -904,18 +916,22 @@ window with the&nbsp;formula </span><span style="" lang="EN-US">-6+(B0*256+B1)*1
 
 <span style="" lang="EN-US"><br>
 </span><span lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 7</span>
-"21 50 02 73" — </span><span style="" lang="EN-US">requests the result from the ADT7320 temperature sensor</span><span lang="EN-US">. 0x21 — read the registers of the
+"21 50 02 73" — </span><span style="" lang="EN-US">requests the result
+from the ADT7320 temperature sensor</span><span lang="EN-US">. 0x21 —
+read the registers of the
 device with an SPI interface; (a feature of
 the </span><span style="" lang="EN-US">ADT7320</span><span lang="EN-US">:
 when writing, the register number is transmitted unchanged;
 when
 reading, 0x40 is added to the address), beginning with the Rg0x02 - for
 the ADT7320 the register number must be shifted left 3 times: 0x02 shl
-3 = 0x10</span><span lang="EN-US">, for the reading 0x40 must be added, so 0x40 | 0x10 = 0x50; 02 - read 2 bytes.<br>
+3 = 0x10</span><span lang="EN-US">, for the reading 0x40 must be added,
+so 0x40 | 0x10 = 0x50; 02 - read 2 bytes.<br>
 Response:
 "21 50 02 0B C8 46". &nbsp;The first 3 bytes are the same as in the
 command.
-The result 0x0B 0xC8 or 0x0BC8 = 3016</span><span lang="EN-US">, which must be divided by 128: <br>
+The result 0x0B 0xC8 or 0x0BC8 = 3016</span><span lang="EN-US">, which
+must be divided by 128: <br>
 T = 3016/128 = 23.5625°C.</span><span lang="EN-US"><br>
 The calculation result is placed
 under the
@@ -924,15 +940,21 @@ window with the&nbsp;formula</span><span lang="EN-US"> (B0*256+B1)/128</span><br
 <span style="" lang="EN-US"><br>
 </span><span lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 8</span>
 "3F 3F" — <a target="_blank" href="I2C_SPI_USB_lib.html#DS18B20">addressing
-the DS18B20 temperature sensor</a> with a 1-Wire interface.<br>Sensor
+the DS18B20 temperature sensor</a> with a 1-Wire interface.<br>
+Sensor
 response: "3F 00 00 7B 01 4B 46 7F FF 01 10 3A 15". After 3-bytes head,
 only 2 bytes provide the temperature data 0x7B 0x01. The sequence
-transmitted by </span><span lang="EN-US"></span><span lang="EN-US">DS18B20 </span><span lang="EN-US">must
+transmitted by </span><span lang="EN-US"></span><span lang="EN-US">DS18B20
+</span><span lang="EN-US">must
 be reordered to
 represent it in hex code: 0x017B =</span><span lang="EN-US"> 379</span><span style="" lang="EN-US"></span>. <span style="" lang="EN-US"></span><br>
-<span lang="EN-US">The result </span><span lang="EN-US">must be divided by 16: </span><span lang="EN-US">Temperature result is calculated
+
+<span lang="EN-US">The result </span><span lang="EN-US">must be
+divided by 16: </span><span lang="EN-US">Temperature result is
+calculated
 using
-the 0th and 1st bytes (B0 and B1, respectively 0x7B 0x01), :<br>379 /16 = 23.6875</span><span style="" lang="EN-US">°C</span><br>
+the 0th and 1st bytes (B0 and B1, respectively 0x7B 0x01), :<br>
+379 /16 = 23.6875</span><span style="" lang="EN-US">°C</span><br>
 
 <span lang="EN-US">The calculation
 result is placed under the box with the&nbsp;formula (B0+B1*256)/16 —
@@ -987,7 +1009,8 @@ results, perhaps add a timer for periodic sensor polling,
 display charts of measured parameters, organize the saving and viewing
 of
 saved results, etc.<br>
-<br>In the windows of the 'Enter formulas...' panel located at the
+<br>
+In the windows of the 'Enter formulas...' panel located at the
 bottom, you can enter up to 4 formulas from the technical descriptions
 of the sensors tested with the adapter.&nbsp;<br>
 </span>
@@ -999,7 +1022,8 @@ of the sensors tested with the adapter.&nbsp;<br>
 response of the LPS22 pressure sensor
 was discussed above: <br>
 </span><span lang="EN-US">11 BA 28
-С3 44 3F 39, the byte numbering in this response is as follows:<br>Cmd Addr Rg B0&nbsp;B1 B2 CR. <br>
+С3 44 3F 39, the byte numbering in this response is as follows:<br>
+Cmd Addr Rg B0&nbsp;B1 B2 CR. <br>
 The first three bytes are the same as in the request command, and the
 last byte is the control
 record. The response of the LPS22 sensor is contained in bytes B0, B1,
@@ -1029,9 +1053,9 @@ This option is intended for entering simple formulas similar to those
 discussed in the example.</span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><br>
 </span><span style="" lang="EN-US"></span>
 <h2 style="background-color: rgb(153, 153, 0); width: 830px;"><span lang="EN-US">&nbsp;Windows Test Application with Virtual COM
-Port Communication</span></h2><span style="background-color: rgb(255, 255, 51);"></span>
+Port Communication</span></h2>
 
-<span style="" lang="EN-US"></span><a href="img/app_monitor_COMport.jpg" target="_blank"><img title="application with VCP" src="img/app_monitor_COMport.jpg" alt="application with virtual COM port" style="border: 0px solid ; width: 379px; height: 262px;" hspace="10" vspace="5"></a><br>
+<span style="background-color: rgb(255, 255, 51);"></span><span style="" lang="EN-US"></span><a href="img/app_monitor_COMport.jpg" target="_blank"><img title="application with VCP" src="img/app_monitor_COMport.jpg" alt="application with virtual COM port" style="border: 0px solid ; width: 379px; height: 262px;" hspace="10" vspace="5"></a><br>
 
 <br>
 
