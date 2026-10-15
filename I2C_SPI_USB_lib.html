@@ -1004,19 +1004,19 @@ was discussed above: <br>
 С3 44 3F 39, the byte numbering in this response is as follows:<br>Cmd Addr Rg B0&nbsp;B1 B2 CR. <br>
 The first three bytes are the same as in the request command, and the
 last byte is the control
-record. The response of the LPS22 sensor is contained in bytes B3, B4,
-and B5. According to the
+record. The response of the LPS22 sensor is contained in bytes B0, B1,
+and B2. According to the
 LPS22 technical description, these bytes are transmitted from least
 significant to
 most significant.<br>
-B5 is the most significant byte, it must be multiplied by 2^16 or
+B2 is the most significant byte, it must be multiplied by 2^16 or
 65536;
-byte B4 is the middle one, it is multiplied by 2^8 or 256; B3 is the
+byte B1 is the middle one, it is multiplied by 2^8 or 256; B0 is the
 least significant byte.
 The results must be summed up and divided by 4096. The formula for the
 calculation
 is written in the second box: <br>
-(B3+B4*256+B5*65536)/4096<br>
+(B0+B1*256+B2*65536)/4096<br>
 To get the result in hectopascals, you need to double-click on the row
 with the LPS22 sensor response in the "Microcontroller Response"
 window. When the row is selected,
