@@ -824,7 +824,7 @@ first, then the LSB) is 0x0B 0xDA or 0x0BDA = 3034, which must be
 divided by 128: <br>
 T = 3034/128 = 23.703125°C.<br>
 </span><span style="" lang="EN-US"> The calculation result is placed
-under the box with the&nbsp;formula (B0*256+B1)/128.<br>
+under the box with the&nbsp;formula (B0*256+B1)/128<br>
 The result is valid only under the corresponding formula <br>
 </span><span style="" lang="EN-US">either </span><span style="" lang="EN-US">after receiving the adapter response when the
 "calculate results on microcontroller response" checkbox is checked, <br>
@@ -882,7 +882,7 @@ to get the result in hectopascals, it must be divided by 4096 or
 shifted right by 12 bits;
 this gives 1012.2976 hPa. <br>
 The calculation result is placed under the box with the&nbsp;formula
-(B0+B1*256+B2*65536)/4096.<br>
+(B0+B1*256+B2*65536)/4096<br>
 <br>
 </span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 6</span>
 "11 80 E5 02 78" —
@@ -901,7 +901,7 @@ relative air humidity RH = -6 + </span><span style="" lang="EN-US">16310
 </span><span style="" lang="EN-US">-6 + 125 *</span><span style="" lang="EN-US">16310</span><span style="" lang="EN-US">/65536 = </span><span style="" lang="EN-US">25.1088%.<br>
 </span><span style="" lang="EN-US">The calculation result is placed
 under the
-window with the&nbsp;formula </span><span style="" lang="EN-US">-6+(B0*256+B1)*125/65536.</span><br>
+window with the&nbsp;formula </span><span style="" lang="EN-US">-6+(B0*256+B1)*125/65536</span><br>
 
 <span style="" lang="EN-US"><br>
 </span><span lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 7</span>
