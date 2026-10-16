@@ -87,7 +87,7 @@ operating systems (Windows,
 WinCE, Mac, Linux)</span><span lang="EN-US">
 allow a computer, smartphone, or controller with a&nbsp;USB host to
 communicate with the adapter&nbsp;via a
-virtual COM port if the appropriate application will be designed and used.</span><span style="" lang="EN-US"><br>
+virtual COM port if the appropriate application will be designed and used. Now only Windows applications were designed.</span><span style="" lang="EN-US"><br>
 <a target="_blank" href="https://www.silabs.com/developers/direct-access-drivers">USBxpress
 Direct Access
 Drivers</a> </span><span style="" lang="EN-US"></span><span style="" lang="EN-US">are available&nbsp;for devices running Windows and WinCE
@@ -141,7 +141,7 @@ is unacceptable:
 the adapter will stop working. <span style="color: rgb(0, 102, 0);"><br>
 To restore the adapter's functionality, you will need to enter the
 correct
-previpusly saved parameters.</span></span><br style="font-weight: bold;">
+previously saved parameters.</span></span><br style="font-weight: bold;">
 <br>
 For the
 operating system and the applications running within it, including
@@ -427,24 +427,9 @@ with an I2C interface support hardware addressing. The device address
 is written into it during manufacturing, and when accessing the device,
 the adapter must first send this address. <br>
 
-<span style="font-weight: bold;"><span style="color: red;">Note.</span>
-The least significant bit (LSB) of the I2C device address determines
-the transmission direction.<br>
-When sensor's datasheet proposes 7-bit address, it must be shifted left 1 time, for example, </span>0x48&lt;&lt;1 = 0x90.<br>
-<span style="font-weight: bold;">
-If the bit in the address byte is cleared, the subsequent bytes
-are written to the I2C device.<br>
-If the least significant bit in the address is set, data will be
-read from the device.<br>
-Technical descriptions of devices specify base addresses — with
-cleared least significant bits.<br style="font-weight: bold;">
-</span><span style="font-weight: bold;">This base
-address is what is used in computer commands and adapter responses. <br>
-Setting
-or&nbsp;clearing the least significant bit of the address is performed
-by the adapter when
-generating transmission sequences for the devices.<br>
-With
+<span style="font-weight: bold;"><span style="color: red;"></span></span>Datasheets give either a 7-bit address (shift it left by 1: 0x48 → 0x90) or an 8-bit write address (LSB = 0). <br>
+Use the address with LSB = 0 in commands; the adapter sets the direction bit itself.<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;"></span><span style="font-weight: bold;">With
 single-byte addressing&nbsp;of the I2C interface, it is possible to
 generate
 256
@@ -551,7 +536,7 @@ to SPI Device Registers.</h4>
 
 Command:<br>
 
-0x22 AddrWrite B0 ... B[n-1] CR<br>
+0x22 AddrWrite B[0] ... B[n-1] CR<br>
 
 0x22 — command,<br>AddrWrite
 — the lowest register number from the sequence of written registers may
@@ -618,7 +603,7 @@ Command:<br>
 
 Adapter response:<br>
 
-B0 ... B[n-1] — bytes received by the adapter.<br>
+B[0] ... B[n-1] — bytes received by the adapter.<br>
 
 <br>
 
@@ -664,11 +649,10 @@ Response: <br>
 
 B[0]..B[8] — the content of the DS18B20 buffer.<br>
 
-Bytes B0 and B1 contain the value measured by the DS18B20
+Bytes B[0] and B[1] contain the value measured by the DS18B20
 sensor.<br>
 
-To get the result, use the formula: &nbsp;T°C = (B0 +
-B1 * 256 ) / 16.<br>
+To get the result, use the formula: &nbsp;T°C = (B[0] + B[1] * 256 ) / 16.<br>
 
 <br>
 
@@ -841,7 +825,7 @@ first, then the LSB) is 0x0B 0xDA or 0x0BDA = 3034, which must be
 divided by 128: <br>
 T = 3034/128 = 23.703125°C.<br>
 </span><span style="" lang="EN-US"> The calculation result is placed
-under the box with the&nbsp;formula (B0*256+B1)/128.<br>
+under the box with the&nbsp;formula (B[0]*256+B[1])/128.<br>
 The result is valid only under the corresponding formula <br>
 </span><span style="" lang="EN-US">either </span><span style="" lang="EN-US">after receiving the adapter response when the
 "calculate results on microcontroller response" checkbox is checked, <br>
@@ -899,7 +883,7 @@ to get the result in hectopascals, it must be divided by 4096 or
 shifted right by 12 bits;
 this gives 1012.2976 hPa. <br>
 The calculation result is placed under the box with the&nbsp;formula
-(B0+B1*256+B2*65536)/4096.<br>
+(B[0]+B[1]*256+B[2]*65536)/4096.<br>
 <br>
 </span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 6</span>
 "11 80 E5 02 78" —
@@ -918,21 +902,15 @@ relative air humidity RH = -6 + </span><span style="" lang="EN-US">16310
 </span><span style="" lang="EN-US">-6 + 125 *</span><span style="" lang="EN-US">16310</span><span style="" lang="EN-US">/65536 = </span><span style="" lang="EN-US">25.1088%.<br>
 </span><span style="" lang="EN-US">The calculation result is placed
 under the
-window with the&nbsp;formula </span><span style="" lang="EN-US">-6+(B0*256+B1)*125/65536.</span><br>
+window with the&nbsp;formula </span><span style="" lang="EN-US">-6+(B[0]*256+B[1])*125/65536.</span><br>
 
 <span style="" lang="EN-US"><br>
 </span><span lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 7</span>
 "21 50 02 73" — </span><span style="" lang="EN-US">requests the result
 from the ADT7320 temperature sensor</span><span lang="EN-US">. 0x21 —
 read the registers of the
-device with an SPI interface. <br>
-A feature of
-the </span><span style="" lang="EN-US">ADT7320</span><span lang="EN-US">: to form AddrRead byte, shift 3 times left register;
-when
-reading, 0x40 is added to this byte. <br>
-Beginning with the Rg0x02: &nbsp; (0x02 &lt;&lt;
-3) | 0x40 = 0x10 | 0x40 = 0x50</span><span lang="EN-US">; <br>
-02 - read 2 bytes.<br>
+device with an SPI interface. <br></span>For the ADT7320, AddrRead = 0x40 | (register &lt;&lt; 3) = 0x40 | (0x02 &lt;&lt; 3) = 0x50;<br>
+<span lang="EN-US">02 - read 2 bytes.<br>
 Response:
 "21 50 02 0B C8 46". &nbsp;The first 3 bytes are the same as in the
 command.
@@ -941,7 +919,7 @@ must be divided by 128: <br>
 T = 3016/128 = 23.5625°C.</span><span lang="EN-US"><br>
 The calculation result is placed
 under the
-window with the&nbsp;formula</span><span lang="EN-US"> (B0*256+B1)/128</span><br>
+window with the&nbsp;formula</span><span lang="EN-US"> (B[0]*256+B[1])/128</span><br>
 
 <span style="" lang="EN-US"><br>
 </span><span lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 8</span>
@@ -960,11 +938,11 @@ represent it in hex code: 0x017B =</span><span lang="EN-US"> 379</span><span sty
 divided by 16: </span><span lang="EN-US">Temperature result is
 calculated
 using
-the 0th and 1st bytes (B0 and B1, respectively 0x7B 0x01), :<br>
+the 0th and 1st bytes (B[0] and B[1], respectively 0x7B 0x01), :<br>
 379 /16 = 23.6875</span><span style="" lang="EN-US">°C</span><br>
 
 <span lang="EN-US">The calculation
-result is placed under the box with the&nbsp;formula (B0+B1*256)/16 —
+result is placed under the box with the&nbsp;formula (B[0]+B[1]*256)/16 —
 under this box in the picture is the up-to-date result,
 and calculated after received response from the DS18B20 sensor.<br>
 <br>
@@ -1028,24 +1006,23 @@ of the sensors tested with the adapter.&nbsp;<br>
 <span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">The
 response of the LPS22 pressure sensor
 was discussed above: <br>
-</span><span lang="EN-US">11 BA 28
-С3 44 3F 39, the byte numbering in this response is as follows:<br>
-Cmd Addr Rg B0&nbsp;B1 B2 CR. <br>
+</span><span lang="EN-US">11 BA 28 C3 44 3F 39, the byte numbering in this response is as follows:<br>
+Cmd Addr Rg B[0] B[1] B[2] CR. <br>
 The first three bytes are the same as in the request command, and the
 last byte is the control
-record. The response of the LPS22 sensor is contained in bytes B0, B1,
-and B2. According to the
+record. The response of the LPS22 sensor is contained in bytes B[0], B[1],
+and B[2]. According to the
 LPS22 technical description, these bytes are transmitted from least
 significant to
 most significant.<br>
-B2 is the most significant byte, it must be multiplied by 2^16 or
+B[2] is the most significant byte, it must be multiplied by 2^16 or
 65536;
-byte B1 is the middle one, it is multiplied by 2^8 or 256; B0 is the
+byte B[1] is the middle one, it is multiplied by 2^8 or 256; B[0] is the
 least significant byte.
 The results must be summed up and divided by 4096. The formula for the
 calculation
 is written in the second box: <br>
-(B0+B1*256+B2*65536)/4096<br>
+(B[0]+B[1]*256+B[2]*65536)/4096<br>
 To get the result in hectopascals, you need to double-click on the row
 with the LPS22 sensor response in the "Microcontroller Response"
 window. When the row is selected,
