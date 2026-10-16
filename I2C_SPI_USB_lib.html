@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//w3c//dtd html 4.01 transitional//en">
 <html lang="en"><head>
 
+
   
   <meta http-equiv="content-type" content="text/html; image/x-icon; charset=utf-8">
 
@@ -21,8 +22,7 @@
   <meta name="keywords" content="I2C SPI 1-Wire USB Adapter">
 
   
-  <meta name="description" content="I2C SPI 1-Wire USB Adapter"><title>I2C SPI 1-Wire USB Adapter</title></head><body style="background-color: rgb(192, 192, 192);">
-<big><big><big><big><a href="../projects/index.html" target="_blank">Home</a></big></big></big></big><big><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <meta name="description" content="I2C SPI 1-Wire USB Adapter"><title>I2C SPI 1-Wire USB Adapter</title></head><body style="background-color: rgb(192, 192, 192);"><big><big><big><big><a href="../projects/index.html" target="_blank">Home</a></big></big></big></big><big><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; &nbsp; &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </big></big><big><big><big><big><a style="font-style: italic; font-weight: bold;" href="mailto:post4ytb@gmail.com" target="_blank"><small><small>post4ytb@gmail.com</small></small></a></big></big></big></big><br>
 
@@ -84,10 +84,10 @@ company offers the latest driver versions on its website.<br>
 </span><span style="" lang="EN-US"><a target="_blank" href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers">VCP&nbsp;Drivers
 (Virtual COM-port)</a></span><span style="" lang="EN-US"> for various
 operating systems (Windows,
-WinCE, Mac, Linux)</span><span style="" lang="EN-US">
+WinCE, Mac, Linux)</span><span lang="EN-US">
 allow a computer, smartphone, or controller with a&nbsp;USB host to
 communicate with the adapter&nbsp;via a
-virtual COM port using the appropriate application.</span><span style="" lang="EN-US"><br>
+virtual COM port if the appropriate application will be designed and used.</span><span style="" lang="EN-US"><br>
 <a target="_blank" href="https://www.silabs.com/developers/direct-access-drivers">USBxpress
 Direct Access
 Drivers</a> </span><span style="" lang="EN-US"></span><span style="" lang="EN-US">are available&nbsp;for devices running Windows and WinCE
@@ -104,11 +104,7 @@ direct access - is determined by the USB PID (Product ID) parameter
 value
 written into this chip.<br>
 </span><span style="" lang="EN-US"><span style="font-weight: bold;"><a name="PID_EA61"></a>PID=0xEA61</span>
-- the adapter is shipped with this parameter value; its operation is
-supported
-under </span><span style="" lang="EN-US">Windows
-and WinCE</span><span style="" lang="EN-US">;
-the chip operates
+- </span><span lang="EN-US">the chip operates
 in the direct access mode to the USB bridge functions; a <span style="font-weight: bold;">Direct Access Driver</span> must be
 installed on the host device.</span><span style="" lang="EN-US"><br>
 <span style="font-weight: bold;"><a name="PID_EA60"></a>PID=0xEA60</span>
@@ -131,10 +127,10 @@ As part of the&nbsp;<span style="font-weight: bold; color: rgb(0, 102, 0);">I2C
 SPI
 1-Wire </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">USB </span></span><span lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">adapter</span>
 the IC CP2102N is shipped with PID=0xEA61 or with PID= 0xEA60 (on
-order). <br>
-If there is need to change CP2102N' PID to 0xEA60, </span><span style="" lang="EN-US">you should first
-read the parameters already written during the manufacturing of the
-adapter (the "Import From Device" button), then change the PID to
+order). <br><span style="color: rgb(204, 0, 0); font-weight: bold;">
+If there is need to change CP2102N' PID to 0xEA60, </span></span><span style="" lang="EN-US"><span style="color: rgb(204, 0, 0); font-weight: bold;">you should first
+read and save the parameters already written during the manufacturing of the
+adapter</span> (the "Import From Device" button), then change the PID to
 0xEA60 and
 press the "Program To Device" button to save the changes.<br>
 <span style="color: red; font-weight: bold;">Attention:
@@ -145,7 +141,7 @@ is unacceptable:
 the adapter will stop working. <span style="color: rgb(0, 102, 0);"><br>
 To restore the adapter's functionality, you will need to enter the
 correct
-parameters.</span></span><br style="font-weight: bold;">
+previpusly saved parameters.</span></span><br style="font-weight: bold;">
 <br>
 For the
 operating system and the applications running within it, including
@@ -161,9 +157,8 @@ these applications, will not detect</span><span lang="EN-US">
 your
 device after the changes are applied.<br>
 </span><span style="color: rgb(204, 0, 0); font-weight: bold;">Do not
-change VID (0x10C4) or the Product String; only PID may be switched
-between 0xEA61 and 0xEA60, because the Silicon Labs drivers are
-installed only for these values.</span><br>
+change VID (0x10C4), only PID may be switched
+between 0xEA61 and 0xEA60 for the adapters.</span><br>
 <span style="" lang="EN-US"></span>
 <h2 style="background-color: rgb(153, 153, 0); width: 583px;"><span style="" lang="EN-US"><a name="bootloader"></a>&nbsp;Adapter
 Bootloader with ATmega8 and</span> megaAVR 0-series Microcontrollers</h2>
@@ -254,26 +249,37 @@ version.<br>
 
 It is also possible to load updated firmware using the programmers. For ATmega8 compatible microcontrollers it
 can be connected to the SPI interface pins of the adapter:<br>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">
 
-Programmer pin:&nbsp;&nbsp;&nbsp;
-_|_&nbsp;&nbsp;&nbsp;
-+3.3V&nbsp;&nbsp;&nbsp; MISO&nbsp;&nbsp;&nbsp;
-MOSI&nbsp;&nbsp;&nbsp;
-SCK&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RST<br>
+Programmer pin</td>
+      <td style="vertical-align: top;">_|_</td>
+      <td style="vertical-align: top;">+3.3V</td>
+      <td style="vertical-align: top;">MISO</td>
+      <td style="vertical-align: top;">MOSI</td>
+      <td style="vertical-align: top;">SCK</td>
+      <td style="vertical-align: top;">RST</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">
 
-Adapter pin:&nbsp;&nbsp;&nbsp;
-&nbsp; &nbsp;&nbsp;&nbsp;
-_|_ &nbsp;&nbsp; &nbsp; &nbsp; V&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; I&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; C&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;MCU/pin 29&nbsp;&nbsp;&nbsp;&nbsp;
-(connected to R=10k and a capacitor near pin 1 of the MCU, marked on
+Adapter pin</td>
+      <td style="vertical-align: top;">_|_</td>
+      <td style="vertical-align: top;">V</td>
+      <td style="vertical-align: top;">O <br>
+      </td>
+      <td style="vertical-align: top;">I</td>
+      <td style="vertical-align: top;">C</td>
+      <td style="vertical-align: top;">MCU/pin 29</td>
+    </tr>
+  </tbody>
+</table>
+MCU pin 29 is connected to R=10k and a capacitor near pin 1 of the MCU, marked on
 the
 board with a checkmark — it is more convenient to solder the wire to
-the R and C pads)<br>
+the R and C pads.<br>
 <a href="I2C_SPI_USB_use.html#UPDI">UPDI programmer for megaAVR 0-series</a> microcontrollers must be used. <br>
 
 <br>
@@ -424,6 +430,8 @@ the adapter must first send this address. <br>
 <span style="font-weight: bold;"><span style="color: red;">Note.</span>
 The least significant bit (LSB) of the I2C device address determines
 the transmission direction.<br>
+When sensor's datasheet proposes 7-bit address, it must be shifted left 1 time, for example, </span>0x48&lt;&lt;1 = 0x90.<br>
+<span style="font-weight: bold;">
 If the bit in the address byte is cleared, the subsequent bytes
 are written to the I2C device.<br>
 If the least significant bit in the address is set, data will be
@@ -530,7 +538,7 @@ CR — control record.<br>
 
 Adapter response:<br>
 
-0x21 RgMinNum numBtToRead B[0] ... B[numBtToRead-1] CR<br>
+0x21 AddrRead numBtToRead B[0] ... B[numBtToRead-1] CR<br>
 
 the first 3 bytes are the same as in the command, <br>
 
@@ -543,10 +551,11 @@ to SPI Device Registers.</h4>
 
 Command:<br>
 
-0x22 AddrWrite B ... B[n-1] CR<br>
+0x22 AddrWrite B0 ... B[n-1] CR<br>
 
-0x22 — command,<br>AddrWrite — the lowest register number from the sequence of
-polled registers may be processed according to datasheet of the particular SPI device<br>
+0x22 — command,<br>AddrWrite
+— the lowest register number from the sequence of written registers may
+be processed according to datasheet of the particular SPI device<br>
 B[0] ... B[n-1] — n bytes to be written to the registers,<br>
 
 CR — control record.<br>
@@ -555,16 +564,43 @@ CR — control record.<br>
 
 Adapter response: command echo.<br>
 <br>
-<span style="color: rgb(204, 0, 0); font-weight: bold;">Examples:</span><br>
-&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">AddrRead</span>&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  <br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; 1 byte read
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; byte sequence read<br>
-<span style="font-weight: bold;">ADXL345</span>&nbsp;&nbsp;  &nbsp;&nbsp; 0x80 | reg &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  0xC0 | reg<br>
-<span style="font-weight: bold;">ADT7320</span>&nbsp;&nbsp;&nbsp;&nbsp; 0x40 | reg&lt;&lt;3&nbsp;&nbsp;&nbsp;&nbsp; 0x40 | reg&lt;&lt;3<br>
-<br>
+<span style="color: rgb(204, 0, 0); font-weight: bold;">Examples:<br>
+</span>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td colspan="2" rowspan="1" style="vertical-align: top; text-align: center;"><span style="font-weight: bold;">AddrRead</span><br>
+      </td>
+      <td colspan="2" rowspan="1" style="vertical-align: top; text-align: center;"><span style="font-weight: bold;">AddrWrite</span></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">1 byte read
+      </td>
+      <td style="vertical-align: top; text-align: center;">byte sequence read</td>
+      <td style="vertical-align: top; text-align: center;">1 byte write</td>
+      <td style="vertical-align: top; text-align: center;">byte sequence write</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><span style="font-weight: bold;">ADXL345</span></td>
+      <td style="vertical-align: top; text-align: center;">0x80 | reg</td>
+      <td style="vertical-align: top; text-align: center;">0xC0 | reg</td>
+      <td style="vertical-align: top; text-align: center;">reg</td>
+      <td style="vertical-align: top; text-align: center;">0x40 | reg</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><span style="font-weight: bold;">ADT7320</span></td>
+      <td style="vertical-align: top; text-align: center;">0x40 | reg&lt;&lt;3</td>
+      <td style="vertical-align: top; text-align: center;">0x40 | reg&lt;&lt;3</td>
+      <td style="vertical-align: top; text-align: center;">reg&lt;&lt;3</td>
+      <td style="vertical-align: top; text-align: center;">reg&lt;&lt;3</td>
+    </tr>
+  </tbody>
+</table>
+<span style="color: rgb(204, 0, 0); font-weight: bold;"></span><br>
 
 
 <h3 style="background-color: rgb(153, 255, 153); width: 299px;">1-Wire
@@ -670,7 +706,7 @@ is circular; it contains 9 bytes and all these bytes must be read.<br>
 <br>
 
 When
-executing the dedicated 0xFF command, the necessary delays are placed
+executing the dedicated 0x3F command, the necessary delays are placed
 between some commands from the example. When manually entering each
 command into
 the computer application window,&nbsp;no delays are required.<span style="" lang="EN-US"></span>
@@ -784,11 +820,11 @@ be omitted.<br>
 test, containing only the command byte and the control record byte.</span><span style="" lang="EN-US"><br>
 <br>
 </span><span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 3</span></span><span style="" lang="EN-US"> "11 92 0 2 A5" —
-requests the result from the TMP117 temperature sensor: </span><span style="" lang="EN-US"><br>
+requests the result from the TMP117 temperature sensor: </span><span lang="EN-US"><br>
 <span style="font-weight: bold;">command</span> <span style="font-weight: bold; color: rgb(153, 0, 0);">0x11</span>
 —&nbsp;read register states of a device with an I2C interface <br>
 having the address <span style="font-weight: bold; color: rgb(153, 0, 0);">0x92</span>
-(the unique I2C address of the TMP117 temperature sensor),<br>
+(one of the four I2C addresses of the TMP117 temperature sensor, when ADD0 pin is connected to Vcc),<br>
 start reading from register <span style="color: rgb(153, 0, 0); font-weight: bold;">0x00</span>,
 <br>
 read <span style="color: rgb(153, 0, 0); font-weight: bold;">0x02</span> bytes.<br>
@@ -894,10 +930,8 @@ A feature of
 the </span><span style="" lang="EN-US">ADT7320</span><span lang="EN-US">: to form AddrRead byte, shift 3 times left register;
 when
 reading, 0x40 is added to this byte. <br>
-Beginning with the Rg0x02 - for
-the ADT7320 the register number must be shifted left 3 times: 0x02 &lt;&lt;
-3 = 0x10</span><span lang="EN-US">, for the reading 0x40 must be added,
-so 0x40 | 0x10 = 0x50; <br>
+Beginning with the Rg0x02: &nbsp; (0x02 &lt;&lt;
+3) | 0x40 = 0x10 | 0x40 = 0x50</span><span lang="EN-US">; <br>
 02 - read 2 bytes.<br>
 Response:
 "21 50 02 0B C8 46". &nbsp;The first 3 bytes are the same as in the
