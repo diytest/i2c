@@ -98,7 +98,7 @@ Drivers</a> and <a target="_blank" href="doc/drvCP210x_VCP_Windows.zip">Virtual
 COM Port Drivers</a>.<br>
 <br>
 The operating
-mode of the CP2102 USB bridge chip - either via a virtual COM port or
+mode of the CP2102N USB bridge chip - either via a virtual COM port or
 with
 direct access - is determined by the USB PID (Product ID) parameter
 value
@@ -157,43 +157,13 @@ PID, or Product String parameters in these applications, and drivers
 with the new values of
 these parameters have not yet been installed, the operating system, and
 consequently,
-these applications, will not detect</span><span style="" lang="EN-US">
+these applications, will not detect</span><span lang="EN-US">
 your
 device after the changes are applied.<br>
-<br>
-Note: <br>
-</span>
-<ul>
-
-  <li><span style="" lang="EN-US">Windows 10
-strictly verifies devices for compliance with VID, PID, and Product
-String —
-they must be registered by the manufacturer, and modifying them
-requires a
-registration procedure at&nbsp;<a target="_blank" href="https://usb.org/">usb.org</a>.
-Unregistered devices are blocked, and the procedure to unblock them in
-Windows 10 requires rather troublesome modifications. For
-the CP2102 chip, these parameters must be as follows: VID=0x10C4;
-PID=0xEA60 or PID=0xEA61</span></li>
-  <li><span style="" lang="EN-US">Windows 7
-allowed devices to work with unregistered parameter values but required
-a specific procedure to permit the operation of
-such devices.</span></li>
-  <li><span style="" lang="EN-US">Windows
-Vista, XP, and 98 allowed these parameters to be changed arbitrarily.
-It was possible to
-connect multiple devices with CP2102 USB bridges, where,
-for example, the first device with such a bridge could be assigned
-PID=0xEA01, and the second PID=0xEA02. Of course, there was a chance
-that with
-such arbitrary usage, someone else might register their device with the
-    </span><span style="" lang="EN-US">VID=0x10C4
-and PID=0xEA01 values you used, and</span><span style="" lang="EN-US">
-your customer might purchase </span><span style="" lang="EN-US">that
-device </span><span style="" lang="EN-US">and attempt to
-use it alongside yours.</span></li>
-</ul>
-
+</span><span style="color: rgb(204, 0, 0); font-weight: bold;">Do not
+change VID (0x10C4) or the Product String; only PID may be switched
+between 0xEA61 and 0xEA60, because the Silicon Labs drivers are
+installed only for these values.</span><br>
 <span style="" lang="EN-US"></span>
 <h2 style="background-color: rgb(153, 153, 0); width: 583px;"><span style="" lang="EN-US"><a name="bootloader"></a>&nbsp;Adapter
 Bootloader with ATmega8 and</span> megaAVR 0-series Microcontrollers</h2>
@@ -282,7 +252,7 @@ version.<br>
 
 <br>
 
-It is also possible to load updated firmware using a programmers. For ATmega8 compatible microcontorllers it
+It is also possible to load updated firmware using the programmers. For ATmega8 compatible microcontrollers it
 can be connected to the SPI interface pins of the adapter:<br>
 
 Programmer pin:&nbsp;&nbsp;&nbsp;
@@ -459,7 +429,7 @@ are written to the I2C device.<br>
 If the least significant bit in the address is set, data will be
 read from the device.<br>
 Technical descriptions of devices specify base addresses — with
-cleared least significant bits. They are always even.<br style="font-weight: bold;">
+cleared least significant bits.<br style="font-weight: bold;">
 </span><span style="font-weight: bold;">This base
 address is what is used in computer commands and adapter responses. <br>
 Setting
@@ -500,11 +470,11 @@ and the&nbsp;CR byte — the control record.<br>
 
 Adapter response:<br>
 
-0x11&nbsp;addr_I2C RgMinNum B[0] ... B[numRgToRead-1] CR<br>
+0x11&nbsp;addr_I2C RgMinNum B[0] ... B[numBtToRead-1] CR<br>
 
 the first 3 bytes are the same as in the command, <br>
 
-B[0] ... B[numRgToRead-1] — register states received by the adapter,<br>
+B[0] ... B[numBtToRead-1] — register states received by the adapter,<br>
 
 the&nbsp;CR byte — control record.<br>
 
@@ -545,12 +515,12 @@ the State of SPI Device Registers.</h4>
 
 Command:<br>
 
-0x21 RgMinNum numBtToRead&nbsp;CR <br>
+0x21 AddrRead numBtToRead&nbsp;CR <br>
 
 <br>
 
-0x21 — command to read register contents,<br>RgMinNum — the lowest register number from the sequence of
-polled registers,<br>
+0x21 — command to read register contents,<br>AddrRead — the lowest register number from the sequence of
+polled registers is processed according to datasheet of the particular SPI device (see <span style="font-weight: bold; color: rgb(204, 0, 0);">Examples</span> and ADT7320 data read below)<br>
 
 numBtToRead — the number of bytes read<br>
 
@@ -560,11 +530,11 @@ CR — control record.<br>
 
 Adapter response:<br>
 
-0x21 RgMinNum numBtToRead B[0] ... B[numRgToRead-1] CR<br>
+0x21 RgMinNum numBtToRead B[0] ... B[numBtToRead-1] CR<br>
 
 the first 3 bytes are the same as in the command, <br>
 
-B[0] ... B[numRgToRead-1] —&nbsp;states of the polled registers,<br>
+B[0] ... B[numBtToRead-1] —&nbsp;states of the polled registers,<br>
 
 byte CR - control record.<br>
 
@@ -573,11 +543,10 @@ to SPI Device Registers.</h4>
 
 Command:<br>
 
-0x22 RgMinNum B ... B[n-1] CR<br>
+0x22 AddrWrite B ... B[n-1] CR<br>
 
-0x22 — command,<br>RgMinNum — the lowest register number from the sequence of
-registers to be written to,<br>
-
+0x22 — command,<br>AddrWrite — the lowest register number from the sequence of
+polled registers may be processed according to datasheet of the particular SPI device<br>
 B[0] ... B[n-1] — n bytes to be written to the registers,<br>
 
 CR — control record.<br>
@@ -585,6 +554,18 @@ CR — control record.<br>
 <br>
 
 Adapter response: command echo.<br>
+<br>
+<span style="color: rgb(204, 0, 0); font-weight: bold;">Examples:</span><br>
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">AddrRead</span>&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; 1 byte read
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; byte sequence read<br>
+<span style="font-weight: bold;">ADXL345</span>&nbsp;&nbsp;  &nbsp;&nbsp; 0x80 | reg &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  0xC0 | reg<br>
+<span style="font-weight: bold;">ADT7320</span>&nbsp;&nbsp;&nbsp;&nbsp; 0x40 | reg&lt;&lt;3&nbsp;&nbsp;&nbsp;&nbsp; 0x40 | reg&lt;&lt;3<br>
+<br>
+
 
 <h3 style="background-color: rgb(153, 255, 153); width: 299px;">1-Wire
 Interface Commands.</h3>
@@ -693,7 +674,7 @@ executing the dedicated 0xFF command, the necessary delays are placed
 between some commands from the example. When manually entering each
 command into
 the computer application window,&nbsp;no delays are required.<span style="" lang="EN-US"></span>
-<h2 style="background-color: rgb(153, 153, 0); width: 770px;"><span style="" lang="EN-US">&nbsp;<a name="APP_USBxpress"></a>Application
+<h2 style="background-color: rgb(153, 153, 0); width: 770px;"><span lang="EN-US">&nbsp;<a name="APP_USBxpress"></a>Application
 with
 Direct Access
 to CP2102N Functions</span></h2>
@@ -908,14 +889,16 @@ window with the&nbsp;formula </span><span style="" lang="EN-US">-6+(B0*256+B1)*1
 "21 50 02 73" — </span><span style="" lang="EN-US">requests the result
 from the ADT7320 temperature sensor</span><span lang="EN-US">. 0x21 —
 read the registers of the
-device with an SPI interface; (a feature of
-the </span><span style="" lang="EN-US">ADT7320</span><span lang="EN-US">:
-when writing, the register number is transmitted unchanged;
+device with an SPI interface. <br>
+A feature of
+the </span><span style="" lang="EN-US">ADT7320</span><span lang="EN-US">: to form AddrRead byte, shift 3 times left register;
 when
-reading, 0x40 is added to the address), beginning with the Rg0x02 - for
-the ADT7320 the register number must be shifted left 3 times: 0x02 shl
+reading, 0x40 is added to this byte. <br>
+Beginning with the Rg0x02 - for
+the ADT7320 the register number must be shifted left 3 times: 0x02 &lt;&lt;
 3 = 0x10</span><span lang="EN-US">, for the reading 0x40 must be added,
-so 0x40 | 0x10 = 0x50; 02 - read 2 bytes.<br>
+so 0x40 | 0x10 = 0x50; <br>
+02 - read 2 bytes.<br>
 Response:
 "21 50 02 0B C8 46". &nbsp;The first 3 bytes are the same as in the
 command.
