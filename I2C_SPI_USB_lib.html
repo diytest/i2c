@@ -199,19 +199,18 @@ use it alongside yours.</span></li>
 Bootloader with ATmega8 and</span> megaAVR 0-series Microcontrollers</h2>
 
 In
-adapters with ATmega8 microcontrollers and megaAVR 0-series
+adapters with ATmega8 compatible microcontrollers and megaAVR 0-series
 microcontrollers, the firmware contains not
 only
 the program for working with I2C, SPI, and 1-Wire interfaces, but also
 a bootloader program.<br>
 
 In adapters with STM8S003 microcontrollers, there is no bootloader
-program — these microcontrollers lack
-hardware support for a boot sector.<br>
+program.<br>
 
 <br>
 
-In ATmega8 and megaAVR 0-series microcontrollers, a boot area and an
+In ATmega8 compatible and megaAVR 0-series microcontrollers, a boot area and an
 application area can be allocated in the program memory, which requires
 a programmer.<br>
 
@@ -283,7 +282,7 @@ version.<br>
 
 <br>
 
-It is also possible to load updated firmware using a programmer — it
+It is also possible to load updated firmware using a programmers. For ATmega8 compatible microcontorllers it
 can be connected to the SPI interface pins of the adapter:<br>
 
 Programmer pin:&nbsp;&nbsp;&nbsp;
@@ -305,6 +304,7 @@ _|_ &nbsp;&nbsp; &nbsp; &nbsp; V&nbsp;&nbsp;&nbsp;
 the
 board with a checkmark — it is more convenient to solder the wire to
 the R and C pads)<br>
+<a href="I2C_SPI_USB_use.html#UPDI">UPDI programmer for megaAVR 0-series</a> microcontrollers must be used. <br>
 
 <br>
 
@@ -1039,7 +1039,7 @@ formula. In the picture, the correct value of the parameter 1012.2976
 is located
 under the formula for the LPS22 pressure sensor.<br>
 <br>
-This option is intended for entering simple formulas similar to those
+This option is intended for entering the formulas similar to those
 discussed in the example.</span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><br>
 </span><span style="" lang="EN-US"></span>
 <h2 style="background-color: rgb(153, 153, 0); width: 830px;"><span lang="EN-US">&nbsp;Windows Test Application with Virtual COM
