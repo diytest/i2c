@@ -2,6 +2,7 @@
 <html lang="en"><head>
 
 
+
   
   <meta http-equiv="content-type" content="text/html; image/x-icon; charset=utf-8">
 
@@ -361,17 +362,23 @@ adapter and without them.<br>
 Test with MCU Running the Working Program.</h4>
 
 Command:<br>
+<span style="font-weight: bold;">
 
-0x10
-B[0] ... B[n-1] CR — up to a dozen arbitrary bytes B[0] ... B[n-1] can
+0x10</span>
+<span style="font-weight: bold;">B</span><small>0</small> ... <span style="font-weight: bold;">B</span><small>n-1</small> <span style="font-weight: bold;">CR</span><small></small><br>
+<br><span style="font-weight: bold;">
+
+0x10</span>
+<span style="font-weight: bold;">B</span><small>0</small> ... <span style="font-weight: bold;">B</span><small>n-1</small> <span style="font-weight: bold;">CR</span><span style="font-weight: bold;"></span> — up to a dozen arbitrary bytes B[0] ... B[n-1] can
 be placed between the 0x10 command byte and the control
 record; their transmission is optional. It is sufficient to transmit
 just the command byte and the control
 record: 0x10 0x10.<br>
 
-Response:<br>
+Response:<br><span style="font-weight: bold;">
 
-0x10 B[0] ... B[n-1] CR — the MCU response repeats the received
+0x10</span>
+<span style="font-weight: bold;">B</span><small>0</small> ... <span style="font-weight: bold;">B</span><small>n-1</small> <span style="font-weight: bold;">CR</span> — the MCU response repeats the received
 sequence (<span style="font-weight: bold;">command
 echo</span>).<br>
 
@@ -380,7 +387,8 @@ record CR</span> is defined as the low byte of the sum of all
 previous bytes
 of the command: <br>
 
-CR = LowByteOf ( 0x10 + B[0] + ... + B[n-1] ).<br>
+CR = LowByteOf ( 0x10
++ B<small>0</small> + ...+ B<small>n-1</small><span style="font-weight: bold;"></span> ).<br>
 
 An example of CR calculation is provided in the <a target="_blank" href="I2C_SPI_USB_lib.html#CR">next
 section</a>.<br>
@@ -388,31 +396,31 @@ section</a>.<br>
 <br>
 
 <h4 style="background-color: rgb(102, 255, 255); width: 471px;">Switching
-to the MCU Bootloader Program from the Working Program.</h4>
+to the MCU Bootloader Program from the Working Program.</h4><span style="font-weight: bold;">
 
-0xBB 0xBB — command to switch the MCU to the bootloader. This command
+0xBB 0xBB</span> — command to switch the MCU to the bootloader. This command
 is executed by the
 MCU working program. <br>
 
 No response to this command is provided.<br>
 
 <h4 style="background-color: rgb(102, 255, 255); width: 472px;">Connection
-Test with MCU Running the Bootloader Program.</h4>
+Test with MCU Running the Bootloader Program.</h4><span style="font-weight: bold;">
 
-0xB7 0xB7 — command executed by the bootloader. The bootloader does not
+0xB7 0xB7</span> — command executed by the bootloader. The bootloader does not
 respond to the 0x10 command described
-above.<br>
+above.<br><span style="font-weight: bold;">
 
-0xB7
-B[0] B[1] B[2] CR — the MCU response allows confirming the transition
-to the bootloader. Bytes B[0], B[1], B[2], and CR are calculated and
+0xB7</span>
+<span style="font-weight: bold;">B</span><small>0</small> <span style="font-weight: bold;">B</span><small>1</small> <span style="font-weight: bold;">B</span><small>2</small> <span style="font-weight: bold;">CR</span> — the MCU response allows confirming the transition
+to the bootloader. Bytes B0, B1, B2, and CR are calculated and
 transmitted
 by the bootloader.<br>
 
 <h4 style="background-color: rgb(102, 255, 255); width: 471px;">Returning
-the MCU to the Working Program from the Bootloader Program.</h4>
+the MCU to the Working Program from the Bootloader Program.</h4><span style="font-weight: bold;">
 
-0xBA 0xBA — command executed by the bootloader. No response to this
+0xBA 0xBA</span> — command executed by the bootloader. No response to this
 command is
 provided. <br>
 
@@ -441,9 +449,9 @@ cannot exceed 128.</span>
 <h4 style="background-color: rgb(102, 255, 255); width: 418px;">Reading
 the State of I2C Device Registers.</h4>
 
-Command:<br>
+Command:<br><span style="font-weight: bold;">
 
-0x11&nbsp;addr_I2C&nbsp;RgMinNum&nbsp;numBtToRead&nbsp;CR
+0x11&nbsp;addr_I2C&nbsp;RgMinNum&nbsp;numBtToRead&nbsp;CR</span>
 <br>
 
 <br>
@@ -461,13 +469,13 @@ and the&nbsp;CR byte — the control record.<br>
 
 <br>
 
-Adapter response:<br>
+Adapter response:<br><span style="font-weight: bold;">
 
-0x11&nbsp;addr_I2C RgMinNum B[0] ... B[numBtToRead-1] CR<br>
+0x11&nbsp;addr_I2C RgMinNum B</span><small>0</small><span style="font-weight: bold;"> ... B</span><small>numBtToRead-1</small><span style="font-weight: bold;"> CR</span><br>
 
 the first 3 bytes are the same as in the command, <br>
 
-B[0] ... B[numBtToRead-1] — register states received by the adapter,<br>
+B<small>0</small> ... B<small>numBtToRead-1</small> — register states received by the adapter,<br>
 
 the&nbsp;CR byte — control record.<br>
 
@@ -477,16 +485,14 @@ section</a>.<br>
 <h4 style="background-color: rgb(102, 255, 255); width: 418px;">Writing
 to I2C Device Registers.</h4>
 
-Command:<br>
+Command:<br><span style="font-weight: bold;">
 
-0x12 addr_I2C&nbsp;RgMinNum B[0] ... B[n-1] CR<br>
+0x12 addr_I2C&nbsp;RgMinNum B</span><small>0</small> ... <span style="font-weight: bold;">B</span><small>n-1</small> <span style="font-weight: bold;">CR</span><br>
 
 0x12 — command;<br>
 
 addr_I2C — address of the I2C device;<br>RgMinNum — the lowest register number from the register
-sequence to be written to;<br>
-
-B[0] ... B[n-1] — <span style="font-weight: bold;">n</span>
+sequence to be written to;<br>B<small>0</small> ... B<small>n-1</small> — <span style="font-weight: bold;">n</span>
 bytes to be written to the registers;<br>
 
 CR — control record.<br>
@@ -506,9 +512,9 @@ required.
 <h4 style="background-color: rgb(102, 255, 255); width: 418px;">Reading
 the State of SPI Device Registers.</h4>
 
-Command:<br>
+Command:<br><span style="font-weight: bold;">
 
-0x21 AddrRead numBtToRead&nbsp;CR <br>
+0x21 AddrRead numBtToRead&nbsp;CR</span> <br>
 
 <br>
 
@@ -521,27 +527,24 @@ CR — control record.<br>
 
 <br>
 
-Adapter response:<br>
+Adapter response:<br><span style="font-weight: bold;">
 
-0x21 AddrRead numBtToRead B[0] ... B[numBtToRead-1] CR<br>
+0x21 AddrRead numBtToRead B</span><small>0</small><span style="font-weight: bold;"> ... B</span><small>numBtToRead-1</small><span style="font-weight: bold;"> CR</span><br>
 
-the first 3 bytes are the same as in the command, <br>
-
-B[0] ... B[numBtToRead-1] —&nbsp;states of the polled registers,<br>
+the first 3 bytes are the same as in the command, <br>B<small>0</small> ... B<small>numBtToRead-1</small> —&nbsp;states of the polled registers,<br>
 
 byte CR - control record.<br>
 
 <h4 style="background-color: rgb(102, 255, 255); width: 418px;">Writing
 to SPI Device Registers.</h4>
 
-Command:<br>
+Command:<br><span style="font-weight: bold;">
 
-0x22 AddrWrite B[0] ... B[n-1] CR<br>
+0x22 AddrWrite </span><span style="font-weight: bold;">B</span><small>0</small><span style="font-weight: bold;"> ... B</span><small>n-1</small><span style="font-weight: bold;"> CR</span><br>
 
 0x22 — command,<br>AddrWrite
 — the lowest register number from the sequence of written registers may
-be processed according to datasheet of the particular SPI device<br>
-B[0] ... B[n-1] — n bytes to be written to the registers,<br>
+be processed according to datasheet of the particular SPI device<br>B<small>0</small> ... B<small>n-1</small> — n bytes to be written to the registers,<br>
 
 CR — control record.<br>
 
@@ -597,35 +600,33 @@ Each manufactured device with a 1-Wire interface has an individual
 When a single device is connected to the adapter, addressless
 communication with it is possible.<br>
 
-Command:<br>
+Command:<br><span style="font-weight: bold;">
 
-0x31 n CR — read n bytes from the 1-Wire device buffer.<br>
+0x31 n CR</span> — read n bytes from the 1-Wire device buffer.<br>
 
-Adapter response:<br>
-
-B[0] ... B[n-1] — bytes received by the adapter.<br>
+Adapter response:<br><span style="font-weight: bold;">B</span><small>0</small><span style="font-weight: bold;"> ... B</span><small>n-1</small> — bytes received by the adapter.<br>
 
 <br>
 
-Command:<br>
+Command:<br><span style="font-weight: bold;">
 
-0x32 B[0] CR — send byte B[0] to the 1-Wire device. <br>
+0x32 B</span><small>0</small> <span style="font-weight: bold;">CR</span> — send byte B<small>0</small> to the 1-Wire device. <br>
 
 No response is provided.<br>
 
 <br>
 
-Command:<br>
+Command:<br><span style="font-weight: bold;">
 
-0x33 0x33 — the adapter generates a reset pulse for 1-Wire devices. <br>
+0x33 0x33</span> — the adapter generates a reset pulse for 1-Wire devices. <br>
 
 No response is provided.<br>
 
 <br>
 
-Command:<br>
+Command:<br><span style="font-weight: bold;">
 
-0x34 0x34 — request the presence of devices on the 1-Wire line. <br>
+0x34 0x34</span> — request the presence of devices on the 1-Wire line. <br>
 
 No response is provided.<br>
 
@@ -635,24 +636,22 @@ No response is provided.<br>
 Temperature
 Sensor: a dedicated command is provided for it in the program.</span><br>
 
-This command invokes all the 1-Wire interface commands listed above:<br>
+This command invokes all the 1-Wire interface commands listed above:<br><span style="font-weight: bold;">
 
-0x3F 0x3F — perform temperature measurement and transmit the
+0x3F 0x3F</span> — perform temperature measurement and transmit the
 measurement
 result.<br>
 
-Response: <br>
+Response: <br><span style="font-weight: bold;">
 
-3F 00 00 B[0]..B[8] CR<br>
+3F 00 00 B</span><small>0</small><span style="font-weight: bold;"> ... B</span><small>8</small><span style="font-weight: bold;"> CR</span><br>
 
-3F 00 00 - DS18B20 response head<br>
+3F 00 00 - DS18B20 response head<br>B<small>0</small> ... B<small>8</small> — the content of the DS18B20 buffer.<br>
 
-B[0]..B[8] — the content of the DS18B20 buffer.<br>
-
-Bytes B[0] and B[1] contain the value measured by the DS18B20
+Bytes B<small>0</small> and B<small>1</small> contain the value measured by the DS18B20
 sensor.<br>
 
-To get the result, use the formula: &nbsp;T°C = (B[0] + B[1] * 256 ) / 16.<br>
+To get the result, use the formula: &nbsp;T°C = (B<small>0</small>+B<small>1</small>*256)/16<br>
 
 <br>
 
