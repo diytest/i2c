@@ -1,5 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="ru"><head>
+
   
   <meta http-equiv="Content-Type" content="text/html; image/x-icon; charset=UTF-8">
 
@@ -20,11 +21,7 @@
   <meta name="Keywords" content="I2C SPI 1-Wire USB adapter">
 
   
-  <meta name="Description" content="I2C SPI 1-Wire USB adapter">
-  <title>I2C SPI 1-Wire USB adapter</title>
-
-  
-</head><body style="background-color: rgb(192, 192, 192);">
+  <meta name="Description" content="I2C SPI 1-Wire USB adapter"><title>I2C SPI 1-Wire USB adapter</title></head><body style="background-color: rgb(192, 192, 192);">
 <big><big><big><big><a href="../projects/index.html" target="_blank">Home</a></big></big></big></big><big><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; &nbsp; &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </big></big><big><big><big><big><a style="font-style: italic; font-weight: bold;" href="mailto:post4ytb@gmail.com" target="_blank"><small><small>post4ytb@gmail.com</small></small></a></big></big></big></big><br>
@@ -91,9 +88,10 @@ with <span style="font-weight: bold;">I2C</span>,&nbsp;<span style="font-weight:
 and for <span style="font-weight: bold;">ATmega808</span> additionally
 the chips with the </span><span lang="EN-US"><span style="font-weight: bold;">UART</span></span><span lang="EN-US">
 interface<span style="font-weight: bold;"></span>. </span><span style="" lang="EN-US"><span style="font-weight: bold;"><br>
-</span></span>The <span style="font-weight: bold;">STM8S003F3P6</span> microcontroller used in the adapter is pin-compatible with the popular <span style="font-weight: bold;">CH32V003F4P6</span>,
-even it's pin 8 doesn't require external capacitor as STM8S003, and may
-be used as general I/O, but software for it is under development<br>
+</span></span>The <span style="font-weight: bold;">STM8S003F3P6</span> microcontroller used in the adapter is pin-compatible with the popular <span style="font-weight: bold;">CH32V003F4P6</span>;
+pin 8, which needs an external capacitor on the STM8S003 (VCAP), is a
+general-purpose I/O on the CH32V003. Software for the CH32V003 is under
+development.<br>
 <span lang="EN-US">
 The adapters can be used both as turnkey devices for your own
 systems and as developer kits (Starter Kits) for learning
@@ -185,7 +183,7 @@ to press a button in that application;<br>
 - compatibility with the Arduino development environment (<span style="font-style: italic;">convenient
 for beginners: lots of
 examples; it requires replacing the bootloader with the Arduino
-bootloader, or ordering an adapter with the Arduino-bootloader alreay
+bootloader, or ordering an adapter with the Arduino-bootloader already
 loaded</span>).
 </span><br>
 </span></big></big></span><span style="" lang="EN-US"><big><big><span style="color: rgb(0, 102, 0);"><br>
@@ -217,8 +215,7 @@ no need to find or design a housing, and the adapter's universal
 software
 is suitable for solving many tasks.</span></big></big></span><span style="" lang="EN-US"><big><big><span style="color: rgb(0, 102, 0);"></span></big></big></span><span style="" lang="EN-US"><big><big><span style="color: rgb(0, 102, 0);"></span></big></big><br style="color: rgb(0, 102, 0);">
 <br>
-To make using the I2C SPI 1-Wire </span><span style="" lang="EN-US">USB
-</span><span style="" lang="EN-US">adapter easier, </span><br>
+To make using the I2C SPI 1-Wire </span><span style="" lang="EN-US">USB adapter easier,</span><span style="" lang="EN-US"> </span><br>
 
 <ul>
 
@@ -268,7 +265,7 @@ COM-port drivers).<o:p></o:p></li>
 
 <span style="" lang="EN-US"><br>
 Compared to adapters found on the Internet, <span style="color: rgb(0, 102, 0); font-weight: bold;">the I2C SPI 1-Wire
-</span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0); font-weight: bold;">USB</span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0); font-weight: bold;"> </span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0); font-weight: bold;">adapter</span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0); font-weight: bold;"> </span></span><span style="" lang="EN-US">differs in that it<br>
+</span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0); font-weight: bold;">USB</span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0); font-weight: bold;"> </span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0); font-weight: bold;">adapter</span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0); font-weight: bold;"> </span></span><span lang="EN-US">differs in that it<br>
 </span>
 <ul>
 
@@ -452,8 +449,7 @@ programmer is not needed for this</span>. <br>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </span><br>
 
-If you need to upload your own firmware to the <span style="font-weight: bold;">ATmega8/88/168/328</span><span style="font-weight: bold;"></span> <span style="font-weight: bold; color: rgb(0, 102, 0);">I2C SPI 1-Wire </span><span style="font-weight: bold; color: rgb(0, 102, 0);">USB</span> <span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">Adapter</span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">
-</span></span>microcontroller, it is also possible via the <span style="font-weight: bold;">SPI</span> interface,
+If you need to upload your own firmware to the <span style="font-weight: bold;">ATmega8/88/168/328</span><span style="font-weight: bold;"></span> <span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);"></span></span>microcontroller used in the <span style="font-weight: bold; color: rgb(0, 102, 0);">I2C SPI 1-Wire </span><span style="font-weight: bold; color: rgb(0, 102, 0);">USB</span> <span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">Adapter</span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);"> </span></span>, it is also possible via the <span style="font-weight: bold;">SPI</span> interface,
 using an inexpensive programmer, for example some <span style="font-weight: bold;">AVR ISP</span> for
 programming <span style="font-weight: bold;">AVR</span>
 microcontrollers.
