@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//w3c//dtd html 4.01 transitional//en">
 <html lang="en"><head>
+
   
   <meta http-equiv="content-type" content="text/html; image/x-icon; charset=utf-8">
 
@@ -366,7 +367,7 @@ Command:<br>
 <br><span style="font-weight: bold;">
 
 0x10</span>
-<span style="font-weight: bold;">B</span><small>0</small> ... <span style="font-weight: bold;">B</span><small>n-1</small> <span style="font-weight: bold;">CR</span><span style="font-weight: bold;"></span> — up to a dozen arbitrary bytes B[0] ... B[n-1] can
+<span style="font-weight: bold;">B</span><small>0</small> ... <span style="font-weight: bold;">B</span><small>n-1</small> <span style="font-weight: bold;">CR</span><span style="font-weight: bold;"></span> — up to a dozen arbitrary bytes B<small>0</small> ... B<small>n-1</small> can
 be placed between the 0x10 command byte and the control
 record; their transmission is optional. It is sufficient to transmit
 just the command byte and the control
@@ -410,7 +411,7 @@ above.<br><span style="font-weight: bold;">
 
 0xB7</span>
 <span style="font-weight: bold;">B</span><small>0</small> <span style="font-weight: bold;">B</span><small>1</small> <span style="font-weight: bold;">B</span><small>2</small> <span style="font-weight: bold;">CR</span> — the MCU response allows confirming the transition
-to the bootloader. Bytes B0, B1, B2, and CR are calculated and
+to the bootloader. Bytes B<small>0</small>, B<small>1</small>, B<small>2</small> and CR are calculated and
 transmitted
 by the bootloader.<br>
 
