@@ -91,7 +91,9 @@ with <span style="font-weight: bold;">I2C</span>,&nbsp;<span style="font-weight:
 and for <span style="font-weight: bold;">ATmega808</span> additionally
 the chips with the </span><span lang="EN-US"><span style="font-weight: bold;">UART</span></span><span lang="EN-US">
 interface<span style="font-weight: bold;"></span>. </span><span style="" lang="EN-US"><span style="font-weight: bold;"><br>
-</span>Used in the adapter <span style="font-weight: bold;">STM8S003F3P6 </span>microcontroller is compatible with popular<span style="font-weight: bold;"> CH32V003H4P6</span>, but software for this one is in porject.</span><br>
+</span></span>The <span style="font-weight: bold;">STM8S003F3P6</span> microcontroller used in the adapter is pin-compatible with the popular <span style="font-weight: bold;">CH32V003F4P6</span>,
+even it's pin 8 doesn't require external capacitor as STM8S003, and may
+be used as general I/O, but software for it is under development<br>
 <span lang="EN-US">
 The adapters can be used both as turnkey devices for your own
 systems and as developer kits (Starter Kits) for learning
@@ -180,9 +182,11 @@ adapter
 automatically, and to return to loading via the Bootloader, you only
 need
 to press a button in that application;<br>
-- compatibility with the Arduino development environment (<span style="font-style: italic;">convenient for beginners: lots of
-examples; it requires to replace bootloader for Arduino-bootloader or
-to order adapter with already downloaded Arduino-bootloader</span>).
+- compatibility with the Arduino development environment (<span style="font-style: italic;">convenient
+for beginners: lots of
+examples; it requires replacing the bootloader with the Arduino
+bootloader, or ordering an adapter with the Arduino-bootloader alreay
+loaded</span>).
 </span><br>
 </span></big></big></span><span style="" lang="EN-US"><big><big><span style="color: rgb(0, 102, 0);"><br>
 That is, <br>
@@ -419,12 +423,12 @@ adapter</span> based on the <span style="font-weight: bold; color: red;">STM8S00
   </big>
 </ul>
 
-<span style="" lang="EN-US">&nbsp;&nbsp;&nbsp;
+<span lang="EN-US">&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;
 is reprogrammed by the user via a single-wire interface (<span style="font-weight: bold;">SWIM</span>). To
-program the </span><span style="" lang="EN-US">microcontroller
-<span style="font-weight: bold;">STM8S003</span>
+program the </span><span style="" lang="EN-US">microcontroller<span style="font-weight: bold;">
+STM8S003</span>
 </span><span style="" lang="EN-US">an inexpensive
 programmer will work, for example,
 an ST-Link mini V2;</span><br>
@@ -448,7 +452,7 @@ programmer is not needed for this</span>. <br>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </span><br>
 
-If you need to upload your own firmware to the <span style="font-weight: bold;">ATmega8/88/16/328</span><span style="font-weight: bold;"></span> <span style="font-weight: bold; color: rgb(0, 102, 0);">I2C SPI 1-Wire </span><span style="font-weight: bold; color: rgb(0, 102, 0);">USB</span> <span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">Adapter</span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">
+If you need to upload your own firmware to the <span style="font-weight: bold;">ATmega8/88/168/328</span><span style="font-weight: bold;"></span> <span style="font-weight: bold; color: rgb(0, 102, 0);">I2C SPI 1-Wire </span><span style="font-weight: bold; color: rgb(0, 102, 0);">USB</span> <span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">Adapter</span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">
 </span></span>microcontroller, it is also possible via the <span style="font-weight: bold;">SPI</span> interface,
 using an inexpensive programmer, for example some <span style="font-weight: bold;">AVR ISP</span> for
 programming <span style="font-weight: bold;">AVR</span>
@@ -465,7 +469,7 @@ before
 programming, the <span style="" lang="EN-US"></span><a target="_blank" href="I2C_SPI_USB_lib.html#bootloader"><span style="font-weight: bold;">bootloader</span></a> will also be erased.
 <br>
 Further
-programming of the <span style="font-weight: bold;">ATmega8/88/16/328</span>
+programming of the <span style="font-weight: bold;">ATmega8/88/168/328</span>
 will then only be possible via the <span style="font-weight: bold;">SPI</span>
 interface,
 using a programmer, since the <a target="_blank" href="I2C_SPI_USB_lib.html#bootloader"><span style="font-weight: bold;">bootloader</span></a><span style="" lang="EN-US"><span style="font-weight: bold;"></span>
