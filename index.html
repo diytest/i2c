@@ -1,5 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="ru"><head>
+
   
   <meta http-equiv="Content-Type" content="text/html; image/x-icon; charset=UTF-8">
 
@@ -73,13 +74,13 @@ SPI 1-Wire USB&nbsp;adapter</span><span style="" lang="EN-US"><br>
 <span style="" lang="EN-US"></span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">I2C SPI 1-Wire </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">&lt;
 &gt;</span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);"></span>
 </span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">USB </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">Adapters</span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);"></span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);"> </span></span><span lang="EN-US">based on the <span style="font-weight: bold;"></span></span><span style="" lang="EN-US"><span style="font-weight: bold;">STM8S003</span></span><span style="" lang="EN-US"> and</span><span style="" lang="EN-US">
-</span><span lang="EN-US"><span style="font-weight: bold;">ATmega8A/ATmega328P microcontrollers,
-as well as the ATmega808 (a new </span></span><span style="font-weight: bold;">megaAVR
+</span><span lang="EN-US"><span style="font-weight: bold;">ATmega8/88/168/328 microcontrollers,
+as well as the ATmega808 (</span></span><span style="font-weight: bold;">megaAVR
 0-series</span><span lang="EN-US"><span style="font-weight: bold;"></span>),
 <span style="font-weight: bold;"></span>provide a connection to a
 computer for various devices or chips
 with <span style="font-weight: bold;">I2C</span>,&nbsp;<span style="font-weight: bold;">SPI and 1-Wire interfaces</span>.<br>
-and for <span style="font-weight: bold;">ATmega808</span> and with the
+and for <span style="font-weight: bold;">ATmega808</span> additionally with the
 interface <span style="font-weight: bold;">UART</span>.<br>
 The adapters can be used both as turnkey devices for your own
 systems and as developer kits (Starter Kits) for learning
@@ -91,16 +92,15 @@ microcontrollers (ATmega808/ATmega809, etc.) is especially relevant: <br>
 </span>
 <ul>
 
-  <li><span lang="EN-US">they have much broader capabilities than
-ATmega8/ATmega328P, </span></li>
+  <li><span lang="EN-US">they have much broader capabilities than </span><span lang="EN-US">ATmega8/88/168/328</span><span lang="EN-US">, </span></li>
   <li><span lang="EN-US">the ATmega808 is produced not only in a
-TQFP32 package, but also in TQFP48 and SSOP28 (used in the adapter), </span></li>
+TQFP32 package, but also in SSOP28 (used in the adapter), </span></li>
   <li><span lang="EN-US">and they are sold significantly cheaper. </span></li>
 </ul>
 
 <span lang="EN-US">However, programming them differs significantly
-from the ATmega8, and no ready-made, inexpensive programmers compatible with the Microchip
-Studio development environment are produced.<br>
+from the </span><span lang="EN-US">ATmega8/88/168/328</span><span lang="EN-US"></span><span lang="EN-US">, and </span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0);"><span style="color: black;">it's hard to find a cheap
+programmer with GUI control software</span></span></span><span lang="EN-US">.<br>
 <br>
 </span><span lang="EN-US">I
 regularly use such an adapter for testing all
@@ -151,7 +151,7 @@ different interfaces to the adapter - I2C, SPI, and 1-Wire;<br>
 library</a></big></big><span style="" lang="EN-US"><big><big><span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;">;<br style="font-weight: bold;">
 </span><span style="font-weight: bold;">-
 the simplicity of programming the adapters based on the
-ATmega8/ATmega328P and ATmega808 microcontrollers - with the Bootloader already flashed, firmware
+ATmega8/88/168/328 and ATmega808 microcontrollers - with the Bootloader already flashed, firmware
 for these microcontrollers is uploaded without a programmer, over
 USB; </span><br style="font-weight: bold;">
 <span style="font-weight: bold;">- the ability
@@ -160,7 +160,10 @@ from the computer; when returning to run mode, the Bootloader computer
 application does not need to be closed - it can disconnect from the adapter
 automatically, and to return to loading via the Bootloader, you only need
 to press a button in that application;<br>
-- compatibility with the Arduino development environment (<span style="font-style: italic;">convenient for beginners: lots of examples</span>).
+- compatibility with the Arduino development environment (<span style="font-style: italic;">convenient
+for beginners: lots of examples; it requires to replace bootloader for
+Arduino-bootloader or to order adapter with already downloaded
+Arduino-bootloader</span>).
 </span><br>
 </span></big></big></span><span style="" lang="EN-US"><big><big><span style="color: rgb(0, 102, 0);"><br>
 That is, <br>
@@ -207,8 +210,8 @@ shrink ratio of 3:1;</span></li>
   <li><span style="" lang="EN-US">an STL
 file for 3D printing has been prepared - </span><span style="" lang="EN-US">a housing for
 the adapter can be printed on a 3D
-printer;     </span><a target="_blank" style="font-weight: bold;" href="img/USB_case.mp4"><span style="color: red;">VIDEO</span>&nbsp;of the USB
-3D-printed housing</a></li>
+printer;     </span><a target="_blank" style="font-weight: bold;" href="img/USB_case.mp4"><span style="color: red;"></span>3D model animation of the adapter enclosure<br>
+</a></li>
 </ul>
 
 <span style="" lang="EN-US"></span>For quickly getting started with the <b><span style="color: rgb(0, 102, 0);">
@@ -273,10 +276,10 @@ devices, and several 1-Wire-interface devices,</li>
 </ul>
 
 The 7-bit address space of the I2C interface allows working with
-up to 128 connected devices; <br>
+up to 112 connected devices (I2C address space provides 128 addresses, but only 112 are accessible); <br>
 
 the 64-bit address space of the 1-Wire interface theoretically
-allows working with 2^64 (two to the 64th power) devices.<br>
+allows working with 2^48 (two to the 48th power) devices.<br>
 
 In both cases, the number of devices will be limited more by the cable
 length and the current drawn by those devices.<br>
@@ -352,7 +355,7 @@ computer or laptop.<br>
 To connect the <span style="color: rgb(0, 102, 0); font-weight: bold;">I2C SPI 1-Wire </span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0); font-weight: bold;">USB</span></span><span style="" lang="EN-US"><span style="color: rgb(0, 102, 0); font-weight: bold;"></span>
 </span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">Adapter</span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">
 </span></span><span style="" lang="EN-US">to a tablet, an
-adapter cable will be needed.<br>
+adapter cable will be needed (only Windows applications are available now).<br>
 <br>
 The software for the <span style="font-weight: bold; color: rgb(0, 102, 0);">I2C SPI 1-Wire </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">USB </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">Adapter</span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);"> </span></span><span style="" lang="EN-US">includes examples of working with temperature, humidity,
 and pressure sensors, a real-time
@@ -390,7 +393,7 @@ an ST-Link mini V2;</span><br>
 
   <li>
     <h1 style="height: 9px;"><span style="" lang="EN-US"><small><small><span style="font-weight: bold; color: rgb(0, 102, 0);">The I2C SPI 1-Wire USB
-adapter</span> based on the <span style="font-weight: bold; color: red;">ATmega8A,</span></small></small><small><small><span style="font-weight: bold; color: red;"> ATmega808</span></small></small></span></h1>
+adapter</span> based on the <span style="font-weight: bold; color: red;">ATmega8/88/168/328,</span></small></small><small><small><span style="font-weight: bold; color: red;"> ATmega808</span></small></small></span></h1>
   </li>
 </ul>
 
@@ -402,7 +405,7 @@ programmer is not needed for this</span>. <br>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </span><br>
 
-If you need to upload your own firmware to the <span style="font-weight: bold;">ATmega8A</span>/<span style="font-weight: bold;">ATmega328P</span> <span style="font-weight: bold; color: rgb(0, 102, 0);">I2C SPI 1-Wire </span><span style="font-weight: bold; color: rgb(0, 102, 0);">USB</span> <span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">Adapter</span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">
+If you need to upload your own firmware to the <span style="font-weight: bold;">ATmega8/88/16/328</span><span style="font-weight: bold;"></span> <span style="font-weight: bold; color: rgb(0, 102, 0);">I2C SPI 1-Wire </span><span style="font-weight: bold; color: rgb(0, 102, 0);">USB</span> <span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">Adapter</span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">
 </span></span>microcontroller, it is also possible via the <span style="font-weight: bold;">SPI</span> interface,
 using an inexpensive programmer, for example some <span style="font-weight: bold;">AVR ISP</span> for
 programming <span style="font-weight: bold;">AVR</span> microcontrollers.
@@ -416,7 +419,7 @@ programming, the <span style="" lang="EN-US"></span><a target="_blank" href="I2C
 <br>will also be erased.
 
 Further
-programming of the <span style="font-weight: bold;">ATmega8A</span>
+programming of the <span style="font-weight: bold;">ATmega8/88/16/328</span>
 will then only be possible via the <span style="font-weight: bold;">SPI</span> interface,
 using a programmer, since the <a target="_blank" href="I2C_SPI_USB_lib.html#bootloader"><span style="font-weight: bold;">bootloader</span></a><span style="" lang="EN-US"><span style="font-weight: bold;"></span>
 firmware is not provided separately. </span>The same applies to the
