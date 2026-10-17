@@ -1,5 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="ru"><head>
+
+
+
   
   <meta http-equiv="Content-Type" content="text/html; image/x-icon; charset=UTF-8">
 
@@ -20,11 +23,36 @@
   <meta name="Keywords" content="I2C SPI 1-Wire USB adapter">
 
   
-  <meta name="Description" content="I2C SPI 1-Wire USB adapter">
-  <title>I2C SPI 1-Wire USB adapter</title>
+  <meta name="Description" content="I2C SPI 1-Wire USB adapter"><title>I2C SPI 1-Wire USB adapter</title></head><body style="background-color: rgb(192, 192, 192);">
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-  
-</head><body style="background-color: rgb(192, 192, 192);">
 <big><big><big><big><a href="../projects/index.html" target="_blank">Home</a></big></big></big></big><big><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp; &nbsp; &nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </big></big><big><big><big><big><a style="font-style: italic; font-weight: bold;" href="mailto:post4ytb@gmail.com" target="_blank"><small><small>post4ytb@gmail.com</small></small></a></big></big></big></big><br>
@@ -144,15 +172,10 @@ their address determined, and each device labeled.<br>
 <span style="color: rgb(153, 0, 0);">The pins</span>
 for connecting devices with the <span style="color: rgb(153, 0, 0); font-weight: bold;">1-Wire</span>
 interface are located <span style="color: rgb(153, 0, 0); font-weight: bold;">on the
-underside</span> of the adapter board, the side without any components.<br>
-
-For example, several
-DS18B20 temperature sensors can be connected to the adapter. <br>
-
-Their
-+U and GND pins are tied together - the sensors operate in
+underside</span> of the adapter board, the side without any components.<br>One DS18B20 temperature sensor can be connected to the adapter with only two wires, like <span style="font-weight: bold;">IC 1</span>.<br>It's +U and GND pins are tied together - the sensor operates in
 parasite-power
-mode, drawing power from the data line DQ. <br>
+mode, drawing power from the data line DQ.<br>
+Several connected sensors with a 1-Wire interface will require separate power, like the <span style="font-weight: bold;">IC N</span> sensor and, possibly, an additional buffer for the control signal. <br>
 
 On the adapter board, parasite
 power is supplied to the IO1 line through a <span style="color: rgb(153, 0, 0);">resistor</span>
@@ -170,13 +193,13 @@ disconnected from each other<br>
 
 <br>
 
-.<br>
+<br>
 
 <h2 style="background-color: rgb(153, 153, 0); width: 526px;"><span style="" lang="EN-US">Connecting I2C Interface
 Devices</span></h2>
 
 In normal mode, the address of an I2C-interface device is defined by 7
-bits, which allows addressing up to 128 devices.<br>
+bits, which allows addressing up to 128 devices, as part of addresses is reserved, only 112 addresses are available.<br>
 
 A huge
 number of I2C-interface devices are manufactured, so devices
@@ -186,12 +209,10 @@ device address to be changed by connecting its <span style="font-weight: bold;">
 line</span> to power
 or to 0V - in that case, two identical devices can also be connected to
 the
-interface. <br>
-
-There is a sensor whose <span style="font-weight: bold;">address-control
+interface. <br>TMP117 temperature sensor <span style="font-weight: bold;">address-control
 line</span> can be connected to the
 power rails, 0V, or to the interface
-lines SDA, SCL, which allows four identical
+lines SDA, SCL, which allows up to four identical
 sensors to be connected to the interface.<br>
 
 <br>
@@ -207,7 +228,7 @@ the
 underside</span> of the adapter board, the side without any components.<br>
 
 <span style="color: rgb(153, 0, 0);">Pull-up
-resistors</span> with a resistance of <span style="color: rgb(153, 0, 0);">10k</span>
+resistors</span> with a resistance of <span style="color: rgb(153, 0, 0);">4k7</span>
 are mounted on
 the adapter board - through them the adapter's supply voltage (the V
 line)
@@ -272,7 +293,7 @@ when connected via <span style="color: rgb(153, 0, 0);">SPI</span>
 the maximum <span style="color: rgb(153, 0, 0);">sampling
 rate</span> is <span style="color: rgb(153, 0, 0);">3200Hz</span>;
 <br>
-if the ADXL345 is connected via the <span style="color: rgb(153, 0, 0);">I2C</span>, </span></span><span style="color: rgb(153, 0, 0);"><span style="color: black;">interface,
+if the ADXL345 is connected via the <span style="color: rgb(153, 0, 0);">I2C</span> </span></span><span style="color: rgb(153, 0, 0);"><span style="color: black;">interface,
 then even at the maximum SCL clock frequency of 400kHz, </span></span><span style="color: rgb(153, 0, 0);"><span style="color: black;">the maximum
 <span style="color: rgb(153, 0, 0);">sampling rate</span>
 of the accelerometer is four times lower: <span style="color: rgb(153, 0, 0);">800Hz</span>.
@@ -291,31 +312,78 @@ the
 topside</span> of the adapter board - the side where the
 components are mounted.<br>
 
-The pin names of an SPI slave device may differ; <br>
+The pin names of an SPI slave device may differ; <br>Next table for SPI 4-wire connection may be used as example for connecting the adapter on ATmega8/88/168/328 with SPI device.<br>
 
-SDI - <span style="font-weight: bold; color: red;">input</span>
-for data coming from the adapter (the master),<br>
-
-SDO - <span style="font-weight: bold; color: red;">output</span>
-for data from the slave device,<br>
-
-SCK - <span style="font-weight: bold; color: red;">input</span>
-for the clock signal sent by the adapter,<br>
-
-~CS - <span style="font-weight: bold; color: red;">input</span>
-for selecting the device; <br>
-
-if the adapter sets a high level on this input, the device does not
-respond to signals arriving over the SPI interface; <br>
-
-a low level on the ~CS pin, set by the adapter, puts the
-slave device's SPI interface into working mode.<br>
-
+<table style="text-align: left; width: 60%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Adapter net name<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Adapter pad marking<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Sensor pin name / variants<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">+U (+3V3)<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">+U<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">+U / Vdd<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">SCK<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">C<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">SCK / SCLK<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">MISO<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">I<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">SDO / DOUT<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">MOSI<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">O<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">SDI / DIN<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">~SS<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">~S<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">~CS<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">GND<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">_|_<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">GND<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+How to understand the connection of the SDO and SDI contacts of the sensor:&nbsp;<br>
+net MISO: Master In Slave Out; the adapter is used here as a Master, <br>
+therefore, the MISO pin acts as an input, the pad is marked 'I', and
+the signal from the slave data output must be transmitted to the 'I'
+pad. <br>
+The sensor is a slave device, SDO / DOUT pin is the data output. <br>
 <br>
-
-<br>
-
-<br>
+Net MOSI: Master Out Slave In - output for the Master (adapter) -
+marked 'O' - it must transmit data to the input of the slave device
+(sensor)- to the SDI/DIN pin of the sensor.<br>
 
 <br>
 
