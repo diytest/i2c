@@ -885,7 +885,7 @@ relative air humidity RH = -6 + </span><span lang="EN-US">34450
 under the
 window with the&nbsp;formula </span><span lang="EN-US">-6+[B0B1]*125/65536</span><br>
 
-<span style="" lang="EN-US"><br>
+<span lang="EN-US"><br>
 </span><span lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 6</span>
 "21 80 01 A2" — </span><span style="" lang="EN-US">requests the ID
 from the ADXL345 accelerometer</span><span lang="EN-US">. 0x21 —
@@ -979,34 +979,34 @@ of the sensors tested with the adapter.&nbsp;<br>
 <h3><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"></span></h3>
 
 <span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">The
-response of the LPS22 pressure sensor
+response of the LPS22HB pressure sensor
 was discussed above: <br>
 </span><span lang="EN-US">11 BA 28 C3 44 3F 39, the byte numbering in this response is as follows:<br>
-Cmd Addr Rg B0 B1 B2 CR. <br>
+Cmd Addr Rg B<small>0</small> B<small>1</small> B<small>2</small> CR. <br>
 The first three bytes are the same as in the request command, and the
 last byte is the control
-record. The response of the LPS22 sensor is contained in bytes B0, B1,
-and B2. According to the
-LPS22 technical description, these bytes are transmitted from least
+record. The response of the LPS22HB sensor is contained in bytes B<small>0</small>, B<small>1</small>,
+and B<small>2</small>. According to the
+LPS22HB technical description, these bytes are transmitted from least
 significant to
 most significant.<br>
-B2 is the most significant byte, it must be multiplied by 2^16 or
+B<small>2</small> is the most significant byte, it must be multiplied by 2^16 or
 65536;
-byte B1 is the middle one, it is multiplied by 2^8 or 256; B0 is the
+byte B<small>1</small> is the middle one, it is multiplied by 2^8 or 256; B<small>0</small> is the
 least significant byte.
 The results must be summed up and divided by 4096. The formula for the
 calculation
 is written in the second box: <br>
-(B0+B1*256+B2*65536)/4096<br>
+[B2<small></small>B10]/4096<br>
 To get the result in hectopascals, you need to double-click on the row
-with the LPS22 sensor response in the "Microcontroller Response"
+with the LPS22HB sensor response in the "Microcontroller Response"
 window. When the row is selected,
 one of its bytes is highlighted.<br>
 Calculations are performed for all entered formulas, but the
 correct parameter value will be displayed only under the corresponding
 formula. In the picture, the correct value of the parameter 1012.2976
 is located
-under the formula for the LPS22 pressure sensor.<br>
+under the formula for the LPS22HB pressure sensor.<br>
 <br>
 This option is intended for entering the formulas similar to those
 discussed in the example.</span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><br>
@@ -1014,7 +1014,7 @@ discussed in the example.</span><span style="" lang="EN-US"></span><span style="
 <h2 style="background-color: rgb(153, 153, 0); width: 830px;"><span lang="EN-US">&nbsp;Windows Test Application with Virtual COM
 Port Communication</span></h2>
 
-<span style="background-color: rgb(255, 255, 51);"></span><span style="" lang="EN-US"></span><a href="img/app_monitor_COMport.jpg" target="_blank"><img title="application with VCP" src="img/app_monitor_COMport.jpg" alt="application with virtual COM port" style="border: 0px solid ; width: 379px; height: 262px;" hspace="10" vspace="5"></a><br>
+<span style="background-color: rgb(255, 255, 51);"></span><span style="" lang="EN-US"></span><a href="img/app_monitor_COMport.jpg" target="_blank"><img title="application with VCP" src="img/app_monitor_COMport.jpg" alt="application with virtual COM port" style="border: 0px solid ; width: 495px; height: 341px;" hspace="10" vspace="5"></a><br>
 
 <br>
 
