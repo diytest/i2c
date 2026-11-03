@@ -267,7 +267,7 @@ Programmer pin</td>
       <td style="vertical-align: top; text-align: center;">
 
 Adapter pin</td>
-      <td style="vertical-align: top; text-align: center;">Gnd</td>
+      <td style="vertical-align: top; text-align: center;">_|_</td>
       <td style="vertical-align: top; text-align: center;">+U</td>
       <td style="vertical-align: top; text-align: center;">O <br>
       </td>
@@ -445,7 +445,7 @@ addresses, but since each device uses two addresses — one for
 reading and
 one for writing — the total number of addressable devices connected to
 the I2C bus
-cannot exceed 112.</span>
+cannot exceed 128, of which 16 are reserved, leaving 112.</span><span style="font-weight: bold;"></span>
 <h4 style="background-color: rgb(102, 255, 255); width: 418px;">Reading
 the State of I2C Device Registers.</h4>
 
@@ -833,7 +833,7 @@ sensor: <br>
 0x11 —&nbsp;reading register states; 0xBA — I2C
 address of the LPS22 sensor; starting from register 0x28,
 read 5 bytes (the states of 5 registers). <br>
-0x28..0x2A </span><span lang="EN-US">registers </span><span lang="EN-US">contain the pressure result, the temperature result is placed to 0x2B and 0x2C registers.<br>
+0x28..0x2A </span><span lang="EN-US">registers </span><span lang="EN-US">contain the pressure result, the temperature result is placed </span>in registers 0x2B and 0x2C<span lang="EN-US">.<br>
 Response: "11 BA 28 27 FA 3E 24 07 7D". The first 3 bytes
 are the same as in the command; the next three bytes </span><span lang="EN-US">27 FA 3E </span><span lang="EN-US">are the pressure result,
 which the LPS22HB
@@ -863,7 +863,7 @@ LPS22HB response "11 BA 28 27 FA 3E 24 07 7D", the window "Data bytes
 (HEX codes)" will contain only the data part (no command, no CR): <br>
 "</span></span><span style="" lang="EN-US"><span style="font-weight: bold;">27 FA 3E 24 07</span></span><span style="" lang="EN-US"><span style="font-weight: bold;">", the byte sequence here is numerated as B<small>0</small> ... B<small>4</small>.<br>
 For the pressure the bytes are placed as B<small>2</small>, B<small>1</small>, B<small>0</small> or 0x3EFA27, for the temperature as B<small>4</small>,B<small>3</small> or 0x0724. <br>
-The 's' character must be placed in a formula when a sensor respondes with a signed result.<br>
+The 's' character must be placed in a formula when a sensor responds with a signed result.<br>
 </span></span><br>
 <span style="" lang="EN-US"><span style="background-color: rgb(204, 255, 255);">Command 5</span>
 "11 80 E5 02 78" —
@@ -911,12 +911,12 @@ represent it in hex code: 0x0119 =</span><span lang="EN-US"> 281</span>. <span s
 divided by 16: </span><span lang="EN-US">Temperature result is
 calculated
 using
-the 0th and 1st bytes (B<small>0</small> and B<small>1</small>, respectively 0x19 0x01), :<br>281 /16 = 17.5625</span><span style="" lang="EN-US">°C</span><br>
+the 0th and 1st bytes (B<small>0</small> and B<small>1</small>, respectively 0x19 0x01):<br>281 /16 = 17.5625</span><span style="" lang="EN-US">°C</span><br>
 
 <span lang="EN-US">The calculation
 result is placed under the box with the&nbsp;formula [B1B0]/16.<br>
 </span><span style="" lang="EN-US"><span style="color: red; font-weight: bold;"><br>
-Note</span>: <span style="font-weight: bold;">DS18B20 temperature 17.5625</span></span><span lang="EN-US"></span><span style="font-weight: bold;" lang="EN-US">°C less than LPS22HB 18.28</span><span style="" lang="EN-US"><span style="font-weight: bold;"></span></span><span lang="EN-US"></span><span style="font-weight: bold;" lang="EN-US">°C, this difference is in the accuracy range, but possibly its due to self-heating of the LPS22HB.</span><br>
+Note</span>: <span style="font-weight: bold;">DS18B20 temperature 17.5625</span></span><span lang="EN-US"></span><span style="font-weight: bold;" lang="EN-US">°C less than LPS22HB 18.28</span><span style="" lang="EN-US"><span style="font-weight: bold;"></span></span><span lang="EN-US"></span><span style="font-weight: bold;" lang="EN-US">°C, this difference is in the accuracy range, but possibly it's due to self-heating of the LPS22HB.</span><br>
 <span lang="EN-US"><br>
 <br>
 </span><span style="" lang="EN-US">As
@@ -981,7 +981,7 @@ response of the LPS22HB pressure sensor
 was discussed above: <br>
 </span><span lang="EN-US">11 BA 28 C3 44 3F 39, the byte numbering in this response is as follows:<br>
 Cmd Addr Rg B<small>0</small> B<small>1</small> B<small>2</small> CR. <br>
-Only the pressure 3-byte is requested.<br>
+</span>Only the three pressure bytes are requested<span lang="EN-US">.<br>
 The first three bytes are the same as in the request command, and the
 last byte is the control
 record. The pressure response of the LPS22HB sensor is contained in bytes B<small>0</small>, B<small>1</small>,
