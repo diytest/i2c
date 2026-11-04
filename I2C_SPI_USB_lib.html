@@ -3,6 +3,7 @@
 
 
 
+
   
   <meta http-equiv="content-type" content="text/html; image/x-icon; charset=utf-8">
 
@@ -129,7 +130,7 @@ SPI
 1-Wire </span></span><span style="" lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">USB </span></span><span lang="EN-US"><span style="font-weight: bold; color: rgb(0, 102, 0);">adapter</span>
 the IC CP2102N is shipped with PID=0xEA61 or with PID= 0xEA60 (on
 order). <br><span style="color: rgb(204, 0, 0); font-weight: bold;">
-If there is need to change CP2102N' PID to 0xEA60, </span></span><span style="" lang="EN-US"><span style="color: rgb(204, 0, 0); font-weight: bold;">you should first
+If there is a need to change CP2102N's PID to 0xEA60, </span></span><span style="" lang="EN-US"><span style="color: rgb(204, 0, 0); font-weight: bold;">you should first
 read and save the parameters already written during the manufacturing of the
 adapter</span> (the "Import From Device" button), then change the PID to
 0xEA60 and
@@ -248,7 +249,7 @@ version.<br>
 
 <br>
 
-It is also possible to load updated firmware using the programmers. For ATmega8 compatible microcontrollers it
+It is also possible to load updated firmware using the programmers. For ATmega8 compatible microcontrollers a programmer
 can be connected to the SPI interface pins of the adapter:<br>
 <table style="text-align: left; width: 50%;" border="1" cellpadding="2" cellspacing="2">
   <tbody>
@@ -280,8 +281,7 @@ Adapter pin</td>
 MCU pin 29 is connected to R=10k and a capacitor near pin 1 of the MCU, marked on
 the
 board with a checkmark — it is more convenient to solder the wire to
-the R and C pads.<br>
-<a href="I2C_SPI_USB_use.html#UPDI">UPDI programmer for megaAVR 0-series</a> microcontrollers must be used. <br>
+the R and C pads.<br>For megaAVR 0-series microcontrollers, a&nbsp;<a href="I2C_SPI_USB_use.html#UPDI">UPDI programmer</a> must be used. <br>
 
 <br>
 
@@ -756,10 +756,10 @@ record byte
 is placed at the
 end of the command. <br style="">
 </span><span style="" lang="EN-US">For example,
-for the last row in the</span><span style="" lang="EN-US">
+for the SHT21 row in the</span><span style="" lang="EN-US">
 "Microcontroller&nbsp;</span><span style="" lang="EN-US">Response</span><span style="" lang="EN-US">:"</span><span style="" lang="EN-US">
 window, the control record is: </span><span style="" lang="EN-US">LowByteOf
-(</span><span style="" lang="EN-US">11 80 E5 86 92</span><span style="" lang="EN-US">) =</span><span style="" lang="EN-US">
+(</span><span style="" lang="EN-US">11+80+E5+86+92</span><span style="" lang="EN-US">) =</span><span style="" lang="EN-US">
 LowByteOf (0x028E) = 0x</span><span style="" lang="EN-US">8E</span><span style="" lang="EN-US">.</span><br>
 
 <span style="" lang="EN-US"><br>
@@ -971,9 +971,7 @@ of the sensors tested with the adapter.&nbsp;<br>
 
 <h3><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"></span></h3>
 
-<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">The
-response of the LPS22HB pressure sensor
-was discussed above: <br>
+<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">Another LPS22HB response, pressure only: <br>
 </span><span lang="EN-US">11 BA 28 C3 44 3F 39, the byte numbering in this response is as follows:<br>
 Cmd Addr Rg B<small>0</small> B<small>1</small> B<small>2</small> CR. <br>
 </span>Only the three pressure bytes are requested<span lang="EN-US">.<br>
@@ -1017,7 +1015,7 @@ adapters that have the </span><span style="" lang="EN-US"><a target="_blank" hre
 PID parameter changed to 0xEA60</a>. A </span><span style="" lang="EN-US"><a target="_blank" href="doc/drvCP210x_VCP_Windows.zip">virtual
 COM port
 driver</a></span> must be installed on the computer.
-<p class="MsoNormal" style="margin-bottom: 12pt;"><span style="" lang="EN-US">The baud rate (500,000 baud),
+<p class="MsoNormal" style="margin-bottom: 12pt;"><span lang="EN-US">The baud rate (500000 baud),
 the number of data bits in the packet (8), the number of stop bits (1),
 and the parity bit
 (Odd) </span><span style="" lang="EN-US">in
