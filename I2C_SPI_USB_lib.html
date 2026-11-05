@@ -4,6 +4,7 @@
 
 
 
+
   
   <meta http-equiv="content-type" content="text/html; image/x-icon; charset=utf-8">
 
@@ -969,17 +970,15 @@ of the sensors tested with the adapter.&nbsp;<br>
 </span>
 <h3><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"><span style="font-weight: bold;">Example.</span></span></h3>
 
-<h3><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"></span></h3>
-
-<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">Another LPS22HB response, pressure only: <br>
-</span><span lang="EN-US">11 BA 28 C3 44 3F 39, the byte numbering in this response is as follows:<br>
-Cmd Addr Rg B<small>0</small> B<small>1</small> B<small>2</small> CR. <br>
-</span>Only the three pressure bytes are requested<span lang="EN-US">.<br>
-The first three bytes are the same as in the request command, and the
+<h3><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"></span></h3><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;">LPS22HB response: <br>
+</span><span lang="EN-US">11 BA 28 27 FA 3E 24 07 7D</span><span lang="EN-US">, the byte numbering in this response is as follows:<br>
+Cmd Addr Rg B<small>0</small> B<small>1</small> B<small>2</small></span><span lang="EN-US"> B<small>3</small> B<small>4</small></span><span lang="EN-US"> CR. <br>
+</span><span lang="EN-US">The first three bytes are the same as in the request command, and the
 last byte is the control
-record. The pressure response of the LPS22HB sensor is contained in bytes B<small>0</small>, B<small>1</small>,
+record. <br>
+The pressure response of the LPS22HB sensor is contained in bytes B<small>0</small>, B<small>1</small>
 and B<small>2</small>. According to the
-LPS22HB technical description, these bytes are transmitted from least
+LPS22HB technical description, </span><span lang="EN-US">B<small>0</small> B<small>1</small> B<small>2</small></span><span lang="EN-US"> </span><span lang="EN-US">are transmitted from least
 significant to
 most significant.<br>
 B<small>2</small> is the most significant byte, it must be multiplied by 2^16 or
@@ -988,17 +987,18 @@ byte B<small>1</small> is the middle one, it is multiplied by 2^8 or 256; B<smal
 least significant byte.
 The results must be summed up and divided by 4096. The formula for the
 calculation
-is written in the second box: <br>
-[B2<small></small>B1B0]/4096<br>
+is written in the first box: <br>
+[B2B1B0]/4096<br>
 To get the result in hectopascals, you need to double-click on the row
 with the LPS22HB sensor response in the "Microcontroller Response"
 window. When the row is selected,
 one of its bytes is highlighted.<br>
 Calculations are performed for all entered formulas, but the
 correct parameter value will be displayed only under the corresponding
-formula. In the picture, the correct value of the parameter 1012.2976
+formulas. In the picture, the correct value of the parameter 1007.6445
 is located
 under the formula for the LPS22HB pressure sensor.<br>
+</span><span lang="EN-US">The temperature response of the LPS22HB sensor is contained in bytes </span><span lang="EN-US">B<small>3</small> and B<small>4<big>. The formula in the second box </big></small></span><span lang="EN-US">[sB4B3]/100 contains "s" character, which indicates signed result in the temperature response.</span><span lang="EN-US"><br>
 <br>
 This option is intended for entering the formulas similar to those
 discussed in the example.</span><span style="" lang="EN-US"></span><span style="" lang="EN-US"><br>
